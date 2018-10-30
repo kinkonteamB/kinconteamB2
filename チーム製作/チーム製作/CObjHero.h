@@ -41,6 +41,7 @@ private:
 	int m_ani_frame;  //描画フレーム
 
 	float m_speed_power; //スピードパワー
+	float m_speed_pow;   //しゃがむ速度
 	float m_ani_max_time;//アニメーション動画間隔最大値
 
 						 //blockとの衝突状態確認用
