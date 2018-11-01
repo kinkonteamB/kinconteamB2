@@ -34,7 +34,7 @@ void CSceneMain::InitScene()
 	//外部グラフィックファイルを読み込み0番に登録（576x384ピクセル）
 	Draw::LoadImage(L"1133010303.png", 0, TEX_SIZE_576);
 
-	//出力させる文字のグラフィックを作成
+	//背景画像読み込み
 	Draw::LoadImage(L"map.jpg", 2, TEX_SIZE_1920);
 
 	//主人公オブジェクト作成
@@ -44,6 +44,8 @@ void CSceneMain::InitScene()
 	//背景オブジェクト作成
 	C0bjBackground * back = new C0bjBackground();
 	Objs::InsertObj(back, OBJ_BACKGROUND, 8);
+
+	
 }
 
 
