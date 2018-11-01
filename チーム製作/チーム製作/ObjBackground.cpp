@@ -11,9 +11,7 @@ using namespace GameL;
 //イニシャライズ
 void  C0bjBackground::Init()
 {
-
 	m_x1 = 0.0f;
-
 }
 
 //アクション
