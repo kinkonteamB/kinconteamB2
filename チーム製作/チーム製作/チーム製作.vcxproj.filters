@@ -12,122 +12,133 @@
     <Filter Include="ソース ファイル\ObjHero">
       <UniqueIdentifier>{a4e50c34-71eb-426d-b35c-a08ceb0bdd2c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル\ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="ソース ファイル\ObjBack">
+      <UniqueIdentifier>{702ff9d7-f279-42bb-9de9-3a6abc65badd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル">
+      <UniqueIdentifier>{19edb0c4-87c4-4e74-b67f-c96fd7c9dbed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{72f5090a-f017-4f27-85ce-ba5ed98b5049}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SceneMain.cpp">
-      <Filter>ソース ファイル\ObjHero</Filter>
-    </ClCompile>
     <ClCompile Include="CObjHero.cpp">
       <Filter>ソース ファイル\ObjHero</Filter>
     </ClCompile>
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソース ファイル\ObjBack</Filter>
+    </ClCompile>
     <ClCompile Include="GameL\Audio.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\DirectXDevice.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\Draw2DTex_Source.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\DrawFont.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\DrawTexture.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\GameL_Main.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\HitBoxManager.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\MultiThread.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\SceneManager.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\SceneObjManager.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\SetWindow.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\UserData.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\WICTextureLoader.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\WinInputs.cpp">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMain.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameHead.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>ソース ファイル\ObjHero</Filter>
-    </ClInclude>
     <ClInclude Include="CObjHero.h">
       <Filter>ソース ファイル\ObjHero</Filter>
     </ClInclude>
+    <ClInclude Include="ObjBackground.h">
+      <Filter>ソース ファイル\ObjBack</Filter>
+    </ClInclude>
+    <ClInclude Include="GameHead.h">
+      <Filter>ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>ヘッダーファイル</Filter>
+    </ClInclude>
     <ClInclude Include="GameL\Audio.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\DirectXDevice.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\DirectXTex.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\DrawFont.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\DrawTexture.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\HitBoxManager.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\MultiThread.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\SceneManager.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\SceneObjManager.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\SetWindow.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\UserData.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\WICTextureLoader.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\WinInputs.h">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMain.h">
+      <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Library Include="GameL\DirectXTex.lib">
-      <Filter>リソース ファイル\ヘッダー ファイル</Filter>
+      <Filter>リソース ファイル</Filter>
     </Library>
   </ItemGroup>
 </Project>

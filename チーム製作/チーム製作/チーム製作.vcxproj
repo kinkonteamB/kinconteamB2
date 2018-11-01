@@ -125,9 +125,11 @@
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WICTextureLoader.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
+    <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="SceneMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CObjHero.h" />
     <ClInclude Include="GameHead.h" />
     <ClInclude Include="GameL\Audio.h" />
     <ClInclude Include="GameL\DirectXDevice.h" />
@@ -143,7 +145,7 @@
     <ClInclude Include="GameL\WICTextureLoader.h" />
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="CObjHero.h" />
+    <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="SceneMain.h" />
   </ItemGroup>
   <ItemGroup>
