@@ -14,6 +14,7 @@ using namespace GameL;
 #include "SceneMain.h"
 #include "GameHead.h"
 #include "SceneTitle.h"
+#include"ObjTitle.h"
 
 //コンストラクタ
 CSceneTitle::CSceneTitle()
@@ -36,6 +37,7 @@ void CSceneTitle::InitScene()
 	//背景オブジェクト作成
 	CObjTitle* back = new CObjTitle();
 	Objs::InsertObj(back, OBJ_TITLE, 3);
+
 }
 
 //ゲームメイン実行中メソッド
