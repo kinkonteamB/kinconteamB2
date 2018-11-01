@@ -44,7 +44,7 @@ private:
 	float m_speed_pow;   //しゃがむ速度
 	float m_ani_max_time;//アニメーション動画間隔最大値
 
-						 //blockとの衝突状態確認用
+	//blockとの衝突状態確認用
 	bool m_hit_up;
 	bool m_hit_down;
 	bool m_hit_left;
@@ -55,6 +55,5 @@ private:
 
 	float m_x;     //主人公機のx方向移動用変数
 	float m_y;     //主人公機のy方向移動用変数
-	bool  m_f;     //弾丸発射制御用
 
 };
