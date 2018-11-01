@@ -29,9 +29,6 @@
     <ClCompile Include="CObjHero.cpp">
       <Filter>ソース ファイル\ObjHero</Filter>
     </ClCompile>
-    <ClCompile Include="ObjBackground.cpp">
-      <Filter>ソース ファイル\ObjBack</Filter>
-    </ClCompile>
     <ClCompile Include="GameL\Audio.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
@@ -83,13 +80,13 @@
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソース ファイル\GameTitle</Filter>
     </ClCompile>
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソース ファイル\ObjBack</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjHero.h">
       <Filter>ソース ファイル\ObjHero</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBackground.h">
-      <Filter>ソース ファイル\ObjBack</Filter>
     </ClInclude>
     <ClInclude Include="GameHead.h">
       <Filter>ヘッダーファイル</Filter>
@@ -144,6 +141,9 @@
     </ClInclude>
     <ClInclude Include="SceneTitle.h">
       <Filter>ソース ファイル\GameTitle</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBackground.h">
+      <Filter>ソース ファイル\ObjBack</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
