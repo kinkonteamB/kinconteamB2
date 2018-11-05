@@ -34,10 +34,10 @@ void CSceneMain::InitScene()
 	//外部グラフィックファイルを読み込み0番に登録（576x384ピクセル）
 	Draw::LoadImage(L"1133010303.png", 0, TEX_SIZE_576);
 
-
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成
 	Objs::InsertObj(obj, COBJ_HERO, 10);//作った主人公オブジェクトをオブジェクトマネージャーに登録
+
 
 }
 
