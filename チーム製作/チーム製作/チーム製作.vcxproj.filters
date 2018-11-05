@@ -24,8 +24,8 @@
     <Filter Include="ソース ファイル\GameTitle">
       <UniqueIdentifier>{bf4efcb1-ec02-4530-8d0e-9a1e2dd311a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\ObjMap">
-      <UniqueIdentifier>{756671ea-0c59-4734-8450-dea48e48af87}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\GameTitle">
+      <UniqueIdentifier>{bf4efcb1-ec02-4530-8d0e-9a1e2dd311a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -86,9 +86,6 @@
     <ClCompile Include="ObjBackground.cpp">
       <Filter>ソース ファイル\ObjBack</Filter>
     </ClCompile>
-    <ClCompile Include="ObjBlock.cpp">
-      <Filter>ソース ファイル\ObjMap</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjHero.h">
@@ -142,6 +139,9 @@
     <ClInclude Include="SceneMain.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ソース ファイル\GameTitle</Filter>
     </ClInclude>
@@ -150,9 +150,6 @@
     </ClInclude>
     <ClInclude Include="ObjBackground.h">
       <Filter>ソース ファイル\ObjBack</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBlock.h">
-      <Filter>ソース ファイル\ObjMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
