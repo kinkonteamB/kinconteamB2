@@ -60,6 +60,14 @@ void C0bjHero::Action()
 		m_speed_power = 0.7f;
 		m_ani_max_time = 2;
 	}
+	if (Input::GetVKey('W') == true)
+	{
+		//if (m_hit_down == true)
+		{
+			m_vy = -8;
+			m_py += m_vy;
+		}
+	}
 	//‚µ‚á‚ª‚Þ
 	if (Input::GetVKey('S') == true)
 	{
@@ -85,15 +93,6 @@ void C0bjHero::Action()
 	{
 		m_ani_frame = 0;
 		m_ani_time = 0;
-	}
-
-	else if (Input::GetVKey('W') == true)
-	{
-		//if (m_hit_down == true)
-		{
-			m_vy = -8;
-			m_py += m_vy;
-		}
 	}
 
 	else if (Input::GetVKey('D') == true)

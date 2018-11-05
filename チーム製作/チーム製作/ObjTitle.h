@@ -5,10 +5,23 @@
 using namespace GameL;
 
 //マウスクリックのメイン遷移（せんい）
-#define MOU_MAIN_HIT_X (319)
-#define MOU_MAIN_HIT_V (469)
-#define MOU_MAIN_HIT_Y (349)
-#define MOU_MAIN_HIT_H (399)
+#define MOU_START_HIT_X (319)
+#define MOU_START_HIT_V (469)
+#define MOU_START_HIT_Y (349)
+#define MOU_START_HIT_H (399)
+
+#define GAME_START_POS_X (320)
+#define GAME_START_POS_Y (350)
+
+#define GAME_RANKING_POS_X (290)
+#define GAME_RANKING_POS_Y (420)
+
+#define GAME_EXIT_POS_X (335)
+#define GAME_EXIT_POS_Y (490)
+
+#define GAME_START_FONT_SIZE (60)
+#define GAME_RANKING_FONT_SIZE (60)
+#define GAME_EXIT_FONT_SIZE (60)
 
 //描画関係の定数
 #define TITLE_POS_X (200)
@@ -38,4 +51,5 @@ private:
 	float m_mou_y;  //マウスの位置Y
 	bool m_mou_r;   //マウスの右ボタン
 	bool m_mou_l;   //マウスの左ボタン
+	int Choose;
 };

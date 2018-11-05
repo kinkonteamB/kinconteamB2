@@ -128,7 +128,6 @@
     <ClCompile Include="GameL\WICTextureLoader.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjBackground.cpp" />
-    <ClCompile Include="ObjBlock.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
@@ -151,7 +150,6 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="CObjHero.h" />
     <ClInclude Include="ObjBackground.h" />
-    <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneTitle.h" />
