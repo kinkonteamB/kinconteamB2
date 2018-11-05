@@ -86,12 +86,6 @@
     <ClCompile Include="ObjBackground.cpp">
       <Filter>ソース ファイル\ObjBack</Filter>
     </ClCompile>
-    <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソース ファイル\GameTitle</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソース ファイル\GameTitle</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjHero.h">
@@ -156,9 +150,6 @@
     </ClInclude>
     <ClInclude Include="ObjBackground.h">
       <Filter>ソース ファイル\ObjBack</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjTitle.h">
-      <Filter>ソース ファイル\GameTitle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
