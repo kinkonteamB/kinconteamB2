@@ -77,6 +77,7 @@ void C0bjHero::Action()
 		if (m_ani_frame != 5)//5のフレーム以外なら何もしない
 		{
 		}
+
 		else if (Input::GetVKey('D') == true) //しゃがむ（右移動）
 		{
 			m_vx += m_speed_power;

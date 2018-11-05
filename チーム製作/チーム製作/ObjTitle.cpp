@@ -78,11 +78,6 @@ void CObjTitle::Draw()
 
 	float b[4] = { 1,1,1,1 };
 
-	//仮マウス位置表示
-	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, b);
-
 	//タイトル
 	Font::StrDraw(L"異世界の塔", 148, 120, 100, b);
 
