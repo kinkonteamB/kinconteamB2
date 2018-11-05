@@ -20,6 +20,24 @@ void CObjTitle::Init()
 //アクション
 void CObjTitle::Action()
 {
+	//マウスの位置を取得
+	m_mou_x = (float)Input::GetPosX();
+	m_mou_y = (float)Input::GetPosY();
+	//マウスのボタンの状態
+	m_mou_r = Input::GetMouButtonR();
+	m_mou_l = Input::GetMouButtonL();
+
+	//マウスの位置とクリックする場所で当たり判定
+	if (m_mou_x > MOU_MAIN_HIT_X && m_mou_x<MOU_MAIN_HIT_V &&
+		m_mou_y>MOU_MAIN_HIT_Y && m_mou_y < MOU_MAIN_HIT_H)
+	{
+		//マウスのボタンが押されたらメインに遷移
+		if (m_mou_r == true || m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneMain());
+		}
+	}
+
 	//エンターキーを押してシーン:ゲームメインに移行する
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
@@ -62,5 +80,11 @@ void CObjTitle::Draw()
 
 	//タイトル
 	Font::StrDraw(L"異世界の塔", 148, 120, 100, b);
+
+	Font::StrDraw(L"START", 320, 350, 60, b);
+
+	Font::StrDraw(L"RANKING", 290, 420, 60, b);
+
+	Font::StrDraw(L"EXIT", 335, 490, 60, b);
 
 }
