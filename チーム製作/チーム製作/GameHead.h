@@ -53,8 +53,6 @@ struct UserData
 
 //ゲームシーンオブジェクトヘッダ------------------
 #include"CObjHero.h"
-#include"SceneTitle.h"
-#include"ObjBackground.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
