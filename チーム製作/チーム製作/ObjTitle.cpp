@@ -58,4 +58,9 @@ void CObjTitle::Draw()
 	//0番目に登録したグラフィックをsrc・dst・ｃの情報を元に描写
 	Draw::Draw(3, &src, &dst, c, 0.0f);
 
+	float b[4] = { 1,1,1,1};
+
+	//タイトル
+	Font::StrDraw(L"異世界の塔", 148, 120, 100, b);
+
 }

@@ -7,8 +7,6 @@
 #include"GameHead.h"
 #include"CObjHero.h"
 
-
-
 //使用するネームスペース
 using namespace GameL;
 
@@ -25,6 +23,12 @@ void C0bjHero::Init()
 	m_ani_time = 0;
 	m_ani_frame = 0;  //静止フレームを初期化する
 
+	m_hit_up = false;
+	m_hit_down = false;
+	m_hit_left = false;
+	m_hit_right = false;
+
+
 	m_speed_power = 0.5f;//通常速度
 	m_ani_max_time = 4;  //アニメーション間隔幅
 
@@ -37,21 +41,31 @@ void C0bjHero::Init()
 //アクション
 void C0bjHero::Action()
 {
+
+	//落下によるゲームオーバー＆リスタート
+	if (m_py > 1000.0f)
+	{
+		//場外に出たらリスタート
+		Scene::SetScene(new CSceneMain());
+	}
 	m_speed_power = 0.5f;
 
-	//キーの入力方向
-	//ジャンプ
-	if (Input::GetVKey('W') == true)
+	//Xキー入力でジャンプ
+
+	//Shihtキー入力で速度アップ
+
+	if (Input::GetVKey(VK_SHIFT) == true)
 	{
-		m_vy = -15;
-		m_py += m_vy;
+		//ダッシュ時の速度
+		m_speed_power = 0.7f;
+		m_ani_max_time = 2;
 	}
 	//しゃがむ
 	if (Input::GetVKey('S') == true)
 	{
 		m_ani_frame = 5;
 		m_ani_time = 0;
-		m_speed_power = 0.3f;
+		m_speed_power = 0.2f;
 		if (m_ani_frame != 5)//5のフレーム以外なら何もしない
 		{
 		}
@@ -60,17 +74,28 @@ void C0bjHero::Action()
 			m_vx += m_speed_power;
 			m_posture = 1.0f;
 		}
-		else if (Input::GetVKey('A') == true)//しゃがむ（右移動）
+		else if (Input::GetVKey('A') == true)//しゃがむ（左移動）
 		{
 			m_vx -= m_speed_power;
 			m_posture = 0.0f;
 		}
 	}
+
 	else if (m_ani_frame >= 4)
 	{
 		m_ani_frame = 0;
 		m_ani_time = 0;
 	}
+
+	else if (Input::GetVKey('W') == true)
+	{
+		//if (m_hit_down == true)
+		{
+			m_vy = -8;
+			m_py += m_vy;
+		}
+	}
+
 	else if (Input::GetVKey('D') == true)
 	{
 		m_vx += m_speed_power;
@@ -83,6 +108,7 @@ void C0bjHero::Action()
 		m_posture = 0.0f;
 		m_ani_time += 1;
 	}
+
 	else
 	{
 		m_ani_frame = 0;   //キー入力が無い場合静止フレームにする
@@ -101,6 +127,9 @@ void C0bjHero::Action()
 	//摩擦
 	m_vx += -(m_vx*0.098);
 
+	//自由落下運動
+	m_vy += 9.8 / (16.0f);
+
 	//位置の更新
 	m_px += m_vx;
 	m_py += m_vy;
@@ -111,9 +140,9 @@ void C0bjHero::Action()
 		m_px = 800.0f - 64.0f;
 	}
 
-	if (m_py + 64.0f > 600.0f)
+	if (m_py + 64.0f > 550.0f)
 	{
-		m_py = 600.0f - 64.0f;
+		m_py = 550.0f - 64.0f;
 	}
 
 	if (m_py < 0.0f)
@@ -154,6 +183,5 @@ void C0bjHero::Draw()
 
 	//0番目に登録したグラフィックをsrc・dst・ｃの情報を元に描写
 	Draw::Draw(0, &src, &dst, c, 0.0f);
-
 
 }
