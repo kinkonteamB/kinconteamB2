@@ -149,6 +149,8 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="CObjHero.h" />
+    <ClInclude Include="ObjBackground.h" />
+    <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneTitle.h" />
   </ItemGroup>

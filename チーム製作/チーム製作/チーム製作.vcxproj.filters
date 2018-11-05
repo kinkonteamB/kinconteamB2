@@ -145,6 +145,9 @@
     <ClInclude Include="SceneMain.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ソース ファイル\GameTitle</Filter>
     </ClInclude>
@@ -155,9 +158,6 @@
       <Filter>ソース ファイル\ObjBack</Filter>
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
-      <Filter>ソース ファイル\GameTitle</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneTitle.h">
       <Filter>ソース ファイル\GameTitle</Filter>
     </ClInclude>
   </ItemGroup>
