@@ -81,29 +81,15 @@ void CObjTitle::Draw()
 	Font::StrDraw(L"ˆÙ¢ŠE‚Ì“ƒ", 148, 120, 100, b);
 
 	if (m_mou_x > 318 && m_mou_x < 464 && m_mou_y < 399 && m_mou_y >349)
-	{
-		Font::StrDraw(L"žSTART", 260, 350, 60, b);
-	}
+		Font::StrDraw(L"žSTART", 265, 350, 60, b);
 	else 
-	{
 		Font::StrDraw(L"START", 320, 350, 60, b);
-	}
-
 	if (m_mou_x > 287 && m_mou_x < 496 && m_mou_y > 420 && m_mou_y < 460)
-	{
 		Font::StrDraw(L"žRANKING", 233, 420, 60, b);
-	}
 	else
-	{
 		Font::StrDraw(L"RANKING", 290, 420, 60, b);
-	}
-
 	if (m_mou_x > 326 && m_mou_x < 453 && m_mou_y > 487 && m_mou_y < 537)
-	{
 		Font::StrDraw(L"žEXIT", 278, 490, 60, b);
-	}
 	else
-	{
 		Font::StrDraw(L"EXIT", 335, 490, 60, b);
-	}
 }
