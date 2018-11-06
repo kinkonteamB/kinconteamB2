@@ -6,6 +6,7 @@
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
 #include "GameL\Audio.h"
+#include "GameL\DrawTexture.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -37,9 +38,11 @@ void CSceneClear::InitScene()
 	CObjClear* back = new CObjClear();
 	Objs::InsertObj(back, OBJ_TITLE, 3);
 
-	//クリアオブj = new CObjClear();     //ジェクト作成
-	CObjClear* obクリアオブジェクト作成
-	Objs::InsertObj(obj, OBJ_CLEAR, 10);  //クリアオブジェクト登録
+	CObjClear* op = new CObjClear();
+	Objs::InsertObj(op, OBJ_TITLE, 1);
+
+	CObjClear* u = new CObjClear();
+	Objs::InsertObj(u, OBJ_TITLE, 1);
 
 	CObjClear* o = new CObjClear();
 	Objs::InsertObj(o, OBJ_TITLE, 1);
