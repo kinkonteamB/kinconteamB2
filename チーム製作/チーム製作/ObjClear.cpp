@@ -22,6 +22,7 @@ void CObjClear::Action()
 }
 //ドロー
 void CObjClear::Draw()
+
 {
 	//描写カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
