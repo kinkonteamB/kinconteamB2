@@ -6,16 +6,14 @@
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
 #include "GameL\Audio.h"
-#include"GameL\DrawTexture.h"
+#include "GameL\DrawTexture.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneMain.h"
+#include "SceneClear.h"
 #include "GameHead.h"
-#include "SceneTitle.h"
-#include"ObjTitle.h"
 
 //コンストラクタ
 CSceneClear::CSceneClear()
@@ -40,8 +38,11 @@ void CSceneClear::InitScene()
 	CObjClear* back = new CObjClear();
 	Objs::InsertObj(back, OBJ_TITLE, 3);
 
-	CObjClear* obj = new CObjClear();
-	Objs::InsertObj(obj, OBJ_CLEAR, 1); 
+	CObjClear* op = new CObjClear();
+	Objs::InsertObj(op, OBJ_TITLE, 1);
+
+	CObjClear* u = new CObjClear();
+	Objs::InsertObj(u, OBJ_TITLE, 1);
 
 	CObjClear* o = new CObjClear();
 	Objs::InsertObj(o, OBJ_TITLE, 1);
