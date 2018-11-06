@@ -27,6 +27,9 @@
     <Filter Include="ソース ファイル\GameTitle">
       <UniqueIdentifier>{bf4efcb1-ec02-4530-8d0e-9a1e2dd311a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameClear">
+      <UniqueIdentifier>{9fc5f191-6a36-4881-90d4-292dc3fa518e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjHero.cpp">
@@ -85,6 +88,18 @@
     </ClCompile>
     <ClCompile Include="ObjBackground.cpp">
       <Filter>ソース ファイル\ObjBack</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjClear.cpp">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneClear.cpp">
+      <Filter>ソース ファイル\GameClear</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +165,15 @@
     </ClInclude>
     <ClInclude Include="ObjBackground.h">
       <Filter>ソース ファイル\ObjBack</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjClear.h">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneClear.h">
+      <Filter>ソース ファイル\GameClear</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

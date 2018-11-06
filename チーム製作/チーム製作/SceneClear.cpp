@@ -29,22 +29,23 @@ CSceneClear::~CSceneClear()
 //初期化メソッド
 void CSceneClear::InitScene()
 {
-	Font::SetStrTex(L"ｵﾒﾃﾞﾄｳ!ｷｮｳﾀﾞｲﾅﾃｷｦﾅｷﾞﾊﾗｲ､ｺﾉﾃﾞｽｹﾞｰﾑｦｸﾘｱｼﾏｼﾀ｡");
-	Font::SetStrTex(L"ﾏﾀ､ｱﾗﾀﾅﾃｷｶﾞｱﾗﾜﾚﾙｿﾉﾋﾏﾃﾞ､ﾋﾄﾄｷﾉﾍｲﾜｦﾋﾀﾘﾅｻｲ｡");
 
-	//音楽読み込み
-	Audio::LoadAudio(0, L"BGMClear.wav", BACK_MUSIC);
+	//出力させる文字のグラフィックを作成
+	Draw::LoadImage(L"GameClear.jpg", 3, TEX_SIZE_1600);
 
-	//ボリュームを1.0に戻す
-	float v = Audio::VolumeMaster(0);
-	v = Audio::VolumeMaster((1.0 - v));
+	//背景オブジェクト作成
+	CObjClear* back = new CObjClear();
+	Objs::InsertObj(back, OBJ_TITLE, 3);
 
-	//音楽スタート
-	Audio::Start(0);
-
-	//クリアオブジェクト作成
-	CObjClear* obj = new CObjClear();     //クリアオブジェクト作成
+	//クリアオブj = new CObjClear();     //ジェクト作成
+	CObjClear* obクリアオブジェクト作成
 	Objs::InsertObj(obj, OBJ_CLEAR, 10);  //クリアオブジェクト登録
+
+	CObjClear* o = new CObjClear();
+	Objs::InsertObj(o, OBJ_TITLE, 1);
+
+	CObjClear* j = new CObjClear();
+	Objs::InsertObj(j, OBJ_TITLE, 1);
 }
 
 //実行中メソッド

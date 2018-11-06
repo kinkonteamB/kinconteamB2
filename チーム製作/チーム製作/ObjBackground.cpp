@@ -45,6 +45,6 @@ void C0bjBackground::Draw()
 	dst.m_left = 0.0f + m_x1;
 	dst.m_right = 800.0f + m_x1;
 	dst.m_bottom = 600.0f;
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	Draw::Draw(3, &src, &dst, c, 0.0f);
 
 }
