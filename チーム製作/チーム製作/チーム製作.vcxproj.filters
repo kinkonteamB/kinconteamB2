@@ -24,9 +24,6 @@
     <Filter Include="ソース ファイル\GameTitle">
       <UniqueIdentifier>{bf4efcb1-ec02-4530-8d0e-9a1e2dd311a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GameTitle">
-      <UniqueIdentifier>{bf4efcb1-ec02-4530-8d0e-9a1e2dd311a9}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjHero.cpp">
@@ -138,9 +135,6 @@
     </ClInclude>
     <ClInclude Include="SceneMain.h">
       <Filter>ソース ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>ソース ファイル\GameTitle</Filter>
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ソース ファイル\GameTitle</Filter>
