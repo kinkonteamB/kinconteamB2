@@ -57,7 +57,7 @@ void CSceneMain::InitScene()
 	//背景画像読み込み
 	Draw::LoadImage(L"map.jpg", 3, TEX_SIZE_1920);
 
-	Draw::LoadImage(L"block.png", 1, TEX_SIZE_768);
+	Draw::LoadImage(L"block1.png", 1, TEX_SIZE_768);
 
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成
