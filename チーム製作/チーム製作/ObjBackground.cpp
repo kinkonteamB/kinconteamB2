@@ -39,7 +39,7 @@ void C0bjBackground::Draw()
 	src.m_left = 0.0f;
 	src.m_right = 1920.0f;
 	src.m_bottom = 920.0f;
-
+	
 	//•`‰æ
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f + m_x1;
