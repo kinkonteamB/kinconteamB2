@@ -10,7 +10,6 @@ enum OBJ_NAME
 	OBJ_TITLE,
 	OBJ_BACKGROUND,
 	OBJ_CLEAR,
-	OBJ_BLOCK,
 };
 //------------------------------------------------
 
@@ -69,5 +68,4 @@ struct UserData
 //ゲーム開始時のシーンクラス登録
 #define SET_GAME_START  CSceneMain
 #define SET_GAME_START  CSceneTitle
-
 //-----------------------------------------------

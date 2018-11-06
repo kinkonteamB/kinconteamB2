@@ -42,7 +42,7 @@ void CObjClear::Draw()
 	dst.m_bottom = 600.0f;
 
 	//0番目に登録したグラフィックをsrc・dst・ｃの情報を元に描写
-	Draw::Draw(3, &src, &dst, c, 0.0f);
+	Draw::Draw(4, &src, &dst, c, 0.0f);
 
 	float b[4] = { 1,1,1,1 };
 
