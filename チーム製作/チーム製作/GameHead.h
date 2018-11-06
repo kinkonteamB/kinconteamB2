@@ -9,7 +9,7 @@ enum OBJ_NAME
 	COBJ_HERO,
 	OBJ_TITLE,
 	OBJ_BACKGROUND,
-
+	OBJ_BLOCK,
 };
 //------------------------------------------------
 

@@ -17,8 +17,6 @@ void CObjTitle::Init()
 	m_key_flag = false;
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
-	m_mou_r = false;
-	m_mou_l = false;
 }
 
 //アクション
@@ -29,16 +27,24 @@ void CObjTitle::Action()
 	m_mou_y = (float)Input::GetPosY();
 
 	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > MOU_MAIN_HIT_X && m_mou_x<MOU_MAIN_HIT_V &&
-		m_mou_y>MOU_MAIN_HIT_Y && m_mou_y < MOU_MAIN_HIT_H)
+	if (m_mou_x > MOU_START_HIT_X && m_mou_x<MOU_START_HIT_V &&
+		m_mou_y>MOU_START_HIT_Y && m_mou_y < MOU_START_HIT_H)
 	{
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_r == true || m_mou_l == true)
+
 		{
 			Scene::SetScene(new CSceneMain());
 		}
 	}
-
+	if (m_mou_x > GAME_EXIT_POS_X && m_mou_x < GAME_EXIT_POS_X +112 &&
+		m_mou_y > GAME_EXIT_POS_Y && m_mou_y < GAME_EXIT_POS_Y +25)
+	{
+		if (m_mou_r == true || m_mou_l == true)
+		{
+			exit(1);
+		}
+	}
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
@@ -72,24 +78,22 @@ void CObjTitle::Draw()
 
 	float b[4] = { 1,1,1,1 };
 
-	//仮マウス位置表示
-	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, b);
-
 	//タイトル
 	Font::StrDraw(L"異世界の塔", 148, 120, 100, b);
 
 	if (m_mou_x > 318 && m_mou_x < 464 && m_mou_y < 399 && m_mou_y >349)
-		Font::StrDraw(L"◇START", 265, 350, 60, b);
-	else 
-		Font::StrDraw(L"START", 320, 350, 60, b);
+		Font::StrDraw(L"◇START", GAME_START_POS_X - 55, GAME_START_POS_Y, GAME_START_FONT_SIZE, b);
+	else
+		Font::StrDraw(L"START", GAME_START_POS_X, GAME_START_POS_Y, GAME_START_FONT_SIZE, b);
+
 	if (m_mou_x > 287 && m_mou_x < 496 && m_mou_y > 420 && m_mou_y < 460)
-		Font::StrDraw(L"◇RANKING", 233, 420, 60, b);
+		Font::StrDraw(L"◇RANKING", GAME_RANKING_POS_X - 55, GAME_RANKING_POS_Y, GAME_RANKING_FONT_SIZE, b);
 	else
-		Font::StrDraw(L"RANKING", 290, 420, 60, b);
+		Font::StrDraw(L"RANKING", GAME_RANKING_POS_X, GAME_RANKING_POS_Y, GAME_RANKING_FONT_SIZE, b);
+
 	if (m_mou_x > 326 && m_mou_x < 453 && m_mou_y > 487 && m_mou_y < 537)
-		Font::StrDraw(L"◇EXIT", 278, 490, 60, b);
+		Font::StrDraw(L"◇EXIT", GAME_EXIT_POS_X - 55, GAME_EXIT_POS_Y, GAME_EXIT_FONT_SIZE, b);
 	else
-		Font::StrDraw(L"EXIT", 335, 490, 60, b);
+		Font::StrDraw(L"EXIT", GAME_EXIT_POS_X, GAME_EXIT_POS_Y, GAME_EXIT_FONT_SIZE, b);
+
 }
