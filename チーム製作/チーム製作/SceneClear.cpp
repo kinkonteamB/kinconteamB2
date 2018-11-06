@@ -50,7 +50,6 @@ void CSceneClear::InitScene()
 	CObjClear* j = new CObjClear();
 	Objs::InsertObj(j, OBJ_TITLE, 1);
 }
-
 //実行中メソッド
 void CSceneClear::Scene()
 {
