@@ -10,6 +10,7 @@ enum OBJ_NAME
 	OBJ_TITLE,
 	OBJ_BACKGROUND,
 	OBJ_CLEAR,
+	OBJ_BLOCK,
 };
 //------------------------------------------------
 
