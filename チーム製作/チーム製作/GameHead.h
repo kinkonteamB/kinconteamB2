@@ -9,6 +9,7 @@ enum OBJ_NAME
 	COBJ_HERO,
 	OBJ_TITLE,
 	OBJ_BACKGROUND,
+	OBJ_CLEAR,
 };
 //------------------------------------------------
 
@@ -54,15 +55,18 @@ struct UserData
 //ゲームシーンオブジェクトヘッダ------------------
 #include"CObjHero.h"
 #include"ObjBackground.h"
+#include"ObjClear.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include"SceneMain.h"
 #include"SceneTitle.h"
+#include"SceneClear.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
 #define SET_GAME_START  CSceneMain
 #define SET_GAME_START  CSceneTitle
+
 //-----------------------------------------------
