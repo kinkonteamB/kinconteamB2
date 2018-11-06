@@ -47,5 +47,5 @@ void CObjClear::Draw()
 
 	float b[4] = { 1,1,1,1 };
 
-	Font::StrDraw(L"clear a stage", 70, 230, 100, c);
+	Font::StrDraw(L"clear stage", 70, 230, 100, c);
 }
