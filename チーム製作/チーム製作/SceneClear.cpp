@@ -32,23 +32,14 @@ void CSceneClear::InitScene()
 {
 
 	//出力させる文字のグラフィックを作成
-	Draw::LoadImage(L"GameClear.jpg", 3, TEX_SIZE_1600);
+	Draw::LoadImage(L"GameClear.jpg", 4, TEX_SIZE_1600);
 
 	//背景オブジェクト作成
-	CObjClear* back = new CObjClear();
-	Objs::InsertObj(back, OBJ_TITLE, 3);
+	CObjClear* nk= new CObjClear();
+	Objs::InsertObj(nk, OBJ_CLEAR, 4);
 
 	CObjClear* op = new CObjClear();
-	Objs::InsertObj(op, OBJ_TITLE, 1);
-
-	CObjClear* u = new CObjClear();
-	Objs::InsertObj(u, OBJ_TITLE, 1);
-
-	CObjClear* o = new CObjClear();
-	Objs::InsertObj(o, OBJ_TITLE, 1);
-
-	CObjClear* j = new CObjClear();
-	Objs::InsertObj(j, OBJ_TITLE, 1);
+	Objs::InsertObj(op, OBJ_CLEAR, 1);
 }
 //実行中メソッド
 void CSceneClear::Scene()
