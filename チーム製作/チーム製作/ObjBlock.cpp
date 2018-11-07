@@ -11,10 +11,10 @@
 using namespace GameL;
 
 
-C0bjBlock::C0bjBlock(int map[18][75])
+C0bjBlock::C0bjBlock(int map[19][75])
 {
 	//マップデータコピー
-	memcpy(m_map, map, sizeof(int)*(18 * 75));
+	memcpy(m_map, map, sizeof(int)*(19 * 75));
 }
 
 //イニシャライズ
@@ -46,24 +46,24 @@ void C0bjBlock::Draw()
 	RECT_F src;//描写元切り取り位置
 	RECT_F dst;//描写先表示位置
 
-			   //切り取り位置の設定
+	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 34.0f;
-	src.m_bottom = 34.0f;
+	src.m_right = 32.0f;
+	src.m_bottom = 32.0f;
 
 
-	for (int i = 0; i < 18; i++)
+	for (int i = 0; i < 19; i++)
 	{
 		for (int j = 0; j < 75; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
 				//表示位置の設定
-				dst.m_top = i*64.0f;
-				dst.m_left = j*64.0f + m_scroll;
-				dst.m_right = dst.m_left + 64.0;
-				dst.m_bottom = dst.m_top + 64.0;
+				dst.m_top = i*32.0f;
+				dst.m_left = j*32.0f + m_scroll;
+				dst.m_right = dst.m_left + 32.0;
+				dst.m_bottom = dst.m_top + 32.0;
 
 				Draw::Draw(1, &src, &dst, c, 0.0f);
 			}
@@ -99,27 +99,27 @@ void C0bjBlock::BlockHit(
 	*bt = 0;
 
 	//m_mapの全要素にアクセス
-	for (int i = 0; i < 18; i++)
+	for (int i = 0; i < 19; i++)
 	{
 		for (int j = 0; j < 75; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
 				//要素番号を座標に変更
-				float bx = j*64.0f;
-				float by = i*64.0f;
+				float bx = j*32.0f;
+				float by = i*32.0f;
 
 				//スクロールの影響
 				float scroll = scroll_on ? m_scroll : 0;
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x + (-scroll) + 64.0f>bx) && (*x + (-scroll)<bx + 64.0f) && (*y + 64.0f>by) && (*y<by + 32.0f))
+				if ((*x + (-scroll) + 64.0f>bx) && (*x + (-scroll)<bx + 32.0f) && (*y + 64.0f>by) && (*y<by + 32.0f))
 				{
 					//上下左右判定
 
 					//vectorの作成
-					float rvx = ((*x + (-scroll)) + 64) - (bx + 32);
-					float rvy = (*y + 64) - (by + 32);
+					float rvx = (*x + (-scroll)) - bx;
+					float rvy = *y - by;
 
 
 					//長さを求める
@@ -143,34 +143,28 @@ void C0bjBlock::BlockHit(
 						{
 							//右
 							*right = true;//オブジェクトの左の部分が衝突している
-							*x = bx + 64.0f + (scroll);//ブロックの位置+主人公の幅
-
-							if (*vx < 0.0f)
-								*vx = -(*vx)*0.1f;//-VX*反発係数
+							*x = bx + 32.0f + (scroll);//ブロックの位置+主人公の幅
+								*vx = -(*vx)*0.0f;//-VX*反発係数
 						}
 						if (r > 45 && r < 135)
 						{
 							//上
 							*down = true;//主人公の下の部分が衝突している
-							*y = by - 120.0f;//ブロックの位置-主人公の幅
-											 //種類を渡すのスタートどゴールのみ変更する
-							if (m_map[i][j] >= 2)
-								*bt = m_map[i][j];//ブロックの要素(type)を主人公に渡す
+							*y = by - 64.0f;//ブロックの位置-主人公の幅
 							*vy = 0.0f;
 						}
 						if (r > 135 && r < 225)
 						{
 							//左
 							*left = true;//主人公の右の部分が衝突している
-							*x = bx - 138.0f + (scroll);//ブロックの位置-主人公の幅
-							if (*vx > 0.0f)
-								*vx = -(*vx)*0.1f;//-VX*反発係数
+							*x = bx - 64.0f + (scroll);//ブロックの位置-主人公の幅
+								*vx = -(*vx)*0.0f;//-VX*反発係数
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
 							*up = true;//主人公の上の部分が衝突している
-							*y = by + 126.0f;//ブロックの位置+主人公の幅
+							*y = by + 64.0f;//ブロックの位置+主人公の幅
 							if (*vy < 0)
 							{
 								*vy = 0.0f;

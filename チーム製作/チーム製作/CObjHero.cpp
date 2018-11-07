@@ -13,8 +13,8 @@ using namespace GameL;
 //イニシャライズ
 void C0bjHero::Init()
 {
-	m_px = 100.0f;
-	m_py = 100.0f;    //位置
+	m_px = 64.0f;
+	m_py = 500.0f;    //位置
 
 	m_vx = 0.0f;    //移動ベクトル
 	m_vy = 0.0f;
@@ -35,7 +35,7 @@ void C0bjHero::Init()
 
 //当たり判定用のHitBoxを作成
 						
-//Hits::SetHitBox(this, m_px, m_py, 64, 32, ELEMENT_PLAYER, COBJ_HERO, 1);
+Hits::SetHitBox(this, m_px, m_py, 64,64, ELEMENT_PLAYER, COBJ_HERO, 1);
 }
 
 //アクション
@@ -48,9 +48,8 @@ void C0bjHero::Action()
 		//場外に出たらリスタート
 		Scene::SetScene(new CSceneMain());
 	}
-	m_speed_power = 0.5f;
 
-	//Xキー入力でジャンプ
+	m_speed_power = 0.5f;
 
 	//Shihtキー入力で速度アップ
 
@@ -62,7 +61,7 @@ void C0bjHero::Action()
 	}
 	if (Input::GetVKey('W') == true)
 	{
-		//if (m_hit_down == true)
+		if (m_hit_down == true)
 		{
 			m_vy = -8;
 			m_py += m_vy;
@@ -124,6 +123,12 @@ void C0bjHero::Action()
 		m_ani_frame = 0;
 	}
 
+	//主人公機が領域外行かない処理
+	if (m_px + 64.0f > 800.0f)
+	{
+		m_px = 800.0f - 64.0f;
+	}
+
 	//摩擦
 	m_vx += -(m_vx*0.098);
 
@@ -134,26 +139,19 @@ void C0bjHero::Action()
 	m_px += m_vx;
 	m_py += m_vy;
 
-	//主人公機が領域外行かない処理
-	if (m_px + 64.0f > 800.0f)
-	{
-		m_px = 800.0f - 64.0f;
-	}
+	//ブロックとの当たり判定実行
+	C0bjBlock*pb = (C0bjBlock*)Objs::GetObj(OBJ_BLOCK);
+	pb->BlockHit(&m_px, &m_py, true,
+		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
+		&m_block_type
+	);
 
-	if (m_py + 64.0f > 550.0f)
-	{
-		m_py = 550.0f - 64.0f;
-	}
+	//自身のHitBoxを持ってくる
+	CHitBox*hit = Hits::GetHitBox(this);
 
-	if (m_py < 0.0f)
-	{
-		m_py = 0.0f;
-	}
+	//HitBoxの位置を変更
+	hit->SetPos(m_px, m_py);
 
-	if (m_px < 0.0f)
-	{
-		m_px = 0.0f;
-	}
 }
 //ドロー
 void C0bjHero::Draw()

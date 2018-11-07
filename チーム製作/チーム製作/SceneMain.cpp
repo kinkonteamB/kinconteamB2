@@ -37,9 +37,9 @@ void CSceneMain::InitScene()
 	int size;              //ステージ情報の大きさ
 	p = Save::ExternalDataOpen(L"mapblock.csv", &size);//外部データ読み込み
 
-	int map[18][75];
+	int map[19][75];
 	int count = 1;
-	for (int i = 0; i < 18; i++)
+	for (int i = 0; i < 19; i++)
 	{
 		for (int j = 0; j < 75; j++)
 		{
@@ -50,7 +50,7 @@ void CSceneMain::InitScene()
 			count += 2;
 		}
 	}
-
+	
 	//外部グラフィックファイルを読み込み0番に登録（576x384ピクセル）
 	Draw::LoadImage(L"1133010303.png", 0, TEX_SIZE_576);
 
