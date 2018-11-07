@@ -63,4 +63,6 @@ void CObjTitle::Draw()
 	//ƒ^ƒCƒgƒ‹
 	Font::StrDraw(L"ˆÙ¢ŠE‚Ì“ƒ", 148, 120, 100, b);
 
+	Font::StrDraw(L"START", 200, 170, 70, b);
+
 }
