@@ -41,8 +41,11 @@ void CSceneTitle::InitScene()
 	CObjTitle* p = new CObjTitle();
 	Objs::InsertObj(p, OBJ_TITLE, 1);
 
-	CObjTitle* s = new CObjTitle();
-	Objs::InsertObj(p, OBJ_TITLE, 2);
+	CObjTitle* n = new CObjTitle();
+	Objs::InsertObj(n, OBJ_TITLE, 1);
+
+	CObjTitle* o = new CObjTitle();
+	Objs::InsertObj(o, OBJ_TITLE, 1);
 }
 
 //ゲームメイン実行中メソッド

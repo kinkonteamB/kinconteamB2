@@ -24,6 +24,15 @@
     <Filter Include="ソース ファイル\GameTitle">
       <UniqueIdentifier>{bf4efcb1-ec02-4530-8d0e-9a1e2dd311a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameTitle">
+      <UniqueIdentifier>{bf4efcb1-ec02-4530-8d0e-9a1e2dd311a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameClear">
+      <UniqueIdentifier>{9fc5f191-6a36-4881-90d4-292dc3fa518e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Map">
+      <UniqueIdentifier>{c7f9f3b6-b97a-4ffd-91a5-eb8cb6b6e19e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjHero.cpp">
@@ -83,6 +92,21 @@
     <ClCompile Include="ObjBackground.cpp">
       <Filter>ソース ファイル\ObjBack</Filter>
     </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjClear.cpp">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneClear.cpp">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBlock.cpp">
+      <Filter>ソース ファイル\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjHero.h">
@@ -136,6 +160,9 @@
     <ClInclude Include="SceneMain.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ソース ファイル\GameTitle</Filter>
     </ClInclude>
@@ -144,6 +171,18 @@
     </ClInclude>
     <ClInclude Include="ObjBackground.h">
       <Filter>ソース ファイル\ObjBack</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjClear.h">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneClear.h">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBlock.h">
+      <Filter>ソース ファイル\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
