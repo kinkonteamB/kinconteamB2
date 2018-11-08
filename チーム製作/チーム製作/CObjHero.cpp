@@ -45,7 +45,7 @@ void C0bjHero::Action()
 	if (m_py > 1000.0f)
 	{
 		//場外に出たらリスタート
-		Scene::SetScene(new CSceneMain());
+		Scene::SetScene(new CSceneOver());
 	}
 
 	m_speed_power = 0.5f;
@@ -126,6 +126,7 @@ void C0bjHero::Action()
 	if (m_px + 64.0f > 800.0f)
 	{
 		m_px = 800.0f - 64.0f;
+
 	}
 
 	//摩擦
@@ -133,18 +134,6 @@ void C0bjHero::Action()
 
 	//自由落下運動
 	m_vy += 9.8 / (16.0f);
-
-
-
-	//ブロックとの当たり判定実行
-	C0bjBlock*pb = (C0bjBlock*)Objs::GetObj(OBJ_BLOCK);
-	pb->BlockHit(&m_px, &m_py, true,
-		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
-		&m_block_type
-	);
-
-	//自身のHitBoxを持ってくる
-	CHitBox*hit = Hits::GetHitBox(this);
 
 	//位置の更新
 	m_px += m_vx;

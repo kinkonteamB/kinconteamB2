@@ -37,11 +37,11 @@ void CSceneMain::InitScene()
 	int size;              //ステージ情報の大きさ
 	p = Save::ExternalDataOpen(L"Brockmap.csv", &size);//外部データ読み込み
 
-	int map[19][75];
+	int map[19][84];
 	int count = 1;
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 75; j++)
+		for (int j = 0; j < 84; j++)
 		{
 			int w = 0;
 			swscanf_s(&p.get()[count], L"%d", &w);
@@ -57,7 +57,7 @@ void CSceneMain::InitScene()
 	//背景画像読み込み
 	Draw::LoadImage(L"map.jpg", 3, TEX_SIZE_1920);
 
-	Draw::LoadImage(L"block1.png", 1, TEX_SIZE_768);
+	Draw::LoadImage(L"Brock3.jpg", 1, TEX_SIZE_768);
 
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成

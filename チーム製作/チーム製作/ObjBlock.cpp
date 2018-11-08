@@ -11,10 +11,10 @@
 using namespace GameL;
 
 
-C0bjBlock::C0bjBlock(int map[19][75])
+C0bjBlock::C0bjBlock(int map[19][84])
 {
 	//マップデータコピー
-	memcpy(m_map, map, sizeof(int)*(19 * 75));
+	memcpy(m_map, map, sizeof(int)*(19 * 84));
 }
 
 //イニシャライズ
@@ -55,7 +55,7 @@ void C0bjBlock::Draw()
 
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 75; j++)
+		for (int j = 0; j < 84; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
@@ -101,7 +101,7 @@ void C0bjBlock::BlockHit(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 75; j++)
+		for (int j = 0; j < 84; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
@@ -134,7 +134,7 @@ void C0bjBlock::BlockHit(
 						r = 360.0f - abs(r);
 
 					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 120.0f)
+					if (len < 80.0f)
 					{
 
 						//角度で上下左右を判定

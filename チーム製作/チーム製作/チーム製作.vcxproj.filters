@@ -30,8 +30,11 @@
     <Filter Include="ソース ファイル\GameClear">
       <UniqueIdentifier>{9fc5f191-6a36-4881-90d4-292dc3fa518e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Scene\Map">
-      <UniqueIdentifier>{c7f9f3b6-b97a-4ffd-91a5-eb8cb6b6e19e}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\MapBrock">
+      <UniqueIdentifier>{35bec342-0a0a-459c-8108-a17b7d6a5fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameOver">
+      <UniqueIdentifier>{430367b2-5b55-4cd6-a18a-4e6361f27613}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,7 +108,13 @@
       <Filter>ソース ファイル\GameClear</Filter>
     </ClCompile>
     <ClCompile Include="ObjBlock.cpp">
-      <Filter>ソース ファイル\Scene\Map</Filter>
+      <Filter>ソース ファイル\MapBrock</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOver.cpp">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOver.cpp">
+      <Filter>ソース ファイル\GameOver</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -182,7 +191,13 @@
       <Filter>ソース ファイル\GameClear</Filter>
     </ClInclude>
     <ClInclude Include="ObjBlock.h">
-      <Filter>ソース ファイル\Scene\Map</Filter>
+      <Filter>ソース ファイル\MapBrock</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjOver.h">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneOver.h">
+      <Filter>ソース ファイル\GameOver</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
