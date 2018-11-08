@@ -19,11 +19,12 @@ void CObjOver::Init()
 //アクション
 void CObjOver::Action()
 {
-	if (Input::GetVKey(VK_RETURN) ==true )
 
+	if (Input::GetVKey(VK_RETURN) ==true )
 	{
 		Scene::SetScene(new CSceneTitle());
 	}
+
 }
 //ドロー
 void CObjOver::Draw()
