@@ -19,12 +19,38 @@ void CObjOver::Init()
 //アクション
 void CObjOver::Action()
 {
+	//マウスの位置を取得
+	m_mou_x = (float)Input::GetPosX();
+	m_mou_y = (float)Input::GetPosY();
 
-	if (Input::GetVKey(VK_RETURN) ==true )
+
+	//マウスの位置とクリックする場所で当たり判定
+	if (m_mou_x > GAME_YES_X -4 && m_mou_x < GAME_YES_X +100 &&
+		m_mou_y > GAME_YES_Y -4 && m_mou_y < GAME_YES_Y +38)
 	{
-		Scene::SetScene(new CSceneTitle());
+		//マウスのボタンが押されたらメインに遷移
+		if (m_mou_r == true || m_mou_l == true)
+
+		{
+			Scene::SetScene(new CSceneMain());
+		}
+	}
+	if (m_mou_x > GAME_NO_X -4 && m_mou_x < GAME_NO_X + 144 &&
+		m_mou_y > GAME_NO_Y -4 && m_mou_y < GAME_NO_Y + 35)
+	{
+		if (m_mou_r == true || m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneTitle());
+		}
 	}
 
+	//マウスの位置を取得
+	m_mou_x = (float)Input::GetPosX();
+	m_mou_y = (float)Input::GetPosY();
+
+	//マウスのボタンの状態
+	m_mou_r = Input::GetMouButtonR();
+	m_mou_l = Input::GetMouButtonL();
 }
 //ドロー
 void CObjOver::Draw()
@@ -51,7 +77,20 @@ void CObjOver::Draw()
 	//0番目に登録したグラフィックをsrc・dst・ｃの情報を元に描写
 	Draw::Draw(4, &src, &dst, c, 0.0f);
 
-	float b[4] = { 1,1,1,1 };
+	float p[4] = { 1,1,1,1 };
 
-	Font::StrDraw(L"Game Over", 165, 265, 100, c);
+	Font::StrDraw(L"Game Over", GAME_OVER_X, GAME_OVER_Y, GAME_OVER_FONT_SIZE, p);
+
+	Font::StrDraw(L"コンテニューしますか？", GAME_CON_X, GAME_CON_Y, GAME_CON_FONT_SIZE, p);
+
+    if(m_mou_x > 330 && m_mou_x < 435 && m_mou_y > 395 && m_mou_y < 439)
+	Font::StrDraw(L"◇はい", GAME_YES_X -30, GAME_YES_Y, GAME_YES_FONT_SIZE, p);
+	else
+	Font::StrDraw(L"はい", GAME_YES_X, GAME_YES_Y, GAME_YES_FONT_SIZE, p);
+
+	if (m_mou_x > 310 && m_mou_x < 460 && m_mou_y > 475 && m_mou_y < 516)
+	Font::StrDraw(L"◇いいえ", GAME_NO_X -30, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
+	else
+	Font::StrDraw(L"いいえ", GAME_NO_X, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
+
 }

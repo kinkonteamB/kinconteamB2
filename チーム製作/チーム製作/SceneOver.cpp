@@ -43,4 +43,7 @@ void CSceneOver::InitScene()
 
 	CObjOver* go2 = new CObjOver();
 	Objs::InsertObj(go2, OBJ_OVER, 1);
+
+	CObjOver* go3 = new CObjOver();
+	Objs::InsertObj(go3, OBJ_OVER, 1);
 }

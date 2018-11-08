@@ -5,14 +5,7 @@
 using namespace GameL;
 
 //ï`âÊä÷åWÇÃíËêî
-#define TITLE_POS_X (200)
-#define TITLE_POS_Y (250)
-#define TITLE_FONT_SIZE (40)
 
-#define RANKING_POS_X (600)
-#define RANKING_POS_Y (0)
-#define RANKING_FONT_SIZE (24)
-#define RANKING_SCORE_MAX (15)
 #define STR_MAX (256)
 #define SCORE_INIT (1)
 #define SCORE_POS_X (670)

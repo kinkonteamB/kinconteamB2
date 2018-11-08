@@ -6,9 +6,22 @@
 using namespace GameL;
 
 //描画関係の定数
-#define TITLE_POS_X (200)
-#define TITLE_POS_Y (250)
-#define TITLE_FONT_SIZE (40)
+
+#define GAME_OVER_X (165)
+#define GAME_OVER_Y (125)
+#define GAME_OVER_FONT_SIZE (100)
+
+#define GAME_CON_X (145)
+#define GAME_CON_Y (325)
+#define GAME_CON_FONT_SIZE (50)
+
+#define GAME_YES_X (335)
+#define GAME_YES_Y (400)
+#define GAME_YES_FONT_SIZE (50)
+
+#define GAME_NO_X (315)
+#define GAME_NO_Y (480)
+#define GAME_NO_FONT_SIZE (50)
 
 #define RANKING_POS_X (600)
 #define RANKING_POS_Y (0)
@@ -42,4 +55,8 @@ public:
 	void Draw();    //ドロー
 private:
 	bool m_key_flag;//キーフラグ
+	float m_mou_x;  //マウスの位置X
+	float m_mou_y;  //マウスの位置Y
+	bool m_mou_r;   //マウスの右ボタン
+	bool m_mou_l;   //マウスの左ボタン
 };
