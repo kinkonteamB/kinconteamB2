@@ -35,11 +35,11 @@ void CSceneMain::InitScene()
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
 	int size;              //ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"mapblock.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"Brockmap.csv", &size);//外部データ読み込み
 
-	int map[18][75];
+	int map[19][75];
 	int count = 1;
-	for (int i = 0; i < 18; i++)
+	for (int i = 0; i < 19; i++)
 	{
 		for (int j = 0; j < 75; j++)
 		{

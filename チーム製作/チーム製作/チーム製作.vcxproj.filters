@@ -30,7 +30,7 @@
     <Filter Include="ソース ファイル\GameClear">
       <UniqueIdentifier>{9fc5f191-6a36-4881-90d4-292dc3fa518e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Map">
+    <Filter Include="ソース ファイル\Scene\Map">
       <UniqueIdentifier>{c7f9f3b6-b97a-4ffd-91a5-eb8cb6b6e19e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -105,7 +105,7 @@
       <Filter>ソース ファイル\GameClear</Filter>
     </ClCompile>
     <ClCompile Include="ObjBlock.cpp">
-      <Filter>ソース ファイル\Map</Filter>
+      <Filter>ソース ファイル\Scene\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -182,7 +182,7 @@
       <Filter>ソース ファイル\GameClear</Filter>
     </ClInclude>
     <ClInclude Include="ObjBlock.h">
-      <Filter>ソース ファイル\Map</Filter>
+      <Filter>ソース ファイル\Scene\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
