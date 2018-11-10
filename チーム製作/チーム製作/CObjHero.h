@@ -55,7 +55,4 @@ private:
 
 	//踏んでいるblockの種類を確認用
 	int m_block_type;
-
-	float m_x;     //主人公機のx方向移動用変数
-	float m_y;     //主人公機のy方向移動用変数
 };

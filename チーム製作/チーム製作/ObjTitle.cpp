@@ -37,6 +37,16 @@ void CObjTitle::Action()
 			Scene::SetScene(new CSceneMain());
 		}
 	}
+
+	if (m_mou_x > GAME_RANKING_POS_X -3 && m_mou_x < GAME_RANKING_POS_X +209 &&
+		m_mou_y > GAME_RANKING_POS_Y && m_mou_y < GAME_RANKING_POS_Y +40)
+	{
+		if (m_mou_r == true || m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneRanking());
+		}
+	}
+
 	if (m_mou_x > GAME_EXIT_POS_X && m_mou_x < GAME_EXIT_POS_X +112 &&
 		m_mou_y > GAME_EXIT_POS_Y && m_mou_y < GAME_EXIT_POS_Y +25)
 	{

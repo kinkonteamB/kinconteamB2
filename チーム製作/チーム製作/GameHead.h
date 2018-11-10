@@ -12,6 +12,9 @@ enum OBJ_NAME
 	OBJ_CLEAR,
 	OBJ_BLOCK,
 	OBJ_OVER,
+	OBJ_RANKING,
+	OBJ_MENU,
+	OBJ_TIME,
 };
 //------------------------------------------------
 
@@ -39,6 +42,8 @@ enum HIT_ELEMENTS
 struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
+	int m_point;    //GameMainで得たポイント
+	int m_ranking[10];  //ランキング情報
 	
 };
 //------------------------------------------------
@@ -60,13 +65,18 @@ struct UserData
 #include"ObjClear.h"
 #include"ObjBlock.h"
 #include"ObjOver.h"
+#include"ObjRanking.h"
+#include"ObjMenu.h"
+#include"ObjTime.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include"SceneMain.h"
 #include"SceneTitle.h"
+#include"SceneRanking.h"
 #include"SceneClear.h"
 #include"SceneOver.h"
+#include"SceneMenu.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

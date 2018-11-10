@@ -41,6 +41,12 @@ Hits::SetHitBox(this, m_px, m_py, 64,64, ELEMENT_PLAYER, COBJ_HERO, 1);
 //アクション
 void C0bjHero::Action()
 {
+
+	if (Input::GetVKey(VK_TAB) == true) 
+	{
+		Scene::SetScene(new CSceneMenu());
+	}
+
 	//落下によるゲームオーバー＆リスタート
 	if (m_py > 1000.0f)
 	{
