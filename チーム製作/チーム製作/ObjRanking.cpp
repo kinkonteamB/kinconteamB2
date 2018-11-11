@@ -153,7 +153,7 @@ void CObjRanking::Draw()
 	if (m_mou_x > CLASS_ALL_POS_X && m_mou_x < CLASS_ALL_POS_X2 && m_mou_y > CLASS_ALL_POS_Y + 360 && m_mou_y < CLASS_ALL_POS_Y2 + 360)
 		Font::StrDraw(L"ž", CLASS_POS_X - 35, CLASS_POS_Y + 360, CLASS_FONT_SIZE, c);
 
-	if (m_mou_x > CLASS_ALL_POS_X && m_mou_x < CLASS_ALL_POS_X2 && m_mou_y > CLASS_ALL_POS_Y + 405 && m_mou_y < CLASS_ALL_POS_Y2 + 405)
+	if (m_mou_x > CLASS_ALL_POS_X && m_mou_x < CLASS_ALL_POS_X2 +21 && m_mou_y > CLASS_ALL_POS_Y + 405 && m_mou_y < CLASS_ALL_POS_Y2 + 405)
 		Font::StrDraw(L"ž", CLASS_POS_X - 40, CLASS_POS_Y + 405, CLASS_FONT_SIZE, c);
 
 	if(m_mou_x > CLICK_TITLE_GO_X && m_mou_x < CLICK_TITLE_GO_X +140 && m_mou_y > CLICK_TITLE_GO_Y && m_mou_y < CLICK_TITLE_GO_Y +19)
