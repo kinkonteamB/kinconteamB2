@@ -35,6 +35,7 @@ void C0bjBackground::Draw()
 	RECT_F dst;//•`Êæ•\¦ˆÊ’u
 
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
+
 	src.m_top = 0.0f;
 	src.m_left = 500.0f;
 	src.m_right = 1920.0f;
