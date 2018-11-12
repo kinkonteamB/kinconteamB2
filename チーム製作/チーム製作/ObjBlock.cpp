@@ -11,14 +11,14 @@
 using namespace GameL;
 
 
-C0bjBlock::C0bjBlock(int map[19][84])
+CObjBlock::CObjBlock(int map[19][84])
 {
 	//マップデータコピー
 	memcpy(m_map, map, sizeof(int)*(19 * 84));
 }
 
 //イニシャライズ
-void C0bjBlock::Init()
+void CObjBlock::Init()
 {
 	m_scroll = 0.0f;
 	m_scroll_map = 0.0f;
@@ -28,7 +28,7 @@ void C0bjBlock::Init()
 
 
 //アクション
-void C0bjBlock::Action()
+void CObjBlock::Action()
 {
 	//主人公の位置を取得
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
@@ -37,7 +37,7 @@ void C0bjBlock::Action()
 
 }
 //ドロー
-void C0bjBlock::Draw()
+void CObjBlock::Draw()
 {
 
 	//描写カラー情報
@@ -83,7 +83,7 @@ void C0bjBlock::Draw()
 //引数１０  int * bt            :下部分判定時、特殊なブロックのタイプを返す
 //判定を行うobjectとブロック64×64限定で、当たり判定と上下左右判定を行う
 //その結果は引数4～10に返す
-void C0bjBlock::BlockHit(
+void CObjBlock::BlockHit(
 	float *x, float *y, bool scroll_on,
 	bool*up, bool*down, bool*left, bool*right,
 	float *vx, float*vy, int *bt
