@@ -35,13 +35,13 @@ void CSceneMain::InitScene()
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
 	int size;              //ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"map1.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"map.csv", &size);//外部データ読み込み
 
-	int map[19][84];
+	int map[19][82];
 	int count = 1;
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 84; j++)
+		for (int j = 0; j < 82; j++)
 		{
 			int w = 0;
 			swscanf_s(&p.get()[count], L"%d", &w);
@@ -57,7 +57,7 @@ void CSceneMain::InitScene()
 	//背景画像読み込み
 	Draw::LoadImage(L"map.jpg", 3, TEX_SIZE_1920);
 
-	Draw::LoadImage(L"Brock3.jpg", 1, TEX_SIZE_768);
+	Draw::LoadImage(L"Brock3.jpg", 2, TEX_SIZE_768);
 
 	Draw::LoadImage(L"kusa.png", 1, TEX_SIZE_32);
 
