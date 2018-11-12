@@ -6,6 +6,7 @@
 #include"GameL\DrawTexture.h"
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawTexture.h"
+#include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
 //使用するネームスペース
 using namespace GameL;
@@ -50,6 +51,9 @@ void CSceneMain::InitScene()
 			count += 2;
 		}
 	}
+
+	//Font作成
+	Font::SetStrTex(L"0123456789分秒");
 	
 	//外部グラフィックファイルを読み込み0番に登録（576x384ピクセル）
 	Draw::LoadImage(L"1133010303.png", 0, TEX_SIZE_576);
@@ -71,9 +75,9 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 
-	////タイムオブジェクト作成
-	//C0bjTime* objt = new C0bjTime();
-	//Objs::InsertObj(objt, OBJ_TIME, 11);
+	//タイムオブジェクト作成
+	C0bjTime* objt = new C0bjTime();
+	Objs::InsertObj(objt, OBJ_TIME, 11);
 }
 
 

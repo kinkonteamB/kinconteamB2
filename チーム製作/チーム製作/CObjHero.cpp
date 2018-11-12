@@ -51,12 +51,14 @@ void C0bjHero::Action()
 	}
 
 	//落下によるゲームオーバー＆リスタート
-	if (m_py > 1000.0f)
+	if (g_py > 1000.0f)
 	{
 		//場外に出たらリスタート
 		Scene::SetScene(new CSceneOver());
+		g_px = 64.0f;
+		g_py = 500.0f;
 	}
-
+	
 	m_speed_power = 0.5f;
 
 	//Shihtキー入力で速度アップ

@@ -35,8 +35,5 @@ private:
 	int m_map[19][82]; //マップ情報
 
 	float m_scroll;     //左右スクロール用
-
-	float Dot(float ax, float ay, float bx, float by);  //内積
-	float Cross(float ax, float ay, float bx, float by);  //外積
 	float m_scroll_map;
 };

@@ -9,6 +9,7 @@
 
 
 
+
 //使用するネームスペース
 using namespace GameL;
 
@@ -26,13 +27,9 @@ void C0bjTime::Action()
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 
 	//スタートブロックを踏んでいるならフラグをオンにする
-	if (hero->GetBT() == 2)
+	if (gh_spx == 64.0f || gh_spy == 500.0f)
 	{
 		m_flag_time = true;
-	}
-	else if (hero->GetBT() == 3)
-	{
-		m_flag_time = false;
 	}
 
 	//フラグがオンの時、時間を進める
