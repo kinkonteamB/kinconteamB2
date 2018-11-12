@@ -35,7 +35,7 @@ void CSceneMain::InitScene()
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
 	int size;              //ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"Brockmap.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"map.csv", &size);//外部データ読み込み
 
 	int map[19][84];
 	int count = 1;
@@ -56,10 +56,8 @@ void CSceneMain::InitScene()
 
 	//背景画像読み込み
 	Draw::LoadImage(L"map.jpg", 3, TEX_SIZE_1920);
-
+	//ブロック画像読み込み
 	Draw::LoadImage(L"Brock3.jpg", 1, TEX_SIZE_768);
-
-	Draw::LoadImage(L"kusa.png", 1, TEX_SIZE_32);
 
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成
