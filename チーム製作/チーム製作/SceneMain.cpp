@@ -70,7 +70,7 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(back, OBJ_BACKGROUND, 8);
 	
 	//blockオブジェクト作成
-	C0bjBlock* objb = new C0bjBlock(map);
+	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 
 	////タイムオブジェクト作成

@@ -176,6 +176,6 @@ void CObjBlock::BlockHit(
 	}
 }
 
-void C0bjBlock::BlockDraw(float x, float y, RECT_F * dst, float c[])
+void CObjBlock::BlockDraw(float x, float y, RECT_F * dst, float c[])
 {
 }
