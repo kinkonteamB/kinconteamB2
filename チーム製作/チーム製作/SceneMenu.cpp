@@ -12,37 +12,37 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneClear.h"
+#include "SceneMenu.h"
 #include "GameHead.h"
 
 //コンストラクタ
-CSceneClear::CSceneClear()
+CSceneMenu::CSceneMenu()
 {
 
 }
 
 //デストラクタ
-CSceneClear::~CSceneClear()
+CSceneMenu::~CSceneMenu()
 {
 
 }
 
 //初期化メソッド
-void CSceneClear::InitScene()
+void CSceneMenu::InitScene()
 {
 
-	//出力させる文字のグラフィックを作成
-	Draw::LoadImage(L"GameClear.jpg", 4, TEX_SIZE_1600);
-
 	//背景オブジェクト作成
-	CObjClear* nk= new CObjClear();
-	Objs::InsertObj(nk, OBJ_CLEAR, 4);
+	CObjMenu* om1 = new CObjMenu();
+	Objs::InsertObj(om1, OBJ_MENU, 1);
 
-	CObjClear* op = new CObjClear();
-	Objs::InsertObj(op, OBJ_CLEAR, 1);
+	CObjMenu* om2 = new CObjMenu();
+	Objs::InsertObj(om2, OBJ_MENU, 1);
+
+	CObjMenu* om3 = new CObjMenu();
+	Objs::InsertObj(om3, OBJ_MENU, 1);
 }
 //実行中メソッド
-void CSceneClear::Scene()
+void CSceneMenu::Scene()
 {
 
 }

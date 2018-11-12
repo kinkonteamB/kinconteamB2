@@ -127,10 +127,26 @@
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WICTextureLoader.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
-    <ClCompile Include="ObjBackground.cpp" />
-    <ClCompile Include="ObjTitle.cpp" />
+    <ClCompile Include="ObjBackground.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ObjBlock.cpp" />
+    <ClCompile Include="ObjClear.cpp" />
+    <ClCompile Include="ObjMenu.cpp" />
+    <ClCompile Include="ObjOver.cpp" />
+    <ClCompile Include="ObjRanking.cpp" />
+    <ClCompile Include="ObjTime.cpp" />
+    <ClCompile Include="ObjTitle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SceneClear.cpp" />
     <ClCompile Include="SceneMain.cpp" />
-    <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="SceneMenu.cpp" />
+    <ClCompile Include="SceneOver.cpp" />
+    <ClCompile Include="SceneRanking.cpp" />
+    <ClCompile Include="SceneTitle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -148,11 +164,29 @@
     <ClInclude Include="GameL\WICTextureLoader.h" />
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="CObjHero.h" />
-    <ClInclude Include="ObjBackground.h" />
-    <ClInclude Include="ObjTitle.h" />
+    <ClInclude Include="CObjHero.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="ObjBackground.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="ObjBlock.h" />
+    <ClInclude Include="ObjClear.h" />
+    <ClInclude Include="ObjMenu.h" />
+    <ClInclude Include="ObjOver.h" />
+    <ClInclude Include="ObjRanking.h" />
+    <ClInclude Include="ObjTime.h" />
+    <ClInclude Include="ObjTitle.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="SceneClear.h" />
     <ClInclude Include="SceneMain.h" />
-    <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="SceneMenu.h" />
+    <ClInclude Include="SceneOver.h" />
+    <ClInclude Include="SceneRanking.h" />
+    <ClInclude Include="SceneTitle.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />

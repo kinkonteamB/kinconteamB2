@@ -2,6 +2,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
+#include "GameL\DrawTexture.h"
 
 #include "GameHead.h"
 #include "ObjClear.h"
@@ -12,33 +13,39 @@ using namespace GameL;
 //イニシャライズ
 void CObjClear::Init()
 {
-	m_key_flag = false;
+
 }
 
 //アクション
 void CObjClear::Action()
 {
-	//エンターキーを押してシーン:ゲームTitleに移行する
-	if (Input::GetVKey(VK_RETURN) == true)
-	{
-		if (m_key_flag == true)
-		{
-			Scene::SetScene(new CSceneTitle());
-			m_key_flag = false;
-		}
-	}
-	else
-	{
-		m_key_flag = true;
-	}
 }
 //ドロー
 void CObjClear::Draw()
+
 {
-	float  c[4] = { 1.0f,1.0f,1.0f,1.0f, };
+	//描写カラー情報
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
 
-	Font::StrDraw(L"ｵﾒﾃﾞﾄｳ!ｷｮｳﾀﾞｲﾅﾃｷｦﾅｷﾞﾊﾗｲ､ｺﾉﾃﾞｽｹﾞｰﾑｦｸﾘｱｼﾏｼﾀ｡", 224, 250, 16, c);
-	Font::StrDraw(L"ﾏﾀ､ｱﾗﾀﾅﾃｷｶﾞｱﾗﾜﾚﾙｿﾉﾋﾏﾃﾞ､ﾋﾄﾄｷﾉﾍｲﾜｦﾋﾀﾘﾅｻｲ｡", 230, 270, 16, c);
+	RECT_F src;//描写元切り取り位置
+	RECT_F dst;//描写先表示位置
 
-	Font::StrDraw(L"ｵﾜﾘ", 340, 300, 64, c);
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1600.0f;
+	src.m_bottom = 909.0f;
+
+	//表示位置の設定
+	dst.m_top = 0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 600.0f;
+
+	//0番目に登録したグラフィックをsrc・dst・ｃの情報を元に描写
+	Draw::Draw(4, &src, &dst, c, 0.0f);
+
+	float b[4] = { 1,1,1,1 };
+
+	Font::StrDraw(L"Stage Clear", 135, 270, 100, c);
 }

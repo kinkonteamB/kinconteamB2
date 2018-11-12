@@ -35,16 +35,17 @@ void C0bjBackground::Draw()
 	RECT_F dst;//•`Êæ•\¦ˆÊ’u
 
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 1920.0f;
-	src.m_bottom = 920.0f;
 
+	src.m_top = 0.0f;
+	src.m_left = 500.0f;
+	src.m_right = 1920.0f;
+	src.m_bottom = 740.0f;
+	
 	//•`‰æ
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f + m_x1;
 	dst.m_right = 800.0f + m_x1;
 	dst.m_bottom = 600.0f;
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	Draw::Draw(3, &src, &dst, c, 0.0f);
 
 }

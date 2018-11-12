@@ -14,6 +14,9 @@ public:
 	void Action();	//アクション
 	void Draw();    //ドロー
 
+#define HEROX (64)
+#define HEROY (64)
+
 	float GetX() { return m_px; }
 	float GetY() { return m_py; }
 	float GetVY() { return m_vy; }
@@ -52,8 +55,5 @@ private:
 
 	//踏んでいるblockの種類を確認用
 	int m_block_type;
-
-	float m_x;     //主人公機のx方向移動用変数
-	float m_y;     //主人公機のy方向移動用変数
-
+	int s;
 };
