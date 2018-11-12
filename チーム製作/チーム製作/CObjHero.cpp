@@ -146,7 +146,7 @@ void C0bjHero::Action()
 	m_py += m_vy;
 
 	//ブロックとの当たり判定実行
-	C0bjBlock*pb = (C0bjBlock*)Objs::GetObj(OBJ_BLOCK);
+	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	pb->BlockHit(&m_px, &m_py, true,
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
 		&m_block_type
