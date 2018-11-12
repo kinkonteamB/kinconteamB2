@@ -178,4 +178,5 @@ void C0bjBlock::BlockHit(
 
 void C0bjBlock::BlockDraw(float x, float y, RECT_F * dst, float c[])
 {
+
 }
