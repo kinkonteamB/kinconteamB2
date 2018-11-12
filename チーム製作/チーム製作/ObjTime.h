@@ -1,11 +1,11 @@
 //#pragma once
 //#pragma once
-////使用するヘッダー
+//使用するヘッダー
 //#include "GameL\SceneObjManager.h"
-////使用するネームスペース
+//使用するネームスペース
 //using namespace GameL;
 //
-////オブジェクト : ブロック＆背景
+//オブジェクト : ブロック＆背景
 //class C0bjTime : public CObj
 //{
 //public:
