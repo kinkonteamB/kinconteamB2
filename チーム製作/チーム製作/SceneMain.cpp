@@ -59,6 +59,8 @@ void CSceneMain::InitScene()
 
 	Draw::LoadImage(L"Brock3.jpg", 1, TEX_SIZE_768);
 
+	Draw::LoadImage(L"kusa.png", 1, TEX_SIZE_32);
+
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成
 	Objs::InsertObj(obj, COBJ_HERO, 10);//作った主人公オブジェクトをオブジェクトマネージャーに登録

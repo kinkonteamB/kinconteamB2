@@ -9,8 +9,8 @@
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクト : ブロック＆背景
-class C0bjBlock : public CObj
+//オブジェクト：ブロック＆背景
+class CObjBlock : public CObj
 {
 public:
 	C0bjBlock(int map[19][84]);
