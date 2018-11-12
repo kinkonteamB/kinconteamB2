@@ -11,10 +11,10 @@
 using namespace GameL;
 
 
-CObjBlock::CObjBlock(int map[19][84])
+CObjBlock::CObjBlock(int map[19][82])
 {
 	//マップデータコピー
-	memcpy(m_map, map, sizeof(int)*(19 * 84));
+	memcpy(m_map, map, sizeof(int)*(19 * 82));
 }
 
 //イニシャライズ
@@ -55,7 +55,7 @@ void CObjBlock::Draw()
 
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 84; j++)
+		for (int j = 0; j < 82; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
@@ -65,7 +65,7 @@ void CObjBlock::Draw()
 				dst.m_right  = dst.m_left + 32.0f;
 				dst.m_bottom =  dst.m_top + 32.0f;
 
-				Draw::Draw(1, &src, &dst, c, 0.0f);
+				Draw::Draw(2, &src, &dst, c, 0.0f);
 			}
 		}
 	}
@@ -101,7 +101,7 @@ void CObjBlock::BlockHit(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 84; j++)
+		for (int j = 0; j < 82; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
@@ -178,4 +178,5 @@ void CObjBlock::BlockHit(
 
 void CObjBlock::BlockDraw(float x, float y, RECT_F * dst, float c[])
 {
+
 }

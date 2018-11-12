@@ -27,7 +27,7 @@ void C0bjTime::Action()
 
 	//スタートブロックを踏んでいるならフラグをオンにする
 	
-	if (hero->GetBT() == 1 )
+	if (hero->GetBT() == 2 )
 	{
 		m_flag_time = true;
 	}
@@ -42,7 +42,7 @@ void C0bjTime::Action()
 //ドロー
 void C0bjTime::Draw()
 {
-	//m_timeから秒分を求める
+	//m_timeから秒分お求める
 	int second;    //秒
 
 	second = (m_time / 60) % 60; //秒
