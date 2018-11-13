@@ -27,21 +27,6 @@
     <Filter Include="ソース ファイル\ObjTime">
       <UniqueIdentifier>{4f0c48d0-22b4-4225-9656-35bdb6ef97fd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GemeClear">
-      <UniqueIdentifier>{e83e1796-53b0-4e7f-90aa-a5c33fa91f1c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\GeamOver">
-      <UniqueIdentifier>{92e95bcf-c55e-4a84-bef7-384367f129c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Ranking">
-      <UniqueIdentifier>{329bfb94-8489-4869-8d3d-ad82401c086c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Menu">
-      <UniqueIdentifier>{b7d1953c-c3db-417a-8fd5-6035c162fdcd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Brock">
-      <UniqueIdentifier>{3fb31416-23b8-4763-8470-efadc6111907}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjHero.cpp">
@@ -101,35 +86,38 @@
     <ClCompile Include="ObjBackground.cpp">
       <Filter>ソース ファイル\ObjBack</Filter>
     </ClCompile>
+    <ClCompile Include="ObjBlock.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjClear.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMenu.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOver.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjRanking.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneClear.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMenu.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOver.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRanking.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="ObjTime.cpp">
       <Filter>ソース ファイル\ObjTime</Filter>
     </ClCompile>
-    <ClCompile Include="ObjBlock.cpp">
-      <Filter>ソース ファイル\Brock</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjClear.cpp">
-      <Filter>ソース ファイル\GemeClear</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMenu.cpp">
-      <Filter>ソース ファイル\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjOver.cpp">
-      <Filter>ソース ファイル\GeamOver</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjRanking.cpp">
-      <Filter>ソース ファイル\Ranking</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneClear.cpp">
-      <Filter>ソース ファイル\GemeClear</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMenu.cpp">
-      <Filter>ソース ファイル\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneOver.cpp">
-      <Filter>ソース ファイル\GeamOver</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneRanking.cpp">
-      <Filter>ソース ファイル\Ranking</Filter>
+    <ClCompile Include="ObjNeedle.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -193,35 +181,20 @@
     <ClInclude Include="ObjBackground.h">
       <Filter>ソース ファイル\ObjBack</Filter>
     </ClInclude>
+    <ClInclude Include="ObjBlock.h" />
+    <ClInclude Include="ObjClear.h" />
+    <ClInclude Include="ObjMenu.h" />
+    <ClInclude Include="ObjOver.h" />
+    <ClInclude Include="ObjRanking.h" />
+    <ClInclude Include="SceneClear.h" />
+    <ClInclude Include="SceneMenu.h" />
+    <ClInclude Include="SceneOver.h" />
+    <ClInclude Include="SceneRanking.h" />
     <ClInclude Include="ObjTime.h">
       <Filter>ソース ファイル\ObjTime</Filter>
     </ClInclude>
-    <ClInclude Include="ObjBlock.h">
-      <Filter>ソース ファイル\Brock</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjClear.h">
-      <Filter>ソース ファイル\GemeClear</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMenu.h">
-      <Filter>ソース ファイル\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjOver.h">
-      <Filter>ソース ファイル\GeamOver</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjRanking.h">
-      <Filter>ソース ファイル\Ranking</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneClear.h">
-      <Filter>ソース ファイル\GemeClear</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMenu.h">
-      <Filter>ソース ファイル\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneOver.h">
-      <Filter>ソース ファイル\GeamOver</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneRanking.h">
-      <Filter>ソース ファイル\Ranking</Filter>
+    <ClInclude Include="ObjNeedle.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

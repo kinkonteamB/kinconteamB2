@@ -64,7 +64,11 @@ void CSceneMain::InitScene()
 	//背景画像読み込み
 	Draw::LoadImage(L"map.jpg", 3, TEX_SIZE_1920);
 
+	//ブロック画像読み込み
 	Draw::LoadImage(L"Brock3.jpg", 2, TEX_SIZE_768);
+
+	//針罠読み込み
+	Draw::LoadImageW(L"針罠上.png", 4, TEX_SIZE_768);
 
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成
@@ -81,6 +85,10 @@ void CSceneMain::InitScene()
 	//タイムオブジェクト作成
 	C0bjTime* objt = new C0bjTime();
 	Objs::InsertObj(objt, OBJ_TIME, 11);
+
+	//罠オブジェクト作成
+	CObjNeedle* needle = new CObjNeedle();
+	Objs::InsertObj(needle, OBJ_NEEDLE, 12);
 }
 
 
