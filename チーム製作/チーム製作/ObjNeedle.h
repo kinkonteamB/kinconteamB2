@@ -15,5 +15,5 @@ public:
 	void Action();		//アクション
 	void Draw();		//ドロー
 private:
-	
+	int m_map[19][160]; //マップ情報
 };

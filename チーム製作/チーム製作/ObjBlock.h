@@ -13,7 +13,7 @@ using namespace GameL;
 class CObjBlock : public CObj
 {
 public:
-	CObjBlock(int map[19][82]);
+	CObjBlock(int map[19][160]);
 	~CObjBlock() {};
 	void Init();   //イ二シャライズ
 	void Action();	//アクション
@@ -32,7 +32,7 @@ public:
 
 private:
 	void BlockDraw(float x, float y, RECT_F*dst, float c[]);
-	int m_map[19][82]; //マップ情報
+	int m_map[19][160]; //マップ情報
 
 	float m_scroll;     //左右スクロール用
 	float m_scroll_map;
