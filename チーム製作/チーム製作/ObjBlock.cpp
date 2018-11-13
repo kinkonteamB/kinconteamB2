@@ -26,7 +26,6 @@ void CObjBlock::Init()
 }
 
 
-
 //アクション
 void CObjBlock::Action()
 {
@@ -34,6 +33,39 @@ void CObjBlock::Action()
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 	float hx = hero->GetX();
 	float hy = hero->GetY();
+
+
+	//後方スクロールライン
+	/*if (hx < 80)
+	{
+		hero->SetX(80);           //主人公はラインを超えないようにする
+		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
+		m_scroll_map -= hero->GetVX();
+	}
+
+	//前方スクロールライン
+	if (hx > 350)
+	{
+		hero->SetX(350);           //主人公はラインを超えないようにする
+		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
+		m_scroll_map -= hero->GetVX();
+	}*/
+
+	//後方スクロールライン
+	if (hx < 80)
+	{
+		hero->SetX(80);           //主人公はラインを超えないようにする
+		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
+	
+	}
+
+	//前方スクロールライン
+	if (hx > 300)
+	{
+		hero->SetX(300);           //主人公はラインを超えないようにする
+		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
+
+	}
 
 }
 //ドロー
@@ -51,7 +83,7 @@ void CObjBlock::Draw()
 	src.m_left = 0.0f;
 	src.m_right = 32.0f;
 	src.m_bottom = 32.0f;
-
+	//m_scroll -= 3.0f;
 
 	for (int i = 0; i < 19; i++)
 	{
@@ -61,7 +93,7 @@ void CObjBlock::Draw()
 			{
 				//表示位置の設定
 				dst.m_top    = i*32.0f;
-				dst.m_left   = j*32.0f;
+				dst.m_left   = j*32.0f + m_scroll;
 				dst.m_right  = dst.m_left + 32.0f;
 				dst.m_bottom =  dst.m_top + 32.0f;
 
@@ -185,7 +217,8 @@ void CObjBlock::BlockHit(
 	}
 }
 
-void CObjBlock::BlockDraw(float x, float y, RECT_F * dst, float c[])
+void CObjBlock::BlockDraw(float x, float y, RECT_F *dst, float c[])
 {
 
 }
+

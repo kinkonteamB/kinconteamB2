@@ -6,6 +6,7 @@
 #include"GameL\DrawTexture.h"
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawTexture.h"
+#include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
 #include"GameL\DrawFont.h"
 //使用するネームスペース
@@ -53,6 +54,9 @@ void CSceneMain::InitScene()
 			count += 2;
 		}
 	}
+
+	//Font作成
+	Font::SetStrTex(L"0123456789分秒");
 	
 	//外部グラフィックファイルを読み込み0番に登録（576x384ピクセル）
 	Draw::LoadImage(L"1133010303.png", 0, TEX_SIZE_576);
