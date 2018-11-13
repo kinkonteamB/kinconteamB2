@@ -28,6 +28,8 @@ void C0bjHero::Init()
 	m_hit_left = false;
 	m_hit_right = false;
 
+	m_block_type = 0;	//踏んでいるブロックの種類
+
 
 	m_speed_power = 0.5f;//通常速度
 	m_ani_max_time = 4;  //アニメーション間隔幅

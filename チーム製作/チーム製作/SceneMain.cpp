@@ -7,6 +7,7 @@
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawTexture.h"
 #include"GameL\UserData.h"
+#include"GameL\DrawFont.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -31,6 +32,8 @@ CSceneMain::~CSceneMain()
 //初期化メソッド
 void CSceneMain::InitScene()
 {
+	//Font作成
+	Font::SetStrTex(L"0123456789分秒");
 
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
@@ -71,9 +74,9 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 
-	////タイムオブジェクト作成
-	//C0bjTime* objt = new C0bjTime();
-	//Objs::InsertObj(objt, OBJ_TIME, 11);
+	//タイムオブジェクト作成
+	C0bjTime* objt = new C0bjTime();
+	Objs::InsertObj(objt, OBJ_TIME, 11);
 }
 
 
