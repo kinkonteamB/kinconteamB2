@@ -8,6 +8,7 @@
 #include"GameL\DrawTexture.h"
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
+#include"GameL\DrawFont.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -32,6 +33,8 @@ CSceneMain::~CSceneMain()
 //初期化メソッド
 void CSceneMain::InitScene()
 {
+	//Font作成
+	Font::SetStrTex(L"0123456789分秒");
 
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
