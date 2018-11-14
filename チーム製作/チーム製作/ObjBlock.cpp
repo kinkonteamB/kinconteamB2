@@ -11,10 +11,10 @@
 using namespace GameL;
 
 
-CObjBlock::CObjBlock(int map[19][160])
+CObjBlock::CObjBlock(int map[19][82])
 {
 	//マップデータコピー
-	memcpy(m_map, map, sizeof(int)*(19 * 160));
+	memcpy(m_map, map, sizeof(int)*(19 * 82));
 }
 
 //イニシャライズ
@@ -33,23 +33,6 @@ void CObjBlock::Action()
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 	float hx = hero->GetX();
 	float hy = hero->GetY();
-
-
-	//後方スクロールライン
-	/*if (hx < 80)
-	{
-		hero->SetX(80);           //主人公はラインを超えないようにする
-		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
-		m_scroll_map -= hero->GetVX();
-	}
-
-	//前方スクロールライン
-	if (hx > 350)
-	{
-		hero->SetX(350);           //主人公はラインを超えないようにする
-		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
-		m_scroll_map -= hero->GetVX();
-	}*/
 
 	//後方スクロールライン
 	if (hx < 80)
@@ -87,7 +70,7 @@ void CObjBlock::Draw()
 
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 160; j++)
+		for (int j = 0; j < 82; j++)
 		{
 			if (m_map[i][j] >0)
 			{
@@ -142,7 +125,7 @@ void CObjBlock::BlockHit(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 160; j++)
+		for (int j = 0; j < 82; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
