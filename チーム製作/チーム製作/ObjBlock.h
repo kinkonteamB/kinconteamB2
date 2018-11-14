@@ -9,12 +9,12 @@
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクト : ブロック＆背景
-class C0bjBlock : public CObj
+//オブジェクト：ブロック＆背景
+class CObjBlock : public CObj
 {
 public:
-	C0bjBlock(int map[19][84]);
-	~C0bjBlock() {};
+	CObjBlock(int map[19][82]);
+	~CObjBlock() {};
 	void Init();   //イ二シャライズ
 	void Action();	//アクション
 	void Draw();    //ドロー
@@ -32,11 +32,8 @@ public:
 
 private:
 	void BlockDraw(float x, float y, RECT_F*dst, float c[]);
-	int m_map[19][84]; //マップ情報
+	int m_map[19][82]; //マップ情報
 
 	float m_scroll;     //左右スクロール用
-
-	float Dot(float ax, float ay, float bx, float by);  //内積
-	float Cross(float ax, float ay, float bx, float by);  //外積
 	float m_scroll_map;
 };

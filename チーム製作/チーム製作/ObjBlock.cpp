@@ -11,14 +11,14 @@
 using namespace GameL;
 
 
-C0bjBlock::C0bjBlock(int map[19][84])
+CObjBlock::CObjBlock(int map[19][82])
 {
 	//マップデータコピー
-	memcpy(m_map, map, sizeof(int)*(19 * 84));
+	memcpy(m_map, map, sizeof(int)*(19 * 82));
 }
 
 //イニシャライズ
-void C0bjBlock::Init()
+void CObjBlock::Init()
 {
 	m_scroll = 0.0f;
 	m_scroll_map = 0.0f;
@@ -26,18 +26,33 @@ void C0bjBlock::Init()
 }
 
 
-
 //アクション
-void C0bjBlock::Action()
+void CObjBlock::Action()
 {
 	//主人公の位置を取得
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
+	//後方スクロールライン
+	if (hx < 80)
+	{
+		hero->SetX(80);           //主人公はラインを超えないようにする
+		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
+	
+	}
+
+	//前方スクロールライン
+	if (hx > 300)
+	{
+		hero->SetX(300);           //主人公はラインを超えないようにする
+		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
+
+	}
+
 }
 //ドロー
-void C0bjBlock::Draw()
+void CObjBlock::Draw()
 {
 
 	//描写カラー情報
@@ -51,21 +66,30 @@ void C0bjBlock::Draw()
 	src.m_left = 0.0f;
 	src.m_right = 32.0f;
 	src.m_bottom = 32.0f;
-
+	//m_scroll -= 3.0f;
 
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 84; j++)
+		for (int j = 0; j < 82; j++)
 		{
-			if (m_map[i][j] > 0)
+			if (m_map[i][j] >0)
 			{
 				//表示位置の設定
 				dst.m_top    = i*32.0f;
-				dst.m_left   = j*32.0f;
+				dst.m_left   = j*32.0f + m_scroll;
 				dst.m_right  = dst.m_left + 32.0f;
 				dst.m_bottom =  dst.m_top + 32.0f;
 
-				Draw::Draw(1, &src, &dst, c, 0.0f);
+				Draw::Draw(2, &src, &dst, c, 0.0f);
+
+
+				if (m_map[i][j] == 77 || m_map[i][j] == 88)
+				{
+					dst.m_top = i*32.0f;
+					dst.m_left = j*32.0f;
+					dst.m_right = dst.m_left + 32.0f;
+					dst.m_bottom = dst.m_top + 32.0f;
+				}
 			}
 		}
 	}
@@ -83,7 +107,7 @@ void C0bjBlock::Draw()
 //引数１０  int * bt            :下部分判定時、特殊なブロックのタイプを返す
 //判定を行うobjectとブロック64×64限定で、当たり判定と上下左右判定を行う
 //その結果は引数4～10に返す
-void C0bjBlock::BlockHit(
+void CObjBlock::BlockHit(
 	float *x, float *y, bool scroll_on,
 	bool*up, bool*down, bool*left, bool*right,
 	float *vx, float*vy, int *bt
@@ -101,7 +125,7 @@ void C0bjBlock::BlockHit(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 84; j++)
+		for (int j = 0; j < 82; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
@@ -176,6 +200,8 @@ void C0bjBlock::BlockHit(
 	}
 }
 
-void C0bjBlock::BlockDraw(float x, float y, RECT_F * dst, float c[])
+void CObjBlock::BlockDraw(float x, float y, RECT_F *dst, float c[])
 {
+
 }
+
