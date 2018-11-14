@@ -34,21 +34,21 @@ void CObjBlock::Action()
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
-	//後方スクロールライン
-	if (hx < 80)
-	{
-		hero->SetX(80);           //主人公はラインを超えないようにする
-		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
-	
-	}
+	////後方スクロールライン
+	//if (hx < 80)
+	//{
+	//	hero->SetX(80);           //主人公はラインを超えないようにする
+	//	m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
+	//
+	//}
 
-	//前方スクロールライン
-	if (hx > 300)
-	{
-		hero->SetX(300);           //主人公はラインを超えないようにする
-		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
+	////前方スクロールライン
+	//if (hx > 300)
+	//{
+	//	hero->SetX(300);           //主人公はラインを超えないようにする
+	//	m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
 
-	}
+	//}
 
 }
 //ドロー

@@ -86,7 +86,7 @@ void CSceneMain::InitScene()
 	C0bjTime* objt = new C0bjTime();
 	Objs::InsertObj(objt, OBJ_TIME, 11);
 
-	//罠オブジェクト作成
+	//針オブジェクト作成
 	CObjNeedle* needle = new CObjNeedle();
 	Objs::InsertObj(needle, OBJ_NEEDLE, 12);
 }
