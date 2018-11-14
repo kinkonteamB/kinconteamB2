@@ -8,7 +8,7 @@
 #include"GameL\DrawTexture.h"
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
-#include"GameL\DrawFont.h"ture.h"
+#include"GameL\DrawFont.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -41,10 +41,9 @@ void CSceneMain::InitScene()
 	int size;              //ステージ情報の大きさ
 	p = Save::ExternalDataOpen(L"map9.csv", &size);//外部データ読み込み
 
-	int map
-[10][100];
+	int map[19][100];
 	int count = 1;
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 19; i++)
 	{
 		for (int j = 0; j < 100; j++)
 		{
@@ -52,6 +51,7 @@ void CSceneMain::InitScene()
 			swscanf_s(&p.get()[count], L"%d", &w);
 
 			map[i][j] = w;
+
 			count += 2;
 		}
 	}
