@@ -8,7 +8,7 @@
 #include"GameL\DrawTexture.h"
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
-#include"GameL\DrawFont.h"ture.h"
+#include"GameL\DrawFont.h"
 //使用するネームスペース
 using namespace GameL;
 

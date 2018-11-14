@@ -6,6 +6,10 @@ using namespace GameL;
 
 //描画関係の定数
 
+#define GAME_CLEAR_X (130)
+#define GAME_CLEAR_Y (200)
+#define GAME_CLEAR_FONT_SIZE (100)
+
 #define STR_MAX (256)
 #define SCORE_INIT (1)
 #define SCORE_POS_X (670)
@@ -34,4 +38,8 @@ public:
 	void Draw();    //ドロー
 private:
 	bool m_key_flag;//キーフラグ
+	float m_mou_x;  //マウスの位置X
+	float m_mou_y;  //マウスの位置Y
+	bool m_mou_r;   //マウスの右ボタン
+	bool m_mou_l;   //マウスの左ボタン
 };
