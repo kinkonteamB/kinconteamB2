@@ -36,31 +36,24 @@ void CObjNeedle::Draw()
 	src.m_right = 32.0f;
 	src.m_bottom = 32.0f;
 
-	for (int i = 0; i < 19; i++)
-	{
-		for (int j = 0; j < 160; j++)
-		{
-			if (m_map[i][j] > 0)
-			{
+	//for (int i = 0; i < 19; i++)
+	//{
+	//	for (int j = 0; j < 160; j++)
+	//	{
+	//		if (m_map[i][j] == 2)
+	//		{
 				//•\Ž¦ˆÊ’u‚ÌÝ’è
 				dst.m_top = 32.0f;
 				dst.m_left = 32.0f;
-				dst.m_right = dst.m_left + 32.0f;
-				dst.m_bottom = dst.m_top + 32.0f;
+				dst.m_right = 32.0f;
+				dst.m_bottom =  32.0f;
 
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 
-				if (m_map[i][j] == 77 || m_map[i][j] == 88)
-				{
-					dst.m_top = i*32.0f;
-					dst.m_left = j*32.0f;
-					dst.m_right = dst.m_left + 32.0f;
-					dst.m_bottom = dst.m_top + 32.0f;
-				}
-			}
+	/*		}
 		}
-	}
+	}*/
 
 
 }

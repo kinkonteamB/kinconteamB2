@@ -72,7 +72,7 @@ void CObjBlock::Draw()
 	{
 		for (int j = 0; j < 100; j++)
 		{
-			if (m_map[i][j] > 0)
+			if (m_map[i][j] >0)
 			{
 				//ï\é¶à íuÇÃê›íË
 				dst.m_top    = i*32.0f;
