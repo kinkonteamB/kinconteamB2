@@ -45,6 +45,7 @@ Hits::SetHitBox(this, g_px, g_py, 64,64, ELEMENT_PLAYER, COBJ_HERO, 1);
 void C0bjHero::Action()
 {
 
+
 	if (Input::GetVKey(VK_TAB) == true) 
 	{
 		Scene::SetScene(new CSceneMenu());
@@ -58,6 +59,8 @@ void C0bjHero::Action()
 		g_px = 64.0f;
 		g_py = 500.0f;
 	}
+
+
 	
 	m_speed_power = 0.5f;
 
@@ -141,20 +144,20 @@ void C0bjHero::Action()
 	}
 
 	CObjBlock*b = (CObjBlock*)Objs::GetObj(COBJ_HERO);
-	//後方スクロールライン
-	if (g_px < 80)
-	{
-		g_px = 80;
-		b->SetScroll(b->GetScroll());
-	}
+	////後方スクロールライン
+	//if (g_px < 80)
+	//{
+	//	g_px = 80;
+	//	b->SetScroll(b->GetScroll());
+	//}
 
-	//前方スクロールライン
-	if (g_px > 350)
-	{
-		g_px = 350;
-		b->SetScroll(b->GetScroll());
-	}
-	
+	////前方スクロールライン
+	//if (g_px > 350)
+	//{
+	//	g_px = 350;
+	//	b->SetScroll(b->GetScroll());
+	//}
+	//
 	//摩擦
 	m_vx += -(m_vx*0.098);
 
@@ -177,6 +180,15 @@ void C0bjHero::Action()
 
 	//HitBoxの位置を変更	
 	hit->SetPos(g_px, g_py);
+
+	//罠に接触したらリスタート
+	if (hit->CheckObjNameHit(OBJ_NEEDLE) != nullptr)
+	{
+		//場外に出たらリスタート
+		Scene::SetScene(new CSceneOver());
+		g_px = 64.0f;
+		g_py = 500.0f;
+	}
 
 }
 //ドロー
