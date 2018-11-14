@@ -17,6 +17,7 @@ void CObjTitle::Init()
 	m_key_flag = false;
 	//m_mou_x = 0.0f;
 	//m_mou_y = 0.0f;
+	choose = 3;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -24,12 +25,30 @@ void CObjTitle::Action()
 {
 	if (Input::GetVKey(VK_UP) == true && choose < 3)
 	{
-		++choose;
+		if (m_f = true)
+		{
+			++choose;
+			m_f=false;
+		}
 	}
+	else
+	{
+		m_f = true;
+	}
+
 	if (Input::GetVKey(VK_DOWN) == true && choose > 1)
 	{
-		--choose;
+		if (m_f = true)
+		{
+			--choose;
+			m_f = false;
+		}
 	}
+	else
+	{
+		m_f = true;
+	}
+
 	if (choose == 3)
 	{
 		if (Input::GetVKey(VK_RETURN) == true)
