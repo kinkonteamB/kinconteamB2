@@ -30,9 +30,6 @@
     <Filter Include="ソース ファイル\Brock">
       <UniqueIdentifier>{03f7e19e-7d29-415b-baa2-d439790b75bf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Clear">
-      <UniqueIdentifier>{680a266a-34e3-4130-a665-e06648ce7906}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Menu">
       <UniqueIdentifier>{a02f87af-c45c-41f0-92a1-85239dbbc9bd}</UniqueIdentifier>
     </Filter>
@@ -41,6 +38,9 @@
     </Filter>
     <Filter Include="ソース ファイル\Rankng">
       <UniqueIdentifier>{6627b1ec-8eb9-4bcf-b523-562fcfa1dcb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Clear">
+      <UniqueIdentifier>{680a266a-34e3-4130-a665-e06648ce7906}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
