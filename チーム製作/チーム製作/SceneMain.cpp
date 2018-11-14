@@ -51,6 +51,7 @@ void CSceneMain::InitScene()
 			swscanf_s(&p.get()[count], L"%d", &w);
 
 			map[i][j] = w;
+
 			count += 2;
 		}
 	}
