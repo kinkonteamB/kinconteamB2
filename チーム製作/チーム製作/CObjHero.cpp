@@ -10,11 +10,12 @@
 //使用するネームスペース
 using namespace GameL;
 
+float g_px = 64.0f;
+float g_py = 500.0f;
+
 //イニシャライズ
 void C0bjHero::Init()
 {
-	m_px = 64.0f;
-	m_py = 500.0f;    //位置
 
 	m_vx = 0.0f;    //移動ベクトル
 	m_vy = 0.0f;
@@ -28,6 +29,8 @@ void C0bjHero::Init()
 	m_hit_left = false;
 	m_hit_right = false;
 
+	m_block_type = 0;	//踏んでいるブロックの種類
+
 
 	m_speed_power = 0.5f;//通常速度
 	m_ani_max_time = 4;  //アニメーション間隔幅
@@ -35,7 +38,7 @@ void C0bjHero::Init()
 
 //当たり判定用のHitBoxを作成
 						
-Hits::SetHitBox(this, m_px, m_py, 64,64, ELEMENT_PLAYER, COBJ_HERO, 1);
+Hits::SetHitBox(this, g_px, g_py, 64,64, ELEMENT_PLAYER, COBJ_HERO, 1);
 }
 
 //アクション
@@ -48,12 +51,14 @@ void C0bjHero::Action()
 	}
 
 	//落下によるゲームオーバー＆リスタート
-	if (m_py > 1000.0f)
+	if (g_py > 1000.0f)
 	{
 		//場外に出たらリスタート
 		Scene::SetScene(new CSceneOver());
+		g_px = 64.0f;
+		g_py = 500.0f;
 	}
-
+	
 	m_speed_power = 0.5f;
 
 	//Shihtキー入力で速度アップ
@@ -69,7 +74,7 @@ void C0bjHero::Action()
 		if (m_hit_down == true)
 		{
 			m_vy = -8;
-			m_py += m_vy;
+			g_py += m_vy;
 		}
 	}
 	//しゃがむ
@@ -129,12 +134,27 @@ void C0bjHero::Action()
 	}
 
 	//主人公機が領域外行かない処理
-	if (m_px + 64.0f > 800.0f)
+	if (g_px + 64.0f > 800.0f)
 	{
-		m_px = 800.0f - 64.0f;
+		g_px = 800.0f - 64.0f;
 
 	}
 
+	CObjBlock*b = (CObjBlock*)Objs::GetObj(COBJ_HERO);
+	//後方スクロールライン
+	if (g_px < 80)
+	{
+		g_px = 80;
+		b->SetScroll(b->GetScroll());
+	}
+
+	//前方スクロールライン
+	if (g_px > 350)
+	{
+		g_px = 350;
+		b->SetScroll(b->GetScroll());
+	}
+	
 	//摩擦
 	m_vx += -(m_vx*0.098);
 
@@ -142,12 +162,12 @@ void C0bjHero::Action()
 	m_vy += 9.8 / (16.0f);
 
 	//位置の更新
-	m_px += m_vx;
-	m_py += m_vy;
+	g_px += m_vx;
+	g_py += m_vy;
 
 	//ブロックとの当たり判定実行
-	C0bjBlock*pb = (C0bjBlock*)Objs::GetObj(OBJ_BLOCK);
-	pb->BlockHit(&m_px, &m_py, true,
+	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	pb->BlockHit(&g_px, &g_py, true,
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
 		&m_block_type
 	);
@@ -155,8 +175,8 @@ void C0bjHero::Action()
 	//自身のHitBoxを持ってくる
 	CHitBox*hit = Hits::GetHitBox(this);
 
-	//HitBoxの位置を変更
-	hit->SetPos(m_px, m_py);
+	//HitBoxの位置を変更	
+	hit->SetPos(g_px, g_py);
 
 }
 //ドロー
@@ -180,10 +200,10 @@ void C0bjHero::Draw()
 	src.m_bottom = 64.0f;
 
 	//表示位置の設定
-	dst.m_top = 0.0f + m_py;
-	dst.m_left = (64.0f*m_posture) + m_px;
-	dst.m_right = (64 - 64.0f*m_posture) + m_px;
-	dst.m_bottom = 64.0f + m_py;
+	dst.m_top = 0.0f + g_py;
+	dst.m_left = (64.0f*m_posture) + g_px;
+	dst.m_right = (64 - 64.0f*m_posture) + g_px;
+	dst.m_bottom = 64.0f + g_py;
 
 	//0番目に登録したグラフィックをsrc・dst・ｃの情報を元に描写
 	Draw::Draw(0, &src, &dst, c, 0.0f);
