@@ -15,5 +15,7 @@ public:
 	void Action();		//アクション
 	void Draw();		//ドロー
 private:
-	int m_map[19][160]; //マップ情報
+	int m_map[19][84]; //マップ情報
+	float m_x = 600;
+	float m_y = 400;
 };

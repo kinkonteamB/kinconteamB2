@@ -60,4 +60,6 @@ private:
 	int m_block_type;
 	int s;
 
+	int m_x;
+	int m_y;
 };

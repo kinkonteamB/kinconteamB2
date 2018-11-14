@@ -41,10 +41,9 @@ void CSceneMain::InitScene()
 	int size;              //ステージ情報の大きさ
 	p = Save::ExternalDataOpen(L"map9.csv", &size);//外部データ読み込み
 
-	int map
-[10][100];
+	int map[19][100];
 	int count = 1;
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 19; i++)
 	{
 		for (int j = 0; j < 100; j++)
 		{
@@ -52,6 +51,7 @@ void CSceneMain::InitScene()
 			swscanf_s(&p.get()[count], L"%d", &w);
 
 			map[i][j] = w;
+
 			count += 2;
 		}
 	}
@@ -87,7 +87,7 @@ void CSceneMain::InitScene()
 	C0bjTime* objt = new C0bjTime();
 	Objs::InsertObj(objt, OBJ_TIME, 11);
 
-	//罠オブジェクト作成
+	//針オブジェクト作成
 	CObjNeedle* needle = new CObjNeedle();
 	Objs::InsertObj(needle, OBJ_NEEDLE, 12);
 }
