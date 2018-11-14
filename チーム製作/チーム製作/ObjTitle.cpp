@@ -15,53 +15,97 @@ using namespace GameL;
 void CObjTitle::Init()
 {
 	m_key_flag = false;
-	m_mou_x = 0.0f;
-	m_mou_y = 0.0f;
+	//m_mou_x = 0.0f;
+	//m_mou_y = 0.0f;
 }
 
 //アクション
 void CObjTitle::Action()
 {
-	//マウスの位置を取得
-	m_mou_x = (float)Input::GetPosX();
-	m_mou_y = (float)Input::GetPosY();
-
-	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > MOU_START_HIT_X && m_mou_x<MOU_START_HIT_V &&
-		m_mou_y>MOU_START_HIT_Y && m_mou_y < MOU_START_HIT_H)
+	if (Input::GetVKey(VK_UP) == true && choose < 3)
 	{
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_r == true || m_mou_l == true)
-
+		++choose;
+	}
+	if (Input::GetVKey(VK_DOWN) == true && choose > 1)
+	{
+		--choose;
+	}
+	if (choose == 3)
+	{
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
-			Scene::SetScene(new CSceneMain());
+			if (m_key_flag == true)
+			{
+				Scene::SetScene(new CSceneMain());
+			}
+		}
+		else
+		{
+			m_key_flag = true;
 		}
 	}
-
-	if (m_mou_x > GAME_RANKING_POS_X -3 && m_mou_x < GAME_RANKING_POS_X +209 &&
-		m_mou_y > GAME_RANKING_POS_Y && m_mou_y < GAME_RANKING_POS_Y +40)
+	if (choose == 2)
 	{
-		if (m_mou_r == true || m_mou_l == true)
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
-			Scene::SetScene(new CSceneRanking());
+			if (m_key_flag == true)
+			{
+				Scene::SetScene(new CSceneRanking());
+			}
+		}
+		else
+		{
+			m_key_flag = true;
 		}
 	}
-
-	if (m_mou_x > GAME_EXIT_POS_X && m_mou_x < GAME_EXIT_POS_X +112 &&
-		m_mou_y > GAME_EXIT_POS_Y && m_mou_y < GAME_EXIT_POS_Y +25)
+	if (choose == 1)
 	{
-		if (m_mou_r == true || m_mou_l == true)
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
 			exit(1);
 		}
 	}
-	//マウスの位置を取得
-	m_mou_x = (float)Input::GetPosX();
-	m_mou_y = (float)Input::GetPosY();
-	//マウスのボタンの状態
-	m_mou_r = Input::GetMouButtonR();
-	m_mou_l = Input::GetMouButtonL();
 }
+	////マウスの位置を取得
+	//m_mou_x = (float)Input::GetPosX();
+	//m_mou_y = (float)Input::GetPosY();
+
+	////マウスの位置とクリックする場所で当たり判定
+	//if (m_mou_x > MOU_START_HIT_X && m_mou_x<MOU_START_HIT_V &&
+	//	m_mou_y>MOU_START_HIT_Y && m_mou_y < MOU_START_HIT_H)
+	//{
+	//	//マウスのボタンが押されたらメインに遷移
+	//	if (m_mou_r == true || m_mou_l == true)
+
+	//	{
+	//		Scene::SetScene(new CSceneMain());
+	//	}
+	//}
+
+	//if (m_mou_x > GAME_RANKING_POS_X -3 && m_mou_x < GAME_RANKING_POS_X +209 &&
+	//	m_mou_y > GAME_RANKING_POS_Y && m_mou_y < GAME_RANKING_POS_Y +40)
+	//{
+	//	if (m_mou_r == true || m_mou_l == true)
+	//	{
+	//		Scene::SetScene(new CSceneRanking());
+	//	}
+	//}
+
+	//if (m_mou_x > GAME_EXIT_POS_X && m_mou_x < GAME_EXIT_POS_X +112 &&
+	//	m_mou_y > GAME_EXIT_POS_Y && m_mou_y < GAME_EXIT_POS_Y +25)
+	//{
+	//	if (m_mou_r == true || m_mou_l == true)
+	//	{
+	//		exit(1);
+	//	}
+	//}
+	////マウスの位置を取得
+	//m_mou_x = (float)Input::GetPosX();
+	//m_mou_y = (float)Input::GetPosY();
+	////マウスのボタンの状態
+	//m_mou_r = Input::GetMouButtonR();
+	//m_mou_l = Input::GetMouButtonL();
+
 //ドロー
 void CObjTitle::Draw()
 {
@@ -91,19 +135,26 @@ void CObjTitle::Draw()
 	//タイトル
 	Font::StrDraw(L"異世界の塔", 148, 120, 100, b);
 
-	if (m_mou_x > 318 && m_mou_x < 464 && m_mou_y < 399 && m_mou_y >349)
-		Font::StrDraw(L"◇START", GAME_START_POS_X - 55, GAME_START_POS_Y, GAME_START_FONT_SIZE, b);
-	else
+
+	//if (m_mou_x > 318 && m_mou_x < 464 && m_mou_y < 399 && m_mou_y >349)
+		//Font::StrDraw(L"◇START", GAME_START_POS_X - 55, GAME_START_POS_Y, GAME_START_FONT_SIZE, b);
+
 		Font::StrDraw(L"START", GAME_START_POS_X, GAME_START_POS_Y, GAME_START_FONT_SIZE, b);
 
-	if (m_mou_x > 287 && m_mou_x < 496 && m_mou_y > 420 && m_mou_y < 460)
-		Font::StrDraw(L"◇RANKING", GAME_RANKING_POS_X - 55, GAME_RANKING_POS_Y, GAME_RANKING_FONT_SIZE, b);
-	else
+	//if (m_mou_x > 287 && m_mou_x < 496 && m_mou_y > 420 && m_mou_y < 460)
+	//	Font::StrDraw(L"◇RANKING", GAME_RANKING_POS_X - 55, GAME_RANKING_POS_Y, GAME_RANKING_FONT_SIZE, b);
+	
 		Font::StrDraw(L"RANKING", GAME_RANKING_POS_X, GAME_RANKING_POS_Y, GAME_RANKING_FONT_SIZE, b);
 
-	if (m_mou_x > 326 && m_mou_x < 453 && m_mou_y > 487 && m_mou_y < 537)
-		Font::StrDraw(L"◇EXIT", GAME_EXIT_POS_X - 55, GAME_EXIT_POS_Y, GAME_EXIT_FONT_SIZE, b);
-	else
+	//if (m_mou_x > 326 && m_mou_x < 453 && m_mou_y > 487 && m_mou_y < 537)
+		//Font::StrDraw(L"◇EXIT", GAME_EXIT_POS_X - 55, GAME_EXIT_POS_Y, GAME_EXIT_FONT_SIZE, b);
+	
 		Font::StrDraw(L"EXIT", GAME_EXIT_POS_X, GAME_EXIT_POS_Y, GAME_EXIT_FONT_SIZE, b);
 
+		if(choose==3)
+			Font::StrDraw(L"◇", GAME_START_POS_X - 55, GAME_START_POS_Y, GAME_START_FONT_SIZE, b);
+		if(choose==2)
+			Font::StrDraw(L"◇", GAME_RANKING_POS_X - 55, GAME_RANKING_POS_Y, GAME_RANKING_FONT_SIZE, b);
+		if(choose==1)
+			Font::StrDraw(L"◇", GAME_EXIT_POS_X - 55, GAME_EXIT_POS_Y, GAME_EXIT_FONT_SIZE, b);
 }
