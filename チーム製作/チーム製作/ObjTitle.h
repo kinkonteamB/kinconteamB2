@@ -53,6 +53,5 @@ private:
 	bool m_mou_l;   //マウスの左ボタン
 	bool  m_f;     //弾丸発射制御用
 	int choose;
-	int choose2;
 	int m_time;
 };

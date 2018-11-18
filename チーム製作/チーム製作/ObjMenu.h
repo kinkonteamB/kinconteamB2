@@ -17,11 +17,6 @@ using namespace GameL;
 //オブジェクト:クリア
 class CObjMenu : public CObj
 {
-private:
-	float m_mou_x;  //マウスの位置X
-	float m_mou_y;  //マウスの位置Y
-	bool m_mou_r;   //マウスの右ボタン
-	bool m_mou_l;   //マウスの左ボタン
 public:
 	CObjMenu() {};
 	~CObjMenu() {};
@@ -30,4 +25,6 @@ public:
 	void Draw();    //ドロー
 private:
 	bool m_key_flag;//キーフラグ
+	int choose;
+	int m_time;
 };

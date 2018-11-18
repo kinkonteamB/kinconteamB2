@@ -69,7 +69,11 @@ private:
 	bool m_mou_r;   //マウスの右ボタン
 	bool m_mou_l;   //マウスの左ボタン
 
+private:
+	bool m_key_flag;//キーフラグ
+	int choose;
+	int m_time;
+
 	//ランキングソートメゾット
 	void RankingSort(int rank[10]);
-
 };
