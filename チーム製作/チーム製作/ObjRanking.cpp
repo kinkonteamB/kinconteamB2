@@ -19,7 +19,7 @@ void CObjRanking::Init()
 {
 	m_key_flag = false;
 	choose = 1;
-	m_time = 5;
+	m_time = 8;
 
 	//ゲーム実行して一回のみ
 	static bool init_point = false;
@@ -61,12 +61,12 @@ void CObjRanking::Action()
 	if (Input::GetVKey(VK_UP) == true && choose > 0 && m_time == 0)
 	{
 		--choose;
-		m_time = 5;
+		m_time = 8;
 	}
 	if (Input::GetVKey(VK_DOWN) == true && choose < 11 && m_time == 0)
 	{
 		++choose;
-		m_time = 5;
+		m_time = 8;
 	}
 
 	if (m_time > 0) {
@@ -118,11 +118,6 @@ void CObjRanking::Action()
 void CObjRanking::Draw()
 {
 	float c[4] = { 1,1,1,1 };
-
-	//仮マウス位置表示
-	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, c);
 
 	//ランキング
 	Font::StrDraw(L"ランキング", RANKING_POS_X, RANKING_POS_Y, RANKING_FONT_SIZE, c);
