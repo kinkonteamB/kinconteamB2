@@ -104,9 +104,6 @@
     <ClCompile Include="ObjTime.cpp">
       <Filter>ソース ファイル\ObjTime</Filter>
     </ClCompile>
-    <ClCompile Include="ObjNeedle.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ObjBlock.cpp">
       <Filter>ソース ファイル\Brock</Filter>
     </ClCompile>
@@ -198,9 +195,6 @@
     </ClInclude>
     <ClInclude Include="ObjTime.h">
       <Filter>ソース ファイル\ObjTime</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjNeedle.h">
-      <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjBlock.h">
       <Filter>ソース ファイル\Brock</Filter>
