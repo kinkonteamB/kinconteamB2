@@ -46,8 +46,8 @@ void CObjClear::Draw()
 			   //Ø‚èæ‚èˆÊ’u‚Ìİ’è
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 700.0f;
-	src.m_bottom = 420.0f;
+	src.m_right = 256.0f;
+	src.m_bottom = 191.0f;
 
 	//•\¦ˆÊ’u‚Ìİ’è
 	dst.m_top = 0.0f;
