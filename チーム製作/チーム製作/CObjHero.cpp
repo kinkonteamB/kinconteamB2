@@ -11,7 +11,7 @@
 using namespace GameL;
 
 float g_px = 64.0f;
-float g_py = 500.0f;
+float g_py = 450.0f;
 
 //イニシャライズ
 void C0bjHero::Init()
@@ -144,20 +144,20 @@ void C0bjHero::Action()
 	}
 
 	CObjBlock*b = (CObjBlock*)Objs::GetObj(COBJ_HERO);
-	////後方スクロールライン
-	//if (g_px < 80)
-	//{
-	//	g_px = 80;
-	//	b->SetScroll(b->GetScroll());
-	//}
+	//後方スクロールライン
+	if (g_px < 80)
+	{
+		g_px = 80;
+		b->SetScroll(b->GetScroll());
+	}
 
-	////前方スクロールライン
-	//if (g_px > 350)
-	//{
-	//	g_px = 350;
-	//	b->SetScroll(b->GetScroll());
-	//}
-	//
+	//前方スクロールライン
+	if (g_px > 350)
+	{
+		g_px = 350;
+		b->SetScroll(b->GetScroll());
+	}
+	
 	//摩擦
 	m_vx += -(m_vx*0.098);
 

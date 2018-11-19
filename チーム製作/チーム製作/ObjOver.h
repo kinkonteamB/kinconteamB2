@@ -55,8 +55,6 @@ public:
 	void Draw();    //ドロー
 private:
 	bool m_key_flag;//キーフラグ
-	float m_mou_x;  //マウスの位置X
-	float m_mou_y;  //マウスの位置Y
-	bool m_mou_r;   //マウスの右ボタン
-	bool m_mou_l;   //マウスの左ボタン
+	int choose;
+	int m_time;
 };

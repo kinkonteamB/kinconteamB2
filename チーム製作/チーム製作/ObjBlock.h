@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 //使用するヘッダー
 #pragma once
 //使用するヘッダー
