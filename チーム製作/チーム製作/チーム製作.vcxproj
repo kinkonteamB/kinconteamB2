@@ -133,7 +133,6 @@
     <ClCompile Include="ObjBlock.cpp" />
     <ClCompile Include="ObjClear.cpp" />
     <ClCompile Include="ObjMenu.cpp" />
-    <ClCompile Include="ObjNeedle.cpp" />
     <ClCompile Include="ObjOver.cpp" />
     <ClCompile Include="ObjRanking.cpp" />
     <ClCompile Include="ObjTime.cpp" />
@@ -174,7 +173,6 @@
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjClear.h" />
     <ClInclude Include="ObjMenu.h" />
-    <ClInclude Include="ObjNeedle.h" />
     <ClInclude Include="ObjOver.h" />
     <ClInclude Include="ObjRanking.h" />
     <ClInclude Include="ObjTime.h" />

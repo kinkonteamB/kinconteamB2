@@ -46,7 +46,7 @@ void CObjOver::Action()
 	}
 	if (choose == 1)
 	{
-		if (Input::GetVKey(VK_RETURN) == true)
+		if (Input::GetVKey(VK_BACK) == true)
 		{
 			Scene::SetScene(new CSceneTitle());
 			m_key_flag = false;

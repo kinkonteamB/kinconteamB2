@@ -58,7 +58,7 @@ void CObjRanking::Init()
 //アクション
 void CObjRanking::Action()
 {
-	if (Input::GetVKey(VK_UP) == true && choose > 0 && m_time == 0)
+	if (Input::GetVKey(VK_UP) == true && choose > 1 && m_time == 1)
 	{
 		--choose;
 		m_time = 8;
@@ -75,11 +75,8 @@ void CObjRanking::Action()
 			m_time = 0;
 		}
 	}
-
-	if (choose==0)
-	{
-		//マウスのボタンが押されたらメインに遷移
-		if (Input::GetVKey(VK_RETURN) == true)
+		//ボタンが押されたらメインに遷移
+		if (Input::GetVKey(VK_BACK) == true)
 		{
 			if (m_key_flag == true)
 			{
@@ -91,7 +88,6 @@ void CObjRanking::Action()
 		{
 			m_key_flag = true;
 		}
-	}
 	//ランキングリセットの部分と当たり判定
 	if (choose==11)
 	{
@@ -136,10 +132,7 @@ void CObjRanking::Draw()
 		Font::StrDraw(str, SCORE_POS_X, SCORE_POS_Y + SCORE_INTERVAL*i+1, SCORE_FONT_SIZE, c);
 	}
 
-	if (choose==0)
-		Font::StrDraw(L"◇タイトルに戻る", CLICK_TITLE_GO_X - 20, CLICK_TITLE_GO_Y, TITLE_FONT_SIZE, c);
-	else
-		Font::StrDraw(L"タイトルに戻る", CLICK_TITLE_GO_X, CLICK_TITLE_GO_Y, TITLE_FONT_SIZE, c);
+	Font::StrDraw(L"バックスペースでタイトルへ", CLICK_TITLE_GO_X, CLICK_TITLE_GO_Y, TITLE_FONT_SIZE, c);
 
 	//マウスがその位置に行った時の処理
 	if (choose == 1)
