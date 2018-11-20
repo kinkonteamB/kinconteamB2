@@ -15,7 +15,6 @@ enum OBJ_NAME
 	OBJ_RANKING,
 	OBJ_MENU,
 	OBJ_TIME,
-	OBJ_NEEDLE,
 };
 //------------------------------------------------
 
@@ -69,7 +68,6 @@ struct UserData
 #include"ObjRanking.h"
 #include"ObjMenu.h"
 #include"ObjTime.h"
-#include"ObjNeedle.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

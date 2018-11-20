@@ -76,7 +76,7 @@ void C0bjHero::Action()
 	{
 		if (m_hit_down == true)
 		{
-			m_vy = -8;
+			m_vy = -10;
 			g_py += m_vy;
 		}
 	}
@@ -182,7 +182,7 @@ void C0bjHero::Action()
 	hit->SetPos(g_px, g_py);
 
 	//罠に接触したらリスタート
-	if (hit->CheckObjNameHit(OBJ_NEEDLE) != nullptr)
+	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
 	{
 		//場外に出たらリスタート
 		Scene::SetScene(new CSceneOver());
