@@ -21,9 +21,9 @@ CObjBlock::CObjBlock(int map[19][100])
 //イニシャライズ
 void CObjBlock::Init()
 {
-	m_scroll = 0.0f;
-	m_scroll_map = 0.0f;
-	float m_x1 = 0.0f;
+	m_scroll      = 0.0f;
+	m_scroll_map  = 0.0f;
+	float m_x1    = 0.0f;
 }
 
 
@@ -194,6 +194,10 @@ void CObjBlock::BlockHit(
 							*left = true;//主人公の右の部分が衝突している
 							*x = bx - 64.0f + (scroll);//ブロックの位置-主人公の幅
 							*vx = -(*vx)*0.0f;//-VX*反発係数
+							if (m_map[i][j] == 5)
+							{
+								Scene::SetScene(new CSceneClear());
+							}
 						}
 						if (r > 225 && r < 315)
 						{
