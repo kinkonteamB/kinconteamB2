@@ -69,7 +69,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"brock3.jpg", 2, TEX_SIZE_768);
 
 	//針罠読み込み
-	Draw::LoadImage(L"blockobj1.jpg", 4, TEX_SIZE_768);
+	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
 
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成
