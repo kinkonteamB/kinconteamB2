@@ -10,7 +10,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-float g_px = 64.0f;
+float g_px = 200.0f;
 float g_py = 450.0f;
 
 //イニシャライズ
