@@ -186,7 +186,7 @@ void CObjBlock::BlockHit(
 							if (m_map[i][j] == 2)
 							{
 								Scene::SetScene(new CSceneOver());
-							}*/
+							}
 						}
 						if (r > 135 && r < 225)
 						{
