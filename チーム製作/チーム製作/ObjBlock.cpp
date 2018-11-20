@@ -67,13 +67,22 @@ void CObjBlock::Draw()
 	src.m_left = 0.0f;
 	src.m_right = 32.0f;
 	src.m_bottom = 32.0f;
-	//m_scroll -= 3.0f;
 
 	for (int i = 0; i < 19; i++)
 	{
 		for (int j = 0; j < 100; j++)
 		{
-			if (m_map[i][j] > 0)
+		
+			if (m_map[i][j] == 2)
+			{
+				dst.m_top = i*32.0f;
+				dst.m_left = j*32.0f;
+				dst.m_right = dst.m_left + 32.0f;
+				dst.m_bottom = dst.m_top + 32.0f;
+
+				Draw::Draw(1, &src, &dst, c, 0.0f);
+			}
+			else if (m_map[i][j] == 1)
 			{
 				//ï\é¶à íuÇÃê›íË
 				dst.m_top = i*32.0f;
@@ -82,16 +91,9 @@ void CObjBlock::Draw()
 				dst.m_bottom = dst.m_top + 32.0f;
 
 				Draw::Draw(2, &src, &dst, c, 0.0f);
-
-		/*		if (m_map[i][j] == 4 || m_map[i][j] == 5)
-				{
-					dst.m_top = i*32.0f;
-					dst.m_left = j*32.0f;
-					dst.m_right = dst.m_left + 32.0f;
-					dst.m_bottom = dst.m_top + 32.0f;
-				}*/
 			}
 		}
+	
 	}
 }
 //BlockHitä÷êî

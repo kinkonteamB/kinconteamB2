@@ -16,6 +16,6 @@ public:
 	void Draw();		//ドロー
 private:
 	int m_map[19][84]; //マップ情報
-	float m_x = 600;
-	float m_y = 400;
+	float m_x;
+	float m_y;
 };
