@@ -78,7 +78,7 @@ void CObjBlock::Draw()
 			{
 				//•\Ž¦ˆÊ’u‚ÌÝ’è
 				dst.m_top = i*32.0f;
-				dst.m_left = j*32.0f;
+				dst.m_left = j*32.0f + m_scroll;
 				dst.m_right = dst.m_left + 32.0f;
 				dst.m_bottom = dst.m_top + 32.0f;
 
@@ -186,7 +186,7 @@ void CObjBlock::BlockHit(
 							if (m_map[i][j] == 2)
 							{
 								Scene::SetScene(new CSceneOver());
-							}*/
+							}
 						}
 						if (r > 135 && r < 225)
 						{
