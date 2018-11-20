@@ -59,7 +59,6 @@ private:
 	//“¥‚ñ‚Å‚¢‚éblock‚ÌŽí—Þ‚ðŠm”F—p
 	int m_block_type;
 	int s;
-
 	int m_x;
 	int m_y;
 };
