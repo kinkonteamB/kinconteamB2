@@ -35,4 +35,8 @@ private:
 
 	float m_scroll;     //左右スクロール用
 	float m_scroll_map;
+
+	int m_ani_time;
+	int m_ani_frame;
+	int m_ani_max_time;
 };
