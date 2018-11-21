@@ -7,7 +7,7 @@
 
 #include "GameHead.h"
 #include "ObjNeedle.h"
-#include "ObjBlock.h"
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -15,8 +15,10 @@ using namespace GameL;
 //イニシャライズ
 void CObjNeedle::Init()
 {
-	m_x = 600;
-	m_y = 400;
+
+	m_scroll = 0.0f;
+	m_scroll_map = 0.0f;
+	float m_x1 = 0.0f;
 
 	//当たり判定用hitbox作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_NEEDLE, 12);
@@ -43,14 +45,21 @@ void CObjNeedle::Draw()
 	src.m_right = 32.0f;
 	src.m_bottom = 32.0f;
 
-	//表示位置の設定
-	dst.m_top    = 0.0f+m_y;
-	dst.m_left   = 0.0f+m_x;
-	dst.m_right  = 32.0f+m_x;
-	dst.m_bottom = 32.0f+m_y;
+	for (int i = 0; i < 19; i++)
+	{
+		for (int j = 0; j < 100; j++)
+		{
+			if (m_map[i][j] == 2)
+			{
+				dst.m_top = i*32.0f;
+				dst.m_left = j*32.0f;
+				dst.m_right = dst.m_left + 32.0f;
+				dst.m_bottom = dst.m_top + 32.0f;
 
-
-	Draw::Draw(4, &src, &dst, c, 0.0f);
+				Draw::Draw(4, &src, &dst, c,0.0f);
+			}
+		}
+	}
 
 
 

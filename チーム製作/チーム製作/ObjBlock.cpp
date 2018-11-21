@@ -4,7 +4,6 @@
 #include"GameL\SceneManager.h"
 #include"GameL\SceneObjManager.h"
 
-
 #include"GameHead.h"
 #include"ObjBlock.h"
 
@@ -35,7 +34,7 @@ void CObjBlock::Action()
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
-	//後方スクロールライン
+	////後方スクロールライン
 	if (hx < 80)
 	{
 		hero->SetX(80);           //主人公はラインを超えないようにする
@@ -43,7 +42,7 @@ void CObjBlock::Action()
 	
 	}
 
-	//前方スクロールライン
+	////前方スクロールライン
 	if (hx > 300)
 	{
 		hero->SetX(300);           //主人公はラインを超えないようにする
@@ -73,23 +72,24 @@ void CObjBlock::Draw()
 	{
 		for (int j = 0; j < 100; j++)
 		{
-			if (m_map[i][j] > 0)
+			if (m_map[i][j] == 1)
 			{
 				//表示位置の設定
-				dst.m_top = i*32.0f;
-				dst.m_left = j*32.0f + m_scroll;
-				dst.m_right = dst.m_left + 32.0f;
-				dst.m_bottom = dst.m_top + 32.0f;
+				dst.m_top    = i*32.0f;
+				dst.m_left   = j*32.0f + m_scroll;
+				dst.m_right  = dst.m_left + 32.0f;
+				dst.m_bottom =  dst.m_top + 32.0f;
 
-				Draw::Draw(2, &src, &dst, c, 0.0f);
+				Draw::Draw(2, &src, &dst, c,0.0f);
 
-		/*		if (m_map[i][j] == 4 || m_map[i][j] == 5)
-				{
-					dst.m_top = i*32.0f;
-					dst.m_left = j*32.0f;
-					dst.m_right = dst.m_left + 32.0f;
-					dst.m_bottom = dst.m_top + 32.0f;
-				}*/
+
+				//if (m_map[i][j] == 77 || m_map[i][j] == 88)
+				//{
+				//	dst.m_top = i*32.0f;
+				//	dst.m_left = j*32.0f;
+				//	dst.m_right = dst.m_left + 32.0f;
+				//	dst.m_bottom = dst.m_top + 32.0f;
+				//}
 			}
 		}
 	}
