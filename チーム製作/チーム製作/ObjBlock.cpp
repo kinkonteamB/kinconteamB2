@@ -176,7 +176,7 @@ void CObjBlock::BlockHit(
 							*vx = 0.0f;//-VX*”½”­ŒW”
 
 						}
-						if (r > 79 && r < 130)
+						if (r > 80 && r < 130)
 						{
 							//ã
 							*down = true;//ŽålŒö‚Ì‰º‚Ì•”•ª‚ªÕ“Ë‚µ‚Ä‚¢‚é
