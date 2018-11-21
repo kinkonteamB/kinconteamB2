@@ -73,6 +73,7 @@ void CObjBlock::Draw()
 			src.m_right = 32.0f;
 			src.m_bottom = 32.0f;
 
+			//ブロック画像表示
 			if (m_map[i][j] == 1)
 			{
 				//表示位置の設定
@@ -85,6 +86,7 @@ void CObjBlock::Draw()
 
 				Draw::Draw(2, &src, &dst, c, 0.0f);
 			}
+			//針トラップ表示
 			else if (m_map[i][j] == 2)
 			{
 				/*src.m_left = 60.0f;
