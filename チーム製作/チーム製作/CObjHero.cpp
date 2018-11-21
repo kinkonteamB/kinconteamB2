@@ -35,10 +35,12 @@ void C0bjHero::Init()
 	m_speed_power = 0.5f;//通常速度
 	m_ani_max_time = 4;  //アニメーション間隔幅
 
+	
+
 
 //当たり判定用のHitBoxを作成
 						
-Hits::SetHitBox(this, g_px, g_py, 64,64, ELEMENT_PLAYER, COBJ_HERO, 1);
+Hits::SetHitBox(this, g_px, g_py,64,64, ELEMENT_PLAYER, COBJ_HERO, 1);
 }
 
 //アクション
@@ -69,14 +71,14 @@ void C0bjHero::Action()
 	if (Input::GetVKey(VK_SHIFT) == true)
 	{
 		//ダッシュ時の速度
-		m_speed_power = 0.7f;
+		m_speed_power = 0.6f;
 		m_ani_max_time = 2;
 	}
 	if (Input::GetVKey('W') == true)
 	{
 		if (m_hit_down == true)
 		{
-			m_vy = -8;
+			m_vy = -10;
 			g_py += m_vy;
 		}
 	}
@@ -182,7 +184,7 @@ void C0bjHero::Action()
 	hit->SetPos(g_px, g_py);
 
 	//罠に接触したらリスタート
-	if (hit->CheckObjNameHit(OBJ_NEEDLE) != nullptr)
+	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
 	{
 		//場外に出たらリスタート
 		Scene::SetScene(new CSceneOver());
