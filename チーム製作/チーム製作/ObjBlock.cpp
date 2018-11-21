@@ -21,9 +21,9 @@ CObjBlock::CObjBlock(int map[19][100])
 //イニシャライズ
 void CObjBlock::Init()
 {
-	m_scroll      = 0.0f;
-	m_scroll_map  = 0.0f;
-	float m_x1    = 0.0f;
+	m_scroll = 0.0f;
+	m_scroll_map = 0.0f;
+	float m_x1 = 0.0f;
 }
 
 
@@ -44,9 +44,9 @@ void CObjBlock::Action()
 	}
 
 	//前方スクロールライン
-	if (hx > 300)
+	if (hx > 350)
 	{
-		hero->SetX(300);           //主人公はラインを超えないようにする
+		hero->SetX(350);           //主人公はラインを超えないようにする
 		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
 
 	}
@@ -86,9 +86,6 @@ void CObjBlock::Draw()
 			}
 			else if (m_map[i][j] == 2)
 			{
-				/*src.m_left = 60.0f;
-				src.m_right = 100.0f;*/
-
 				//表示位置の設定
 				dst.m_top = i*32.0f;
 				dst.m_left = j*32.0f + m_scroll;
@@ -98,7 +95,6 @@ void CObjBlock::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 			}
 		}
-	
 	}
 }
 //BlockHit関数
@@ -144,7 +140,7 @@ void CObjBlock::BlockHit(
 				float scroll = scroll_on ? m_scroll : 0;
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x + (-scroll) + 64.0f > bx) && (*x + (-scroll) < bx + 32.0f) && (*y + 64.0f > by) && (*y < by + 32.0f))
+				if ((*x + (-scroll) + 50.0f > bx) && (*x + (-scroll) < bx + 16.0f) && (*y + 64.0f > by) && (*y < by + 32.0f))
 				{
 					//上下左右判定
 
@@ -169,35 +165,31 @@ void CObjBlock::BlockHit(
 					if (len < 80.0f)
 					{
 						//角度で上下左右を判定
-						if ((r < 49 && r>0) || r > 315)
+						if ((r < 71 && r>0) || r > 315)
 						{
 							//右
 							*right = true;//オブジェクトの左の部分が衝突している
 							*x = bx + 32.0f + (scroll);//ブロックの位置+主人公の幅
-							*vx = +(*vx)*0.0f;//-VX*反発係数
+							*vx = -1.5f;//-VX*反発係数
 						}
-						if (r > 49 && r < 135)
+						if (r > 71 && r < 135)
 						{
 							//上
 							*down = true;//主人公の下の部分が衝突している
 							*y = by - 64.0f;//ブロックの位置-主人公の幅
 							*vy = 0.0f;
 
-							if (m_map[i][j] == 2)
+						/*	if (m_map[i][j] == 2)
 							{
 								Scene::SetScene(new CSceneOver());
-							}
+							}*/
 						}
 						if (r > 135 && r < 225)
 						{
 							//左
 							*left = true;//主人公の右の部分が衝突している
-							*x = bx - 64.0f + (scroll);//ブロックの位置-主人公の幅
+							*x = bx - 50.0f + (scroll);//ブロックの位置-主人公の幅
 							*vx = -(*vx)*0.0f;//-VX*反発係数
-							if (m_map[i][j] == 5)
-							{
-								Scene::SetScene(new CSceneClear());
-							}
 						}
 						if (r > 225 && r < 315)
 						{

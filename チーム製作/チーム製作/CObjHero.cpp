@@ -40,7 +40,7 @@ void C0bjHero::Init()
 
 //当たり判定用のHitBoxを作成
 						
-Hits::SetHitBox(this, g_px, g_py,64,64, ELEMENT_PLAYER, COBJ_HERO, 1);
+Hits::SetHitBox(this, g_px, g_py,32,64, ELEMENT_PLAYER, COBJ_HERO, 1);
 }
 
 //アクション
@@ -154,9 +154,9 @@ void C0bjHero::Action()
 	}
 
 	//前方スクロールライン
-	if (g_px > 350)
+	if (g_px > 400)
 	{
-		g_px = 350;
+		g_px = 400;
 		b->SetScroll(b->GetScroll());
 	}
 	
@@ -181,7 +181,7 @@ void C0bjHero::Action()
 	CHitBox*hit = Hits::GetHitBox(this);
 
 	//HitBoxの位置を変更	
-	hit->SetPos(g_px, g_py);
+	hit->SetPos(g_px+18, g_py);
 
 	//罠に接触したらリスタート
 	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
