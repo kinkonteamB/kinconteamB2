@@ -172,7 +172,7 @@ void CObjBlock::BlockHit(
 						{
 							//右
 							*right = true;//オブジェクトの左の部分が衝突している
-							*x = bx + 32.0f + (scroll);//ブロックの位置+主人公の幅
+							*x = bx + 17.0f + (scroll);//ブロックの位置+主人公の幅
 							*vx = -1.5f;//-VX*反発係数
 						}
 						if (r > 71 && r < 135)
