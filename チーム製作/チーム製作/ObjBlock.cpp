@@ -165,7 +165,7 @@ void CObjBlock::BlockHit(
 
 
 					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 76.0f)
+					if (len < 80.0f)
 					{
 						//角度で上下左右を判定
 						if ((r < 75&& r>0) || r > 315)
@@ -176,7 +176,7 @@ void CObjBlock::BlockHit(
 							*vx = 0.0f;//-VX*反発係数
 
 						}
-						if (r > 80 && r < 130)
+						if (r > 75 && r < 120)
 						{
 							//上
 							*down = true;//主人公の下の部分が衝突している
@@ -187,7 +187,7 @@ void CObjBlock::BlockHit(
 								Scene::SetScene(new CSceneOver());
 							}
 						}
-						if (r > 135 && r < 225)
+						if (r > 120 && r < 225)
 						{
 							//左
 							*left = true;//主人公の右の部分が衝突している
