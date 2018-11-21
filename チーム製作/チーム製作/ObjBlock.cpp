@@ -43,9 +43,9 @@ void CObjBlock::Action()
 	}
 
 	//前方スクロールライン
-	if (hx > 350)
+	if (hx > 300)
 	{
-		hero->SetX(350);           //主人公はラインを超えないようにする
+		hero->SetX(300);           //主人公はラインを超えないようにする
 		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
 
 	}
@@ -183,10 +183,10 @@ void CObjBlock::BlockHit(
 							*y = by - 64.0f;//ブロックの位置-主人公の幅
 							*vy = 0.0f;
 
-						/*	if (m_map[i][j] == 2)
+							if (m_map[i][j] == 2)
 							{
 								Scene::SetScene(new CSceneOver());
-							}*/
+							}
 						}
 						if (r > 135 && r < 225)
 						{

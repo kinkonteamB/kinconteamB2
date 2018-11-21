@@ -154,9 +154,9 @@ void C0bjHero::Action()
 	}
 
 	//前方スクロールライン
-	if (g_px > 400)
+	if (g_px > 350)
 	{
-		g_px = 400;
+		g_px = 350;
 		b->SetScroll(b->GetScroll());
 	}
 	
