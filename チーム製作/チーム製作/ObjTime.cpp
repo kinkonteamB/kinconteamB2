@@ -36,6 +36,12 @@ void C0bjTime::Action()
 	if (m_flag_time == true)
 	{
 		m_time++;
+
+		if (timekeeper[i] > m_time)
+		{
+			timekeeper[i] = m_time;
+		}
+		
 	}
 }
 

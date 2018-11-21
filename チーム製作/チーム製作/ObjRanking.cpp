@@ -177,7 +177,7 @@ void CObjRanking::Draw()
 //高順でバブルソートを行う
 void CObjRanking::RankingSort(int rank[10])
 {
-	//値交換用変数
+	//値交換用変数+
 	int w;
 
 	//バブルソート
