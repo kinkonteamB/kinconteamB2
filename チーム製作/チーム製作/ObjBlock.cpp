@@ -183,10 +183,11 @@ void CObjBlock::BlockHit(
 							*y = by - 64.0f;//ブロックの位置-主人公の幅
 							*vy = 0.0f;
 
-						/*	if (m_map[i][j] == 2)
+
+							if (m_map[i][j] == 2)
 							{
 								Scene::SetScene(new CSceneOver());
-							}*/
+							}
 						}
 						if (r > 135 && r < 225)
 						{
