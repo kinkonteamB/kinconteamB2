@@ -33,14 +33,14 @@
     <Filter Include="ソース ファイル\Menu">
       <UniqueIdentifier>{a02f87af-c45c-41f0-92a1-85239dbbc9bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Over">
-      <UniqueIdentifier>{a16fccb6-1c19-4ed1-ba37-c5ca1984f85e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Rankng">
       <UniqueIdentifier>{6627b1ec-8eb9-4bcf-b523-562fcfa1dcb9}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Clear">
       <UniqueIdentifier>{680a266a-34e3-4130-a665-e06648ce7906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Over">
+      <UniqueIdentifier>{a16fccb6-1c19-4ed1-ba37-c5ca1984f85e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -103,9 +103,6 @@
     </ClCompile>
     <ClCompile Include="ObjTime.cpp">
       <Filter>ソース ファイル\ObjTime</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjNeedle.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjBlock.cpp">
       <Filter>ソース ファイル\Brock</Filter>
@@ -198,9 +195,6 @@
     </ClInclude>
     <ClInclude Include="ObjTime.h">
       <Filter>ソース ファイル\ObjTime</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjNeedle.h">
-      <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjBlock.h">
       <Filter>ソース ファイル\Brock</Filter>

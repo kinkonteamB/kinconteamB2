@@ -18,6 +18,8 @@ public:
 private:
 	int m_time;  //時間
 	bool m_flag_time;//時間計測スタートフラグ
+	int timekeeper[9];
+	int i = 300;
 	float gh_spx = 64.0f;
 	float gh_spy = 500.0f;
 };

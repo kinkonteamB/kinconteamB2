@@ -35,10 +35,11 @@ void C0bjHero::Init()
 	m_speed_power = 0.5f;//通常速度
 	m_ani_max_time = 4;  //アニメーション間隔幅
 
+	m_time = 31;
 
 //当たり判定用のHitBoxを作成
 						
-Hits::SetHitBox(this, g_px, g_py, 64,64, ELEMENT_PLAYER, COBJ_HERO, 1);
+Hits::SetHitBox(this, g_px, g_py,32,64, ELEMENT_PLAYER, COBJ_HERO, 1);
 }
 
 //アクション
@@ -56,12 +57,8 @@ void C0bjHero::Action()
 	{
 		//場外に出たらリスタート
 		Scene::SetScene(new CSceneOver());
-		g_px = 64.0f;
-		g_py = 500.0f;
 	}
 
-
-	
 	m_speed_power = 0.5f;
 
 	//Shihtキー入力で速度アップ
@@ -69,7 +66,7 @@ void C0bjHero::Action()
 	if (Input::GetVKey(VK_SHIFT) == true)
 	{
 		//ダッシュ時の速度
-		m_speed_power = 0.7f;
+		m_speed_power = 0.6f;
 		m_ani_max_time = 2;
 	}
 	if (Input::GetVKey('W') == true)
@@ -80,6 +77,7 @@ void C0bjHero::Action()
 			g_py += m_vy;
 		}
 	}
+
 	//しゃがむ
 	if (Input::GetVKey('S') == true)
 	{
@@ -179,10 +177,10 @@ void C0bjHero::Action()
 	CHitBox*hit = Hits::GetHitBox(this);
 
 	//HitBoxの位置を変更	
-	hit->SetPos(g_px, g_py);
+	hit->SetPos(g_px+18, g_py);
 
 	//罠に接触したらリスタート
-	if (hit->CheckObjNameHit(OBJ_NEEDLE) != nullptr)
+	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
 	{
 		//場外に出たらリスタート
 		Scene::SetScene(new CSceneOver());

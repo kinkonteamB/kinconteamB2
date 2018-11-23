@@ -13,24 +13,44 @@ using namespace GameL;
 //イニシャライズ
 void CObjClear::Init()
 {
-
+	choose = 0;
 }
 
 //アクション
 void CObjClear::Action()
 {
-	//エンターキーを押してシーン:ゲームTitleに移行する
-	if (Input::GetVKey(VK_RETURN) == true)
+	if (Input::GetVKey(VK_UP) == true)
 	{
-		if (m_key_flag == true)
+		choose = 0;
+	}
+	if (Input::GetVKey(VK_DOWN) == true)
+	{
+		choose = 1;
+	}
+
+	if (choose == 0)
+	{
+		if (Input::GetVKey(VK_RETURN) == true)
+		{
+
+			if (m_key_flag == true)
+			{
+				Scene::SetScene(new CSceneMain());
+				m_key_flag = false;
+			}
+		}
+		else
+		{
+			m_key_flag = true;
+		}
+	}
+	if (choose == 1)
+	{
+		if (Input::GetVKey(VK_BACK) == true)
 		{
 			Scene::SetScene(new CSceneTitle());
 			m_key_flag = false;
 		}
-	}
-	else
-	{
-		m_key_flag = true;
 	}
 }
 //ドロー
@@ -46,8 +66,8 @@ void CObjClear::Draw()
 			   //切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 700.0f;
-	src.m_bottom = 420.0f;
+	src.m_right = 256.0f;
+	src.m_bottom = 191.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f;
@@ -62,6 +82,14 @@ void CObjClear::Draw()
 
 	Font::StrDraw(L"Stage Clear", GAME_CLEAR_X, GAME_CLEAR_Y, GAME_CLEAR_FONT_SIZE, p);
 
-	
+	Font::StrDraw(L"Next Stage", NEXT_STAGE_X, NEXT_STAGE_Y, NEXT_STAGE_FONT_SIZE, p);
 
+	if (choose == 0)
+		Font::StrDraw(L"◇はい", NEXT_STAGE_YES_X -40, NEXT_STAGE_YES_Y, GAME_NO_FONT_SIZE, p);
+	else
+		Font::StrDraw(L"はい", GAME_YES_X, GAME_YES_Y, GAME_NO_FONT_SIZE, p);
+	if (choose == 1)
+		Font::StrDraw(L"◇いいえ", GAME_NO_X - 40, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
+	else
+		Font::StrDraw(L"いいえ", GAME_NO_X, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
 }
