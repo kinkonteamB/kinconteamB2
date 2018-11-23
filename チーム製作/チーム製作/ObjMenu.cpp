@@ -13,41 +13,46 @@ using namespace GameL;
 //イニシャライズ
 void CObjMenu::Init()
 {
-
+	choose = 0;
+	m_time = 10;
 }
 
 //アクション
 void CObjMenu::Action()
 {
-	//マウスの位置を取得
-	m_mou_x = (float)Input::GetPosX();
-	m_mou_y = (float)Input::GetPosY();
-	//マウスのボタンの状態
-	m_mou_r = Input::GetMouButtonR();
-	m_mou_l = Input::GetMouButtonL();
-
-
-	if (m_mou_x > GAME_BACK_X - 5 && m_mou_x < GAME_BACK_X + 292 &&
-		m_mou_y > GAME_BACK_Y - 5 && m_mou_y < GAME_BACK_Y + 40)
+	if (Input::GetVKey(VK_UP) == true)
 	{
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			Scene::SetScene(new CSceneMain());
-		}
+		choose = 0;
+	}
+	if (Input::GetVKey(VK_DOWN) == true)
+	{
+		choose = 1;
 	}
 
-	if (m_mou_x > TITLE_BACK_X - 3 && m_mou_x < TITLE_BACK_X + 339 &&
-		m_mou_y > TITLE_BACK_Y - 6 && m_mou_y < TITLE_BACK_Y + 38)
+	if (choose == 0)
 	{
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_r == true || m_mou_l == true)
+		if (Input::GetVKey(VK_RETURN) == true)
+		{
+
+			if (m_key_flag == true)
+			{
+				Scene::SetScene(new CSceneMain());
+				m_key_flag = false;
+			}
+		}
+		else
+		{
+			m_key_flag = true;
+		}
+	}
+	if (choose == 1)
+	{
+		if (Input::GetVKey(VK_BACK) == true)
 		{
 			Scene::SetScene(new CSceneTitle());
+			m_key_flag = false;
 		}
 	}
-
-
 }
 //ドロー
 void CObjMenu::Draw()
@@ -78,17 +83,12 @@ void CObjMenu::Draw()
 
 	Font::StrDraw(L"メニュー", 230, 100, 90, c);
 
-	if(m_mou_x > GAME_BACK_X -5 && m_mou_x < GAME_BACK_X +292 &&
-		m_mou_y > GAME_BACK_Y -5 && m_mou_y < GAME_BACK_Y +40)
-    	Font::StrDraw(L"◇ゲームに戻る", GAME_BACK_X -50, GAME_BACK_Y, GAME_DOBLE_FONT, c);
+	if(choose==0)
+		Font::StrDraw(L"◇ゲームに戻る", GAME_BACK_X -40,GAME_BACK_Y, GAME_DOBLE_FONT, c);
 	else
 		Font::StrDraw(L"ゲームに戻る", GAME_BACK_X, GAME_BACK_Y, GAME_DOBLE_FONT, c);
-
-	if(m_mou_x > TITLE_BACK_X - 3 && m_mou_x < TITLE_BACK_X + 339 &&
-		m_mou_y > TITLE_BACK_Y - 6 && m_mou_y < TITLE_BACK_Y + 38)
-		Font::StrDraw(L"◇タイトルに戻る", TITLE_BACK_X -50, TITLE_BACK_Y, GAME_DOBLE_FONT, c);
+	if (choose == 1)
+		Font::StrDraw(L"◇タイトルに戻る", TITLE_BACK_X -40, TITLE_BACK_Y, GAME_DOBLE_FONT, c);
 	else
 		Font::StrDraw(L"タイトルに戻る", TITLE_BACK_X, TITLE_BACK_Y, GAME_DOBLE_FONT, c);
-
-
 }

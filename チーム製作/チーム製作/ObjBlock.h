@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 //使用するヘッダー
 #pragma once
 //使用するヘッダー
@@ -9,12 +8,12 @@
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクト : ブロック＆背景
-class C0bjBlock : public CObj
+//オブジェクト：ブロック＆背景
+class CObjBlock : public CObj
 {
 public:
-	C0bjBlock(int map[19][84]);
-	~C0bjBlock() {};
+	CObjBlock(int map[19][100]);
+	~CObjBlock() {};
 	void Init();   //イ二シャライズ
 	void Action();	//アクション
 	void Draw();    //ドロー
@@ -32,11 +31,12 @@ public:
 
 private:
 	void BlockDraw(float x, float y, RECT_F*dst, float c[]);
-	int m_map[19][84]; //マップ情報
+	int m_map[19][100]; //マップ情報
 
 	float m_scroll;     //左右スクロール用
-
-	float Dot(float ax, float ay, float bx, float by);  //内積
-	float Cross(float ax, float ay, float bx, float by);  //外積
 	float m_scroll_map;
+
+	int m_ani_time;
+	int m_ani_frame;
+	int m_ani_max_time;
 };

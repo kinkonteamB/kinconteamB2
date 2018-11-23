@@ -9,6 +9,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\ObjHero">
+      <UniqueIdentifier>{a4e50c34-71eb-426d-b35c-a08ceb0bdd2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ObjBack">
+      <UniqueIdentifier>{702ff9d7-f279-42bb-9de9-3a6abc65badd}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ヘッダーファイル">
       <UniqueIdentifier>{19edb0c4-87c4-4e74-b67f-c96fd7c9dbed}</UniqueIdentifier>
     </Filter>
@@ -18,37 +24,28 @@
     <Filter Include="ソース ファイル\GameTitle">
       <UniqueIdentifier>{bf4efcb1-ec02-4530-8d0e-9a1e2dd311a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GameTitle">
-      <UniqueIdentifier>{bf4efcb1-ec02-4530-8d0e-9a1e2dd311a9}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\ObjTime">
+      <UniqueIdentifier>{4f0c48d0-22b4-4225-9656-35bdb6ef97fd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GameClear">
-      <UniqueIdentifier>{9fc5f191-6a36-4881-90d4-292dc3fa518e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\MapBrock">
-      <UniqueIdentifier>{35bec342-0a0a-459c-8108-a17b7d6a5fd2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\GameOver">
-      <UniqueIdentifier>{430367b2-5b55-4cd6-a18a-4e6361f27613}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Ranking">
-      <UniqueIdentifier>{2843fb19-a925-44fa-8d78-2ce92de8b8d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Background">
-      <UniqueIdentifier>{702ff9d7-f279-42bb-9de9-3a6abc65badd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Hero">
-      <UniqueIdentifier>{a4e50c34-71eb-426d-b35c-a08ceb0bdd2c}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Brock">
+      <UniqueIdentifier>{03f7e19e-7d29-415b-baa2-d439790b75bf}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Menu">
-      <UniqueIdentifier>{c8c3f87b-3316-4b89-8f31-f5a1a11087b3}</UniqueIdentifier>
+      <UniqueIdentifier>{a02f87af-c45c-41f0-92a1-85239dbbc9bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Time">
-      <UniqueIdentifier>{3e39c932-dbae-4a23-ba22-9a91f2d4a6fa}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Rankng">
+      <UniqueIdentifier>{6627b1ec-8eb9-4bcf-b523-562fcfa1dcb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Clear">
+      <UniqueIdentifier>{680a266a-34e3-4130-a665-e06648ce7906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Over">
+      <UniqueIdentifier>{a16fccb6-1c19-4ed1-ba37-c5ca1984f85e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjHero.cpp">
-      <Filter>ソース ファイル\Hero</Filter>
+      <Filter>ソース ファイル\ObjHero</Filter>
     </ClCompile>
     <ClCompile Include="GameL\Audio.cpp">
       <Filter>リソース ファイル</Filter>
@@ -102,34 +99,19 @@
       <Filter>ソース ファイル\GameTitle</Filter>
     </ClCompile>
     <ClCompile Include="ObjBackground.cpp">
-      <Filter>ソース ファイル\Background</Filter>
+      <Filter>ソース ファイル\ObjBack</Filter>
     </ClCompile>
-    <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソース ファイル\GameTitle</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソース ファイル\GameTitle</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjClear.cpp">
-      <Filter>ソース ファイル\GameClear</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneClear.cpp">
-      <Filter>ソース ファイル\GameClear</Filter>
+    <ClCompile Include="ObjTime.cpp">
+      <Filter>ソース ファイル\ObjTime</Filter>
     </ClCompile>
     <ClCompile Include="ObjBlock.cpp">
-      <Filter>ソース ファイル\MapBrock</Filter>
+      <Filter>ソース ファイル\Brock</Filter>
     </ClCompile>
-    <ClCompile Include="ObjOver.cpp">
-      <Filter>ソース ファイル\GameOver</Filter>
+    <ClCompile Include="ObjClear.cpp">
+      <Filter>ソース ファイル\Clear</Filter>
     </ClCompile>
-    <ClCompile Include="SceneOver.cpp">
-      <Filter>ソース ファイル\GameOver</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjRanking.cpp">
-      <Filter>ソース ファイル\Ranking</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneRanking.cpp">
-      <Filter>ソース ファイル\Ranking</Filter>
+    <ClCompile Include="SceneClear.cpp">
+      <Filter>ソース ファイル\Clear</Filter>
     </ClCompile>
     <ClCompile Include="ObjMenu.cpp">
       <Filter>ソース ファイル\Menu</Filter>
@@ -137,13 +119,22 @@
     <ClCompile Include="SceneMenu.cpp">
       <Filter>ソース ファイル\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="ObjTime.cpp">
-      <Filter>ソース ファイル\Time</Filter>
+    <ClCompile Include="SceneOver.cpp">
+      <Filter>ソース ファイル\Over</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOver.cpp">
+      <Filter>ソース ファイル\Over</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjRanking.cpp">
+      <Filter>ソース ファイル\Rankng</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRanking.cpp">
+      <Filter>ソース ファイル\Rankng</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjHero.h">
-      <Filter>ソース ファイル\Hero</Filter>
+      <Filter>ソース ファイル\ObjHero</Filter>
     </ClInclude>
     <ClInclude Include="GameHead.h">
       <Filter>ヘッダーファイル</Filter>
@@ -193,9 +184,6 @@
     <ClInclude Include="SceneMain.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>ソース ファイル\GameTitle</Filter>
-    </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ソース ファイル\GameTitle</Filter>
     </ClInclude>
@@ -203,40 +191,37 @@
       <Filter>ソース ファイル\GameTitle</Filter>
     </ClInclude>
     <ClInclude Include="ObjBackground.h">
-      <Filter>ソース ファイル\Background</Filter>
+      <Filter>ソース ファイル\ObjBack</Filter>
     </ClInclude>
-    <ClInclude Include="ObjTitle.h">
-      <Filter>ソース ファイル\GameTitle</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjClear.h">
-      <Filter>ソース ファイル\GameClear</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneClear.h">
-      <Filter>ソース ファイル\GameClear</Filter>
+    <ClInclude Include="ObjTime.h">
+      <Filter>ソース ファイル\ObjTime</Filter>
     </ClInclude>
     <ClInclude Include="ObjBlock.h">
-      <Filter>ソース ファイル\MapBrock</Filter>
+      <Filter>ソース ファイル\Brock</Filter>
     </ClInclude>
-    <ClInclude Include="ObjOver.h">
-      <Filter>ソース ファイル\GameOver</Filter>
+    <ClInclude Include="ObjClear.h">
+      <Filter>ソース ファイル\Clear</Filter>
     </ClInclude>
-    <ClInclude Include="SceneOver.h">
-      <Filter>ソース ファイル\GameOver</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjRanking.h">
-      <Filter>ソース ファイル\Ranking</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneRanking.h">
-      <Filter>ソース ファイル\Ranking</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMenu.h">
-      <Filter>ソース ファイル\Menu</Filter>
+    <ClInclude Include="SceneClear.h">
+      <Filter>ソース ファイル\Clear</Filter>
     </ClInclude>
     <ClInclude Include="SceneMenu.h">
       <Filter>ソース ファイル\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="ObjTime.h">
-      <Filter>ソース ファイル\Time</Filter>
+    <ClInclude Include="ObjMenu.h">
+      <Filter>ソース ファイル\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneOver.h">
+      <Filter>ソース ファイル\Over</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjOver.h">
+      <Filter>ソース ファイル\Over</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjRanking.h">
+      <Filter>ソース ファイル\Rankng</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRanking.h">
+      <Filter>ソース ファイル\Rankng</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

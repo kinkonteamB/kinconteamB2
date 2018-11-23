@@ -35,7 +35,7 @@ using namespace GameL;
 
 #define CLICK_TITLE_GO_X  (30)
 #define CLICK_TITLE_GO_Y  (50)
-#define TITLE_FONT_SIZE (20)
+#define TITLE_FONT_SIZE (15)
 
 #define SCORE_INIT (1)
 #define SCORE_POS_X (516)
@@ -69,7 +69,11 @@ private:
 	bool m_mou_r;   //マウスの右ボタン
 	bool m_mou_l;   //マウスの左ボタン
 
+private:
+	bool m_key_flag;//キーフラグ
+	int choose;
+	int m_time;
+
 	//ランキングソートメゾット
 	void RankingSort(int rank[10]);
-
 };

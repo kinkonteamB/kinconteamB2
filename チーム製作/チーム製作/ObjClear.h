@@ -6,6 +6,22 @@ using namespace GameL;
 
 //描画関係の定数
 
+#define GAME_CLEAR_X (130)
+#define GAME_CLEAR_Y (160)
+#define GAME_CLEAR_FONT_SIZE (100)
+
+#define NEXT_STAGE_X (230)
+#define NEXT_STAGE_Y (300)
+#define NEXT_STAGE_FONT_SIZE (70)
+
+#define NEXT_STAGE_YES_X (335)
+#define NEXT_STAGE_YES_Y (400)
+#define NEXT_STAGE_YES_FONT_SIZE (70)
+
+#define NEXT_STAGE_NO_X (315)
+#define NEXT_STAGE_NO_Y (480)
+#define NEXT_STAGE_NO_FONT_SIZE (70)
+
 #define STR_MAX (256)
 #define SCORE_INIT (1)
 #define SCORE_POS_X (670)
@@ -34,4 +50,9 @@ public:
 	void Draw();    //ドロー
 private:
 	bool m_key_flag;//キーフラグ
+	float m_mou_x;  //マウスの位置X
+	float m_mou_y;  //マウスの位置Y
+	bool m_mou_r;   //マウスの右ボタン
+	bool m_mou_l;   //マウスの左ボタン
+	int choose;
 };

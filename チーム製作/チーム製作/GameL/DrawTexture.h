@@ -17,12 +17,14 @@ using namespace std;
 
 namespace GameL
 {
-	//テクスチャイメージサイズ　８乗ｵﾝﾘ-設定
+	//テクスwチャイメージサイズ　８乗ｵﾝﾘ-設定
 	enum TEX_SIZE
 	{
+		TEX_SIZE_32   =   32,
 		TEX_SIZE_64   =	  64,
 		TEX_SIZE_128  =	 128,
 		TEX_SIZE_256  =	 256,
+		TEX_SIZE_263 = 263,
 		TEX_SIZE_576  =	 576,
 		TEX_SIZE_700  = 700,
 		TEX_SIZE_768  =  768,

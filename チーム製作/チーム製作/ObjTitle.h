@@ -51,4 +51,7 @@ private:
 	float m_mou_y;  //マウスの位置Y
 	bool m_mou_r;   //マウスの右ボタン
 	bool m_mou_l;   //マウスの左ボタン
+	bool  m_f;     //弾丸発射制御用
+	int choose;
+	int m_time;
 };
