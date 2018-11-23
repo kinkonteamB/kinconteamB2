@@ -8,6 +8,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+#define ALL_BLOCK_SIZE (32.0f)
+
 //オブジェクト：ブロック＆背景
 class CObjBlock : public CObj
 {
@@ -35,6 +37,7 @@ private:
 
 	float m_scroll;     //左右スクロール用
 	float m_scroll_map;
+	float x, y;
 
 	int m_ani_time;
 	int m_ani_frame;

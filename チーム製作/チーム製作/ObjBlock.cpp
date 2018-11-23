@@ -70,30 +70,28 @@ void CObjBlock::Draw()
 			//切り取り位置の設定
 			src.m_top = 0.0f;
 			src.m_left = 0.0f;
-			src.m_right = 32.0f;
-			src.m_bottom = 32.0f;
+			src.m_right = ALL_BLOCK_SIZE;
+			src.m_bottom = ALL_BLOCK_SIZE;
 
 			//ブロック画像表示
 			if (m_map[i][j] == 1)
 			{
 				//表示位置の設定
-				dst.m_top    = i*32.0f;
-				dst.m_left   = j*32.0f + m_scroll;
-				dst.m_right  = dst.m_left + 32.0f;
-				dst.m_bottom =  dst.m_top + 32.0f;
+				dst.m_top    = i*ALL_BLOCK_SIZE;
+				dst.m_left   = j*ALL_BLOCK_SIZE + m_scroll;
+				dst.m_right  = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom =  dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(2, &src, &dst, c,0.0f);
-
-				Draw::Draw(2, &src, &dst, c, 0.0f);
 			}
 			//針トラップ表示
 			else if (m_map[i][j] == 2)
 			{
 				//表示位置の設定
-				dst.m_top = i*32.0f;
-				dst.m_left = j*32.0f + m_scroll;
-				dst.m_right = dst.m_left + 32.0f;
-				dst.m_bottom = dst.m_top + 32.0f;
+				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
+				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 			}
@@ -176,7 +174,7 @@ void CObjBlock::BlockHit(
 							*vx = 0.0f;//-VX*反発係数
 
 						}
-						if (r > 75 && r < 120)
+						if (r > 75 && r < 128)
 						{
 							//上
 							*down = true;//主人公の下の部分が衝突している
@@ -184,10 +182,10 @@ void CObjBlock::BlockHit(
 							*vy = 0.0f;
 							if (m_map[i][j] == 2)
 							{
-								Scene::SetScene(new CSceneOver());
+							//	Scene::SetScene(new CSceneOver());
 							}
 						}
-						if (r > 120 && r < 225)
+						if (r > 128 && r < 225)
 						{
 							//左
 							*left = true;//主人公の右の部分が衝突している
