@@ -21,94 +21,94 @@ void CObjRanking::Init()
 	choose = 1;
 	m_time = 8;
 
-	//ゲーム実行して一回のみ
-	static bool init_point = false;
-	if (init_point == false)
-	{
-		//	//ランキング初期化
-		for (int i = 0; i < 10; i++)
+		//ゲーム実行して一回のみ
+		static bool init_point = false;
+		if (init_point == false)
 		{
-			((UserData*)Save::GetData())->m_ranking[i] = 0;
-		}
-	}
-
-	//	//ロード
-	//	Save::Open();//同フォルダ「UserData」からデータ取得
-
-		//点数を0にする
-//		((UserData*)Save::GetData())->m_time = 0;
-
-	//	init_point = true;
-	//}
-	////得点情報ランキング最下位（描画圏外）に登録
-	//((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->m_point;
-
-	////得点が高い順に並び替えをする
-	//RankingSort(((UserData*)Save::GetData())->m_ranking);
-
-	////ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
-	//if (init_point = true)
-	//{
-	//	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
-
-	//}
-
-}
-
-//アクション
-void CObjRanking::Action()
-{
-	if (Input::GetVKey(VK_UP) == true && choose > 1 && m_time == 0)
-	{
-		--choose;
-		m_time = 8;
-	}
-	if (Input::GetVKey(VK_DOWN) == true && choose < 11 && m_time == 0)
-	{
-		++choose;
-		m_time = 8;
-	}
-
-	if (m_time > 0) {
-		m_time--;
-		if (m_time <= 0) {
-			m_time = 0;
-		}
-	}
-		//ボタンが押されたらメインに遷移
-		if (Input::GetVKey(VK_BACK) == true)
-		{
-			if (m_key_flag == true)
+			//	//ランキング初期化
+			for (int i = 0; i < 10; i++)
 			{
-				Scene::SetScene(new CSceneTitle());
-				m_key_flag = false;
+				((UserData*)Save::GetData())->m_ranking[i] = 0;
+			}
+		}
+	
+		//	//ロード
+		//	Save::Open();//同フォルダ「UserData」からデータ取得
+	
+			//点数を0にする
+	//		((UserData*)Save::GetData())->m_time = 0;
+	
+		//	init_point = true;
+		//}
+		////得点情報ランキング最下位（描画圏外）に登録
+		//((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->m_point;
+	
+		////得点が高い順に並び替えをする
+		//RankingSort(((UserData*)Save::GetData())->m_ranking);
+	
+		////ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
+		//if (init_point = true)
+		//{
+		//	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
+	
+		//}
+	
+	}
+	
+	//アクション
+	void CObjRanking::Action()
+	{
+		if (Input::GetVKey(VK_UP) == true && choose > 1 && m_time == 0)
+		{
+			--choose;
+			m_time = 8;
+		}
+		if (Input::GetVKey(VK_DOWN) == true && choose < 11 && m_time == 0)
+		{
+			++choose;
+			m_time = 8;
+		}
+	
+		if (m_time > 0) {
+			m_time--;
+			if (m_time <= 0) {
+				m_time = 0;
+			}
+		}
+			//ボタンが押されたらメインに遷移
+			if (Input::GetVKey(VK_BACK) == true)
+			{
+				if (m_key_flag == true)
+				{
+					Scene::SetScene(new CSceneTitle());
+					m_key_flag = false;
+				}
+			}
+			else
+			{
+				m_key_flag = true;
+			}
+		//ランキングリセットの部分と当たり判定
+		if (choose==11)
+		{
+			if (Input::GetVKey(VK_RETURN) == true)
+			{
+				if (m_key_flag == true)
+				{
+					//ランキング初期化
+					for (int i = 0; i < 11; i++)
+					{
+						((UserData*)Save::GetData())->m_ranking[i] = 0;
+					}
+					m_key_flag = false;
+				}
 			}
 		}
 		else
 		{
 			m_key_flag = true;
 		}
-	//ランキングリセットの部分と当たり判定
-	if (choose==11)
-	{
-		if (Input::GetVKey(VK_RETURN) == true)
-		{
-			if (m_key_flag == true)
-			{
-				//ランキング初期化
-				for (int i = 0; i < 11; i++)
-				{
-					((UserData*)Save::GetData())->m_ranking[i] = 0;
-				}
-				m_key_flag = false;
-			}
-		}
 	}
-	else
-	{
-		m_key_flag = true;
-	}
-}
 
 //ドロー
 void CObjRanking::Draw()
@@ -171,10 +171,10 @@ void CObjRanking::Draw()
 	else
 		Font::StrDraw(L"ClickReset", CLICK_RESET_POS_X, CLICK_RESET_POS_Y, CLICK_RESET_FONT_SIZE, c);
 }
-
-//ランキングソートメゾット
-//引数1　int[11] :ランキング用配列
-//高順でバブルソートを行う
+//
+////ランキングソートメゾット
+////引数1　int[11] :ランキング用配列
+////高順でバブルソートを行う
 void CObjRanking::RankingSort(int rank[10])
 {
 	//値交換用変数+
