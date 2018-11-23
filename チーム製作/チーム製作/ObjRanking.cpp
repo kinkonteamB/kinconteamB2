@@ -20,7 +20,7 @@ void CObjRanking::Init()
 	m_key_flag = false;
 	choose = 1;
 	m_time = 5;
-
+	
 	//ƒQ[ƒ€Às‚µ‚Äˆê‰ñ‚Ì‚İ
 	static bool init_point = false;
 	if (init_point == false)
