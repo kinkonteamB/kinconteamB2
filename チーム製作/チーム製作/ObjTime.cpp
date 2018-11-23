@@ -3,10 +3,10 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneManager.h"
 #include"GameL\DrawFont.h"
+#include"GameL\UserData.h"
 
 #include"GameHead.h"
 #include"ObjTime.h"
-
 
 
 
@@ -41,7 +41,6 @@ void C0bjTime::Action()
 		{
 			timekeeper[i] = m_time;
 		}
-		
 	}
 }
 
@@ -53,17 +52,16 @@ void C0bjTime::Draw()
 	int second;    //•b
 
 	second = (m_time / 60) % 60; //•b
-	minute = (m_time / 60) / 60; //•ª
+	minute = (m_time / 60) / 60; //•b
 
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	wchar_t str[128];
 
 	//•ª:•b‚Ì’l‚ð•¶Žš—ñ”ä
-	if (second < 10)
-		swprintf_s(str, L"%d•ª0%d•b", minute, second);//•b‚Ì1Œ…–Ú‚É0‚ð—pˆÓ
-	else
-		swprintf_s(str, L"%d•ª%d•b", minute, second);
+	
+	swprintf_s(str, L"%d•ª0%d•b", minute, second);//•b‚Ì1Œ…–Ú‚É0‚ð—pˆÓ
+	swprintf_s(str, L"%d•ª%d•b", ((UserData*)Save::GetData())->minute= minute, second = second);
 	Font::StrDraw(str, 10, 10, 20, c);
 }
 

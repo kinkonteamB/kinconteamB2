@@ -71,10 +71,16 @@ void C0bjHero::Action()
 	}
 	if (Input::GetVKey('W') == true)
 	{
-		if (m_hit_down == true)
+		if (m_hit_down == true &&m_time==0 )
 		{
 			m_vy = -8;
 			g_py += m_vy;
+		}
+	}
+	if (m_time > 0) {
+		m_time--;
+		if (m_time <= 0) {
+			m_time = 0;
 		}
 	}
 
