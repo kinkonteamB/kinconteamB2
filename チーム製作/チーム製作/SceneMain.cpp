@@ -16,6 +16,8 @@ using namespace GameL;
 //使用ヘッダー
 #include"SceneMain.h"
 #include"GameHead.h"
+#include"ObjArrow.h"
+
 
 //コンストラクタ
 CSceneMain::CSceneMain()
@@ -71,6 +73,9 @@ void CSceneMain::InitScene()
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
 
+	//矢罠読み込み
+	Draw::LoadImage(L"Arrow.png", 5, TEX_SIZE_768);
+
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成
 	Objs::InsertObj(obj, COBJ_HERO, 10);//作った主人公オブジェクトをオブジェクトマネージャーに登録
@@ -86,6 +91,10 @@ void CSceneMain::InitScene()
 	//タイムオブジェクト作成
 	C0bjTime* objt = new C0bjTime();
 	Objs::InsertObj(objt, OBJ_TIME, 11);
+
+	//テスト用矢のオブジェクト作成
+	CObjArrow* obja = new CObjArrow();
+	Objs::InsertObj(obja, OBJ_ARROW, 5);
 
 }
 

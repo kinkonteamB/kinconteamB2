@@ -17,7 +17,7 @@ void CObjOver::Init()
 }
 
 //ƒAƒNƒVƒ‡ƒ“
-void CObjOver::Action()
+void CObjOver::Action() 
 {
 	if (Input::GetVKey(VK_UP) == true)
 	{
