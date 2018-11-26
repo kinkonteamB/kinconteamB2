@@ -58,12 +58,8 @@ void C0bjHero::Action()
 	{
 		//場外に出たらリスタート
 		Scene::SetScene(new CSceneOver());
-		g_px = 64.0f;
-		g_py = 500.0f;
 	}
 
-
-	
 	m_speed_power = 0.5f;
 
 	//Shihtキー入力で速度アップ
@@ -154,9 +150,9 @@ void C0bjHero::Action()
 	}
 
 	//前方スクロールライン
-	if (g_px > 400)
+	if (g_px > 350)
 	{
-		g_px = 400;
+		g_px = 350;
 		b->SetScroll(b->GetScroll());
 	}
 	
