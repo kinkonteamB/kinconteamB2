@@ -27,7 +27,7 @@ void C0bjTime::Action()
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 
 	//スタートブロックを踏んでいるならフラグをオンにする
-	if (gh_spx == 64.0f || gh_spy == 500.0f)
+	if (gh_spx == 64.0f || gh_spy == 500.0f)s
 	{
 		m_flag_time = true;
 	}
