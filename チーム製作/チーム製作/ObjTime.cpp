@@ -27,7 +27,7 @@ void C0bjTime::Action()
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 
 	//スタートブロックを踏んでいるならフラグをオンにする
-	if (gh_spx == 64.0f || gh_spy == 500.0f)s
+	if (gh_spx == 64.0f || gh_spy == 500.0f)
 	{
 		m_flag_time = true;
 	}
@@ -59,7 +59,6 @@ void C0bjTime::Draw()
 	wchar_t str[128];
 
 	//分:秒の値を文字列比
-	
 	swprintf_s(str, L"%d分%d秒", minute, second);//秒の1桁目に0を用意
 	swprintf_s(str, L"%d分%d秒", ((UserData*)Save::GetData())->minute= minute, second = second);
 	Font::StrDraw(str, 10, 10, 20, c);

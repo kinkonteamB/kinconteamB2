@@ -74,7 +74,7 @@ void C0bjHero::Action()
 	{
 		if (m_hit_down == true &&m_time==0 )
 		{
-			m_vy = -15;
+			m_vy = -8;
 			g_py += m_vy;
 		}
 	}

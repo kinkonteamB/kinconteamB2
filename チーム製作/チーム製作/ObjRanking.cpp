@@ -58,7 +58,7 @@ void CObjRanking::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjRanking::Action()
 {
-	if (Input::GetVKey(VK_UP) == true && choose > 0 && m_time == 0)
+	if (Input::GetVKey(VK_UP) == true && choose > 1 && m_time == 0)
 	{
 		--choose;
 		m_time = 5;
