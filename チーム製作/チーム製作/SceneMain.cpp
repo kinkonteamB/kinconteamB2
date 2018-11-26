@@ -9,6 +9,7 @@
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
 #include"GameL\DrawFont.h"
+#include"GameL\Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -16,6 +17,8 @@ using namespace GameL;
 //使用ヘッダー
 #include"SceneMain.h"
 #include"GameHead.h"
+#include"ObjArrow.h"
+
 
 //コンストラクタ
 CSceneMain::CSceneMain()
@@ -71,7 +74,7 @@ void CSceneMain::InitScene()
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
 
-	//針罠読み込み
+	//ゴール
 	Draw::LoadImage(L"efe.png", 5, TEX_SIZE_768);
 
 	//主人公オブジェクト作成
@@ -86,9 +89,22 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 
-	////タイムオブジェクト作成
-	//C0bjTime* objt = new C0bjTime();
-	//Objs::InsertObj(objt, OBJ_TIME, 11);
+	//タイムオブジェクト作成
+	C0bjTime* objt = new C0bjTime();
+	Objs::InsertObj(objt, OBJ_TIME, 12);
+
+	//音楽読み込み
+	Audio::LoadAudio(0, L"moristage.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"choice.wav", EFFECT);
+
+	//ボリュームを1.5増やす
+	float v = Audio::VolumeMaster(0);
+
+	//音楽スタート
+	Audio::Start(0);
+	////テスト用矢のオブジェクト作成
+	//CObjArrow* obja = new CObjArrow();
+	//Objs::InsertObj(obja, OBJ_ARROW, 5);
 
 }
 

@@ -35,6 +35,9 @@ void CObjClear::Action()
 
 			if (m_key_flag == true)
 			{
+				g_px = 64.0f;
+				g_py = 500.0f;
+
 				Scene::SetScene(new CSceneMain());
 				m_key_flag = false;
 			}

@@ -60,7 +60,7 @@ void C0bjTime::Draw()
 
 	//•ª:•b‚Ì’l‚ð•¶Žš—ñ”ä
 	
-	swprintf_s(str, L"%d•ª0%d•b", minute, second);//•b‚Ì1Œ…–Ú‚É0‚ð—pˆÓ
+	swprintf_s(str, L"%d•ª%d•b", minute, second);//•b‚Ì1Œ…–Ú‚É0‚ð—pˆÓ
 	swprintf_s(str, L"%d•ª%d•b", ((UserData*)Save::GetData())->minute= minute, second = second);
 	Font::StrDraw(str, 10, 10, 20, c);
 }
