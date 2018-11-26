@@ -69,11 +69,12 @@ void C0bjHero::Action()
 		m_speed_power = 0.6f;
 		m_ani_max_time = 2;
 	}
+	//ƒWƒƒƒ“ƒv
 	if (Input::GetVKey('W') == true)
 	{
 		if (m_hit_down == true &&m_time==0 )
 		{
-			m_vy = -8;
+			m_vy = -15;
 			g_py += m_vy;
 		}
 	}

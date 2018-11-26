@@ -23,6 +23,11 @@ void CObjBlock::Init()
 	m_scroll = 0.0f;
 	m_scroll_map = 0.0f;
 	float m_x1 = 0.0f;
+
+	m_ani_time = 0;
+	m_ani_frame = 0;
+
+	m_ani_max_time = 15;
 }
 
 
@@ -33,13 +38,12 @@ void CObjBlock::Action()
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 	float hx = hero->GetX();
 	float hy = hero->GetY();
-
 	////後方スクロールライン
 	if (hx < 80)
 	{
 		hero->SetX(80);           //主人公はラインを超えないようにする
 		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
-	
+
 	}
 
 	//前方スクロールライン
@@ -50,7 +54,22 @@ void CObjBlock::Action()
 
 	}
 
+
+	for (int i = 0; i < 19; i++)
+	{
+		for (int j = 0; j < 100; j++)
+		{
+
+			if (m_map[i][j] == 5)
+			{
+				CObjgoalblock* ends = new CObjgoalblock(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(ends, OBJ_GOAL_BLOCK, 11);
+				m_map[i][j] = 0;
+			}
+		}
+	}
 }
+
 //ドロー
 void CObjBlock::Draw()
 {
@@ -77,12 +96,12 @@ void CObjBlock::Draw()
 			if (m_map[i][j] == 1)
 			{
 				//表示位置の設定
-				dst.m_top    = i*ALL_BLOCK_SIZE;
-				dst.m_left   = j*ALL_BLOCK_SIZE + m_scroll;
-				dst.m_right  = dst.m_left + ALL_BLOCK_SIZE;
-				dst.m_bottom =  dst.m_top + ALL_BLOCK_SIZE;
+				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
+				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
-				Draw::Draw(2, &src, &dst, c,0.0f);
+				Draw::Draw(2, &src, &dst, c, 0.0f);
 			}
 			//針トラップ表示
 			else if (m_map[i][j] == 2)
@@ -95,9 +114,11 @@ void CObjBlock::Draw()
 
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 			}
+	
 		}
 	}
 }
+
 //BlockHit関数
 //引数１    float * x           :判定を行うobjectのX位置
 //引数２    float * y           :判定を行うobjectのY位置

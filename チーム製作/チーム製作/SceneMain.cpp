@@ -71,7 +71,7 @@ void CSceneMain::InitScene()
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
 
-	//針罠読み込み
+	//ゴール
 	Draw::LoadImage(L"efe.png", 5, TEX_SIZE_768);
 
 	//主人公オブジェクト作成
