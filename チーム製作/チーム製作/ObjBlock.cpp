@@ -4,7 +4,6 @@
 #include"GameL\SceneManager.h"
 #include"GameL\SceneObjManager.h"
 
-
 #include"GameHead.h"
 #include"ObjBlock.h"
 
@@ -35,7 +34,7 @@ void CObjBlock::Action()
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
-	//後方スクロールライン
+	////後方スクロールライン
 	if (hx < 80)
 	{
 		hero->SetX(80);           //主人公はラインを超えないようにする
@@ -71,34 +70,32 @@ void CObjBlock::Draw()
 			//切り取り位置の設定
 			src.m_top = 0.0f;
 			src.m_left = 0.0f;
-			src.m_right = 32.0f;
-			src.m_bottom = 32.0f;
+			src.m_right = ALL_BLOCK_SIZE;
+			src.m_bottom = ALL_BLOCK_SIZE;
 
+			//ブロック画像表示
 			if (m_map[i][j] == 1)
 			{
 				//表示位置の設定
-				dst.m_top = i*32.0f;
-				dst.m_left = j*32.0f + m_scroll;
-				dst.m_right = dst.m_left + 32.0f;
-				dst.m_bottom = dst.m_top + 32.0f;
+				dst.m_top    = i*ALL_BLOCK_SIZE;
+				dst.m_left   = j*ALL_BLOCK_SIZE + m_scroll;
+				dst.m_right  = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom =  dst.m_top + ALL_BLOCK_SIZE;
 
-				Draw::Draw(2, &src, &dst, c, 0.0f);
+				Draw::Draw(2, &src, &dst, c,0.0f);
 			}
+			//針トラップ表示
 			else if (m_map[i][j] == 2)
 			{
-				/*src.m_left = 60.0f;
-				src.m_right = 100.0f;*/
-
 				//表示位置の設定
-				dst.m_top = i*32.0f;
-				dst.m_left = j*32.0f + m_scroll;
-				dst.m_right = dst.m_left + 32.0f;
-				dst.m_bottom = dst.m_top + 32.0f;
+				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
+				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 			}
 		}
-	
 	}
 }
 //BlockHit関数
@@ -144,7 +141,7 @@ void CObjBlock::BlockHit(
 				float scroll = scroll_on ? m_scroll : 0;
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x + (-scroll) + 64.0f > bx) && (*x + (-scroll) < bx + 32.0f) && (*y + 64.0f > by) && (*y < by + 32.0f))
+				if ((*x + (-scroll) + 50.0f > bx) && (*x + (-scroll) < bx + 16.0f) && (*y + 64.0f > by) && (*y < by + 32.0f))
 				{
 					//上下左右判定
 
@@ -169,30 +166,30 @@ void CObjBlock::BlockHit(
 					if (len < 80.0f)
 					{
 						//角度で上下左右を判定
-						if ((r < 49 && r>0) || r > 315)
+						if ((r < 75&& r>0) || r > 315)
 						{
 							//右
 							*right = true;//オブジェクトの左の部分が衝突している
-							*x = bx + 32.0f + (scroll);//ブロックの位置+主人公の幅
-							*vx = +(*vx)*0.0f;//-VX*反発係数
+							*x = bx + 16.0f + (scroll);//ブロックの位置+主人公の幅
+							*vx = 0.0f;//-VX*反発係数
+
 						}
-						if (r > 49 && r < 135)
+						if (r > 75 && r < 128)
 						{
 							//上
 							*down = true;//主人公の下の部分が衝突している
 							*y = by - 64.0f;//ブロックの位置-主人公の幅
 							*vy = 0.0f;
-
 							if (m_map[i][j] == 2)
 							{
-								Scene::SetScene(new CSceneOver());
+							//	Scene::SetScene(new CSceneOver());
 							}
 						}
-						if (r > 135 && r < 225)
+						if (r > 128 && r < 225)
 						{
 							//左
 							*left = true;//主人公の右の部分が衝突している
-							*x = bx - 64.0f + (scroll);//ブロックの位置-主人公の幅
+							*x = bx - 50.0f + (scroll);//ブロックの位置-主人公の幅
 							*vx = -(*vx)*0.0f;//-VX*反発係数
 						}
 						if (r > 225 && r < 315)

@@ -19,7 +19,7 @@ void CObjRanking::Init()
 {
 	m_key_flag = false;
 	choose = 1;
-	m_time = 8;
+	m_time = 5;
 
 	//ゲーム実行して一回のみ
 	static bool init_point = false;
@@ -58,15 +58,15 @@ void CObjRanking::Init()
 //アクション
 void CObjRanking::Action()
 {
-	if (Input::GetVKey(VK_UP) == true && choose > 1 && m_time == 1)
+	if (Input::GetVKey(VK_UP) == true && choose > 0 && m_time == 0)
 	{
 		--choose;
-		m_time = 8;
+		m_time = 5;
 	}
 	if (Input::GetVKey(VK_DOWN) == true && choose < 11 && m_time == 0)
 	{
 		++choose;
-		m_time = 8;
+		m_time = 5;
 	}
 
 	if (m_time > 0) {
@@ -75,8 +75,11 @@ void CObjRanking::Action()
 			m_time = 0;
 		}
 	}
-		//ボタンが押されたらメインに遷移
-		if (Input::GetVKey(VK_BACK) == true)
+
+	if (choose==0)
+	{
+		//マウスのボタンが押されたらメインに遷移
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
 			if (m_key_flag == true)
 			{
@@ -88,6 +91,7 @@ void CObjRanking::Action()
 		{
 			m_key_flag = true;
 		}
+	}
 	//ランキングリセットの部分と当たり判定
 	if (choose==11)
 	{
@@ -171,13 +175,13 @@ void CObjRanking::Draw()
 	else
 		Font::StrDraw(L"ClickReset", CLICK_RESET_POS_X, CLICK_RESET_POS_Y, CLICK_RESET_FONT_SIZE, c);
 }
-
-//ランキングソートメゾット
-//引数1　int[11] :ランキング用配列
-//高順でバブルソートを行う
+//
+////ランキングソートメゾット
+////引数1　int[11] :ランキング用配列
+////高順でバブルソートを行う
 void CObjRanking::RankingSort(int rank[10])
 {
-	//値交換用変数
+	//値交換用変数+
 	int w;
 
 	//バブルソート

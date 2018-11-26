@@ -43,7 +43,8 @@ enum HIT_ELEMENTS
 struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
-	int m_point;    //GameMainで得たポイント
+	int minute;//GameMainで得たポイント
+	int second;
 	int m_ranking[10];  //ランキング情報
 	
 };
