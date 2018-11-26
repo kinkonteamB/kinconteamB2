@@ -22,6 +22,8 @@ public:
 
 	void SetScroll(float s) { m_scroll = s; }
 	float GetScroll() { return m_scroll; }
+	float GetScrollX() { return m_scroll; }
+	float GetScrollY() { return m_scroll; }
 
 	//ƒuƒƒbƒN‚Ì“–‚½‚è”»’è
 	void BlockHit(

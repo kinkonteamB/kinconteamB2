@@ -9,7 +9,6 @@
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
 #include"GameL\DrawFont.h"
-#include"GameL\Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -91,17 +90,8 @@ void CSceneMain::InitScene()
 
 	//タイムオブジェクト作成
 	C0bjTime* objt = new C0bjTime();
-	Objs::InsertObj(objt, OBJ_TIME, 12);
+	Objs::InsertObj(objt, OBJ_TIME, 11);
 
-	//音楽読み込み
-	Audio::LoadAudio(0, L"moristage.wav", BACK_MUSIC);
-	Audio::LoadAudio(1, L"choice.wav", EFFECT);
-
-	//ボリュームを1.5増やす
-	float v = Audio::VolumeMaster(0);
-
-	//音楽スタート
-	Audio::Start(0);
 	////テスト用矢のオブジェクト作成
 	//CObjArrow* obja = new CObjArrow();
 	//Objs::InsertObj(obja, OBJ_ARROW, 5);
