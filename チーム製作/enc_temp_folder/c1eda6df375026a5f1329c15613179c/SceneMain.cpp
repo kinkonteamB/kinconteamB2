@@ -90,7 +90,7 @@ void CSceneMain::InitScene()
 
 	//タイムオブジェクト作成
 	C0bjTime* objt = new C0bjTime();
-	Objs::InsertObj(objt, OBJ_TIME, 12);
+	Objs::InsertObj(objt, OBJ_TIME, 11);
 
 	////テスト用矢のオブジェクト作成
 	//CObjArrow* obja = new CObjArrow();
