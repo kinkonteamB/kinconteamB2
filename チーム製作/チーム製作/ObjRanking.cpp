@@ -21,38 +21,8 @@ void CObjRanking::Init()
 	choose = 1;
 	m_time = 5;
 
-	//ゲーム実行して一回のみ
-	static bool init_point = false;
-	if (init_point == false)
-	{
-		//	//ランキング初期化
-		for (int i = 0; i < 10; i++)
-		{
-			((UserData*)Save::GetData())->m_ranking[i] = 0;
-		}
-	}
-
-	//	//ロード
-	//	Save::Open();//同フォルダ「UserData」からデータ取得
-
-		//点数を0にする
-//		((UserData*)Save::GetData())->m_time = 0;
-
-	//	init_point = true;
-	//}
-	////得点情報ランキング最下位（描画圏外）に登録
-	//((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->m_point;
-
-	////得点が高い順に並び替えをする
-	//RankingSort(((UserData*)Save::GetData())->m_ranking);
-
-	////ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
-	//if (init_point = true)
-	//{
-	//	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
-
-	//}
-
+	//得点が高い順に並び替えをする
+	RankingSort(((UserData*)Save::GetData())->m_ranking);
 }
 
 //アクション
@@ -76,10 +46,10 @@ void CObjRanking::Action()
 		}
 	}
 
-	if (choose==0)
+	if (choose !=0)
 	{
-		//マウスのボタンが押されたらメインに遷移
-		if (Input::GetVKey(VK_RETURN) == true)
+		//ボタンが押されたらメインに遷移
+		if (Input::GetVKey(VK_BACK) == true)
 		{
 			if (m_key_flag == true)
 			{
@@ -122,17 +92,17 @@ void CObjRanking::Draw()
 	//ランキング
 	Font::StrDraw(L"ランキング", RANKING_POS_X, RANKING_POS_Y, RANKING_FONT_SIZE, c);
 
-	for (int i = 0; i <RANKING_CLASS_MAX; i++)
-	{
-		wchar_t str[STR_MAX2];
-		swprintf_s(str, L"%d階層", i + CLASS_INIT);
-		Font::StrDraw(str, CLASS_POS_X, CLASS_POS_Y + CLASS_INTERVAL *i + 1, CLASS_FONT_SIZE, c);
-	}
+	//for (int i = 0; i <RANKING_CLASS_MAX; i++)
+	//{
+	//	wchar_t str[STR_MAX2];
+	//	swprintf_s(str, L"%d階層", i + CLASS_INIT);
+	//	Font::StrDraw(str, CLASS_POS_X, CLASS_POS_Y + CLASS_INTERVAL *i + 1, CLASS_FONT_SIZE, c);
+	//}
 
 	for (int i = 0; i <RANKING_SCORE_MAX; i++)
 	{
 		wchar_t str[STR_MAX];
-		swprintf_s(str, L"%d 位 %d 秒", i + SCORE_INIT,((UserData*)Save::GetData())->m_ranking[i]);
+		swprintf_s(str, L"%d位%d秒", i + SCORE_INIT,((UserData*)Save::GetData())->m_ranking[i]);
 		Font::StrDraw(str, SCORE_POS_X, SCORE_POS_Y + SCORE_INTERVAL*i+1, SCORE_FONT_SIZE, c);
 	}
 
@@ -175,7 +145,6 @@ void CObjRanking::Draw()
 	else
 		Font::StrDraw(L"ClickReset", CLICK_RESET_POS_X, CLICK_RESET_POS_Y, CLICK_RESET_FONT_SIZE, c);
 }
-//
 ////ランキングソートメゾット
 ////引数1　int[11] :ランキング用配列
 ////高順でバブルソートを行う

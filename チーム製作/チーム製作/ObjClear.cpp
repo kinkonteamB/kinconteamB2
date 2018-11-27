@@ -3,6 +3,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
 #include "GameL\DrawTexture.h"
+#include"GameL\UserData.h"
 
 #include "GameHead.h"
 #include "ObjClear.h"
@@ -14,6 +15,7 @@ using namespace GameL;
 void CObjClear::Init()
 {
 	choose = 0;
+
 }
 
 //アクション
@@ -96,3 +98,27 @@ void CObjClear::Draw()
 	else
 		Font::StrDraw(L"いいえ", GAME_NO_X, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
 }
+////ランキングソートメゾット
+////引数1　int[11] :ランキング用配列
+////高順でバブルソートを行う
+void CObjClear::RankingSort(int rank[10])
+{
+	//値交換用変数+
+	int w;
+
+	//バブルソート
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = i + 1; j < 10; j++)
+		{
+			if (rank[i] < rank[j])
+			{
+				//値の交換
+				w = rank[i];
+				rank[i] = rank[j];
+				rank[j] = w;
+			}
+		}
+	}
+}
+

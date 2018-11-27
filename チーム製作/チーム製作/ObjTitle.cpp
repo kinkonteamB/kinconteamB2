@@ -2,6 +2,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
+#include"GameL\UserData.h"
 
 #include "GameHead.h"
 #include "ObjTitle.h"
@@ -19,6 +20,34 @@ void CObjTitle::Init()
 	m_key_flag = true;
 	choose = 0;
 	m_time = 10;
+
+	//ゲーム実行して一回のみ
+	static bool init_point = false;
+	if (init_point == false)
+	{
+		//ランキング初期化
+		for (int i = 0; i < 10; i++)
+		{
+			((UserData*)Save::GetData())->m_ranking[i] = 0;
+		}
+
+		//ロード
+		Save::Open();//同フォルダ「UserData」からデータ取得
+
+		//点数を0にする
+		((UserData*)Save::GetData())->minute = 0;
+
+		init_point = true;
+	}
+	//得点情報ランキング最下位（描画圏外）に登録
+	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
+
+	//ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
+	if (init_point = true)
+	{
+		Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
+
+	}
 }
 
 //アクション
@@ -48,6 +77,8 @@ void CObjTitle::Action()
 			if (m_key_flag == true)
 			{
 				Scene::SetScene(new CSceneMain());
+				g_px = 64.0f;
+				g_py = 450.0f;
 			}
 		}
 		else
