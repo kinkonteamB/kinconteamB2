@@ -42,6 +42,9 @@
     <Filter Include="ソース ファイル\Over">
       <UniqueIdentifier>{a16fccb6-1c19-4ed1-ba37-c5ca1984f85e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\arrow">
+      <UniqueIdentifier>{ee212e0f-8036-49da-9535-5f155d7e9f13}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjHero.cpp">
@@ -130,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="SceneRanking.cpp">
       <Filter>ソース ファイル\Rankng</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjArrow.cpp">
+      <Filter>ソース ファイル\arrow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +228,9 @@
     </ClInclude>
     <ClInclude Include="SceneRanking.h">
       <Filter>ソース ファイル\Rankng</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjArrow.h">
+      <Filter>ソース ファイル\arrow</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
