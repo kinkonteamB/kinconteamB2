@@ -2,6 +2,7 @@
 #include"GameL\DrawTexture.h"
 #include"GameHead.h"
 #include"GameL\WinInputs.h"
+#include"GameL\UserData.h"
 
 #include"ObjBackground.h"
 
@@ -21,6 +22,9 @@ void  C0bjBackground::Action()
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 	float hx = hero->GetX();
 	float hy = hero->GetY();
+
+	//“¾“_‚Ì‰Šú‰»
+	((UserData*)Save::GetData())->minute = 0;
 }
 
 //ƒhƒ[

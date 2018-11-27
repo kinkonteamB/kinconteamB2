@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 //使用するヘッダーファイル
 #include"GameL\SceneObjManager.h"
 //使用するネームスペース

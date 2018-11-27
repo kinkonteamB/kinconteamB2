@@ -8,8 +8,6 @@
 #include"GameHead.h"
 #include"ObjTime.h"
 
-
-
 //Žg—p‚·‚éƒl[ƒ€ƒXƒy[ƒX
 using namespace GameL;
 
@@ -18,6 +16,9 @@ void C0bjTime::Init()
 {
 	m_time = 0;
 	m_flag_time = false;
+
+	Save::Seve();//UserData‚Ìî•ñƒtƒHƒ‹ƒ_uUserDatav‚ðì¬‚·‚é
+
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -42,25 +43,24 @@ void C0bjTime::Action()
 			timekeeper[i] = m_time;
 		}
 	}
+
+
+
+
 }
 
 //ƒhƒ[
 void C0bjTime::Draw()
 {
 	//m_time‚©‚ç•b•ª‚¨‹‚ß‚é
-	int minute;    //•ª
-	int second;    //•b
 
-	second = (m_time / 60) % 60; //•b
-	minute = (m_time / 60) / 60; //•b
+	 int minute= (m_time / 60) % 999; //•b
 
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	wchar_t str[128];
-
 	//•ª:•b‚Ì’l‚ð•¶Žš—ñ”ä
-	swprintf_s(str, L"%d•ª%d•b", minute, second);//•b‚Ì1Œ…–Ú‚É0‚ð—pˆÓ
-	swprintf_s(str, L"%d•ª%d•b", ((UserData*)Save::GetData())->minute= minute, second = second);
+	swprintf_s(str, L"%d•b", ((UserData*)Save::GetData())->minute = minute);//•b‚Ì1Œ…–Ú‚É0‚ð—pˆÓ
 	Font::StrDraw(str, 10, 10, 20, c);
 }
 

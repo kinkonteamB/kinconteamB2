@@ -2,6 +2,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
+#include"GameL\UserData.h"
 
 #include "GameHead.h"
 #include "ObjTitle.h"
@@ -19,6 +20,9 @@ void CObjTitle::Init()
 	m_key_flag = true;
 	choose = 0;
 	m_time = 10;
+
+	//得点の初期化
+	((UserData*)Save::GetData())->minute = 0;
 }
 
 //アクション
