@@ -39,7 +39,7 @@ void CSceneMain::InitScene()
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
 	int size;              //ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"map1.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"map2-1.csv", &size);//外部データ読み込み
 
 	int map[19][100];
 	int count = 1;
@@ -71,6 +71,9 @@ void CSceneMain::InitScene()
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
 
+	//矢読み込み
+	Draw::LoadImage(L"矢2.png", 5, TEX_SIZE_768);
+
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成
 	Objs::InsertObj(obj, COBJ_HERO, 10);//作った主人公オブジェクトをオブジェクトマネージャーに登録
@@ -86,6 +89,10 @@ void CSceneMain::InitScene()
 	//タイムオブジェクト作成
 	C0bjTime* objt = new C0bjTime();
 	Objs::InsertObj(objt, OBJ_TIME, 11);
+
+	//弓矢オブジェクト作成
+	CObjArrow* objar = new CObjArrow();
+	Objs::InsertObj(objar, OBJ_ARROW, 12);
 
 }
 

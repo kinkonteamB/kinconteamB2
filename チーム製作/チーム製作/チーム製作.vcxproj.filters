@@ -131,6 +131,9 @@
     <ClCompile Include="SceneRanking.cpp">
       <Filter>ソース ファイル\Rankng</Filter>
     </ClCompile>
+    <ClCompile Include="CObjArrow.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjHero.h">
@@ -222,6 +225,9 @@
     </ClInclude>
     <ClInclude Include="SceneRanking.h">
       <Filter>ソース ファイル\Rankng</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjArrow.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
