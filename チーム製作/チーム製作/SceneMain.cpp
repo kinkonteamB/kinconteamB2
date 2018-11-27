@@ -9,6 +9,7 @@
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
 #include"GameL\DrawFont.h"
+#include"GameL\Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -16,6 +17,8 @@ using namespace GameL;
 //使用ヘッダー
 #include"SceneMain.h"
 #include"GameHead.h"
+#include"ObjArrow.h"
+
 
 //コンストラクタ
 CSceneMain::CSceneMain()
@@ -39,7 +42,7 @@ void CSceneMain::InitScene()
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
 	int size;              //ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"map2-1.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"map9.csv", &size);//外部データ読み込み
 
 	int map[19][100];
 	int count = 1;
@@ -74,6 +77,9 @@ void CSceneMain::InitScene()
 	//矢読み込み
 	Draw::LoadImage(L"矢2.png", 5, TEX_SIZE_768);
 
+	//ゴール
+	Draw::LoadImage(L"efe.png", 5, TEX_SIZE_768);
+
 	//主人公オブジェクト作成
 	C0bjHero* obj = new C0bjHero();   //主人公オブジェクト作成
 	Objs::InsertObj(obj, COBJ_HERO, 10);//作った主人公オブジェクトをオブジェクトマネージャーに登録
@@ -88,7 +94,20 @@ void CSceneMain::InitScene()
 
 	//タイムオブジェクト作成
 	C0bjTime* objt = new C0bjTime();
-	Objs::InsertObj(objt, OBJ_TIME, 11);
+	Objs::InsertObj(objt, OBJ_TIME, 12);
+
+	//音楽読み込み
+	Audio::LoadAudio(0, L"moristage.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"choice.wav", EFFECT);
+
+	//ボリュームを1.5増やす
+	float v = Audio::VolumeMaster(0);
+
+	//音楽スタート
+	Audio::Start(0);
+	////テスト用矢のオブジェクト作成
+	//CObjArrow* obja = new CObjArrow();
+	//Objs::InsertObj(obja, OBJ_ARROW, 5);
 
 	//弓矢オブジェクト作成
 	CObjArrow* objar = new CObjArrow();

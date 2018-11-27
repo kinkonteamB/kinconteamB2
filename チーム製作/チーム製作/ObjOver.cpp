@@ -10,6 +10,10 @@
 //使用するネームスペース
 using namespace GameL;
 
+
+extern float g_px;
+extern float g_py;
+
 //イニシャライズ
 void CObjOver::Init()
 {
@@ -17,7 +21,7 @@ void CObjOver::Init()
 }
 
 //アクション
-void CObjOver::Action()
+void CObjOver::Action() 
 {
 	if (Input::GetVKey(VK_UP) == true)
 	{
@@ -35,6 +39,9 @@ void CObjOver::Action()
 
 			if (m_key_flag == true)
 			{
+				g_px = 64.0f;
+				g_py = 500.0f;
+
 				Scene::SetScene(new CSceneMain());
 				m_key_flag = false;
 			}
