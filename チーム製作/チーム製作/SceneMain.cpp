@@ -74,6 +74,9 @@ void CSceneMain::InitScene()
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
 
+	//矢読み込み
+	Draw::LoadImage(L"矢2.png", 5, TEX_SIZE_768);
+
 	//ゴール
 	Draw::LoadImage(L"efe.png", 5, TEX_SIZE_768);
 
@@ -105,6 +108,10 @@ void CSceneMain::InitScene()
 	////テスト用矢のオブジェクト作成
 	//CObjArrow* obja = new CObjArrow();
 	//Objs::InsertObj(obja, OBJ_ARROW, 5);
+
+	//弓矢オブジェクト作成
+	CObjArrow* objar = new CObjArrow();
+	Objs::InsertObj(objar, OBJ_ARROW, 12);
 
 }
 
