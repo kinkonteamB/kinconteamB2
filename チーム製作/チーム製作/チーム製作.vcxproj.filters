@@ -30,17 +30,17 @@
     <Filter Include="ソース ファイル\Brock">
       <UniqueIdentifier>{03f7e19e-7d29-415b-baa2-d439790b75bf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Menu">
-      <UniqueIdentifier>{a02f87af-c45c-41f0-92a1-85239dbbc9bd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Rankng">
       <UniqueIdentifier>{6627b1ec-8eb9-4bcf-b523-562fcfa1dcb9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Clear">
+    <Filter Include="ソース ファイル\GameOver">
+      <UniqueIdentifier>{a16fccb6-1c19-4ed1-ba37-c5ca1984f85e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameClear">
       <UniqueIdentifier>{680a266a-34e3-4130-a665-e06648ce7906}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Over">
-      <UniqueIdentifier>{a16fccb6-1c19-4ed1-ba37-c5ca1984f85e}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\GameTitle\Menu">
+      <UniqueIdentifier>{a02f87af-c45c-41f0-92a1-85239dbbc9bd}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\arrow">
       <UniqueIdentifier>{ee212e0f-8036-49da-9535-5f155d7e9f13}</UniqueIdentifier>
@@ -111,22 +111,22 @@
       <Filter>ソース ファイル\Brock</Filter>
     </ClCompile>
     <ClCompile Include="ObjClear.cpp">
-      <Filter>ソース ファイル\Clear</Filter>
+      <Filter>ソース ファイル\GameClear</Filter>
     </ClCompile>
     <ClCompile Include="SceneClear.cpp">
-      <Filter>ソース ファイル\Clear</Filter>
+      <Filter>ソース ファイル\GameClear</Filter>
     </ClCompile>
     <ClCompile Include="ObjMenu.cpp">
-      <Filter>ソース ファイル\Menu</Filter>
+      <Filter>ソース ファイル\GameTitle\Menu</Filter>
     </ClCompile>
     <ClCompile Include="SceneMenu.cpp">
-      <Filter>ソース ファイル\Menu</Filter>
+      <Filter>ソース ファイル\GameTitle\Menu</Filter>
     </ClCompile>
     <ClCompile Include="SceneOver.cpp">
-      <Filter>ソース ファイル\Over</Filter>
+      <Filter>ソース ファイル\GameOver</Filter>
     </ClCompile>
     <ClCompile Include="ObjOver.cpp">
-      <Filter>ソース ファイル\Over</Filter>
+      <Filter>ソース ファイル\GameOver</Filter>
     </ClCompile>
     <ClCompile Include="ObjRanking.cpp">
       <Filter>ソース ファイル\Rankng</Filter>
@@ -134,8 +134,8 @@
     <ClCompile Include="SceneRanking.cpp">
       <Filter>ソース ファイル\Rankng</Filter>
     </ClCompile>
-    <ClCompile Include="CObjArrow.cpp">
-      <Filter>ソース ファイル\arrow</Filter>
+    <ClCompile Include="Objgoalblock.cpp">
+      <Filter>ソース ファイル\Brock</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -206,22 +206,22 @@
       <Filter>ソース ファイル\Brock</Filter>
     </ClInclude>
     <ClInclude Include="ObjClear.h">
-      <Filter>ソース ファイル\Clear</Filter>
+      <Filter>ソース ファイル\GameClear</Filter>
     </ClInclude>
     <ClInclude Include="SceneClear.h">
-      <Filter>ソース ファイル\Clear</Filter>
+      <Filter>ソース ファイル\GameClear</Filter>
     </ClInclude>
     <ClInclude Include="SceneMenu.h">
-      <Filter>ソース ファイル\Menu</Filter>
+      <Filter>ソース ファイル\GameTitle\Menu</Filter>
     </ClInclude>
     <ClInclude Include="ObjMenu.h">
-      <Filter>ソース ファイル\Menu</Filter>
+      <Filter>ソース ファイル\GameTitle\Menu</Filter>
     </ClInclude>
     <ClInclude Include="SceneOver.h">
-      <Filter>ソース ファイル\Over</Filter>
+      <Filter>ソース ファイル\GameOver</Filter>
     </ClInclude>
     <ClInclude Include="ObjOver.h">
-      <Filter>ソース ファイル\Over</Filter>
+      <Filter>ソース ファイル\GameOver</Filter>
     </ClInclude>
     <ClInclude Include="ObjRanking.h">
       <Filter>ソース ファイル\Rankng</Filter>
@@ -229,8 +229,8 @@
     <ClInclude Include="SceneRanking.h">
       <Filter>ソース ファイル\Rankng</Filter>
     </ClInclude>
-    <ClInclude Include="CObjArrow.h">
-      <Filter>ソース ファイル\arrow</Filter>
+    <ClInclude Include="Objgoalblock.h">
+      <Filter>ソース ファイル\Brock</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

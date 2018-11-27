@@ -40,6 +40,16 @@ void CSceneClear::InitScene()
 
 	CObjClear* op = new CObjClear();
 	Objs::InsertObj(op, OBJ_CLEAR, 1);
+
+	//音楽読み込み
+	Audio::LoadAudio(0, L"BGMClear.wav", BACK_MUSIC);
+
+	//ボリュームを1.0に戻す
+	float v = Audio::VolumeMaster(0);
+	v = Audio::VolumeMaster(1.0 - v);
+
+	//音楽スタート
+	Audio::Start(0);
 }
 //実行中メソッド
 void CSceneClear::Scene()

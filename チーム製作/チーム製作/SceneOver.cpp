@@ -7,6 +7,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\Audio.h"
 #include "GameL\DrawTexture.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -46,4 +47,14 @@ void CSceneOver::InitScene()
 
 	CObjOver* go3 = new CObjOver();
 	Objs::InsertObj(go3, OBJ_OVER, 1);
+
+	//音楽読み込み
+	Audio::LoadAudio(0, L"BGMGameover.wav", BACK_MUSIC);
+
+	//ボリュームを1.0に戻す
+	float v = Audio::VolumeMaster(0);
+	v = Audio::VolumeMaster((1.0 - v));
+
+	//音楽スタート
+	Audio::Start(0);
 }

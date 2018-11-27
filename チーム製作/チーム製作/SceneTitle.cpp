@@ -7,6 +7,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\Audio.h"
 #include"GameL\DrawTexture.h"
+#include"GameL\Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -46,6 +47,13 @@ void CSceneTitle::InitScene()
 
 	CObjTitle* o = new CObjTitle();
 	Objs::InsertObj(o, OBJ_TITLE, 1);
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"title2.wav", SOUND_TYPE::BACK_MUSIC);
+
+	//バックミュージックスタート
+	float Volume = Audio::VolumeMaster(-0.8f);
+	Audio::Start(0);    //音楽スタート
 }
 
 //ゲームメイン実行中メソッド

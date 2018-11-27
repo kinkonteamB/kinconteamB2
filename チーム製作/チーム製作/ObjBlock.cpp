@@ -23,6 +23,11 @@ void CObjBlock::Init()
 	m_scroll = 0.0f;
 	m_scroll_map = 0.0f;
 	float m_x1 = 0.0f;
+
+	m_ani_time = 0;
+	m_ani_frame = 0;
+
+	m_ani_max_time = 15;
 }
 
 
@@ -33,13 +38,12 @@ void CObjBlock::Action()
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 	float hx = hero->GetX();
 	float hy = hero->GetY();
-
 	////後方スクロールライン
 	if (hx < 80)
 	{
 		hero->SetX(80);           //主人公はラインを超えないようにする
 		m_scroll -= hero->GetVX(); //主人公が本来動くべき分の値をm_scrollに加える
-	
+
 	}
 
 	//前方スクロールライン
@@ -50,7 +54,22 @@ void CObjBlock::Action()
 
 	}
 
+
+	for (int i = 0; i < 19; i++)
+	{
+		for (int j = 0; j < 100; j++)
+		{
+
+			if (m_map[i][j] == 5)
+			{
+				CObjgoalblock* ends = new CObjgoalblock(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(ends, OBJ_GOAL_BLOCK, 11);
+				m_map[i][j] = 0;
+			}
+		}
+	}
 }
+
 //ドロー
 void CObjBlock::Draw()
 {
@@ -70,19 +89,17 @@ void CObjBlock::Draw()
 			//切り取り位置の設定
 			src.m_top = 0.0f;
 			src.m_left = 0.0f;
-			src.m_right = 32.0f;
-			src.m_bottom = 32.0f;
+			src.m_right = ALL_BLOCK_SIZE;
+			src.m_bottom = ALL_BLOCK_SIZE;
 
 			//ブロック画像表示
 			if (m_map[i][j] == 1)
 			{
 				//表示位置の設定
-				dst.m_top    = i*32.0f;
-				dst.m_left   = j*32.0f + m_scroll;
-				dst.m_right  = dst.m_left + 32.0f;
-				dst.m_bottom =  dst.m_top + 32.0f;
-
-				Draw::Draw(2, &src, &dst, c,0.0f);
+				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
+				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(2, &src, &dst, c, 0.0f);
 			}
@@ -90,16 +107,18 @@ void CObjBlock::Draw()
 			else if (m_map[i][j] == 2)
 			{
 				//表示位置の設定
-				dst.m_top = i*32.0f;
-				dst.m_left = j*32.0f + m_scroll;
-				dst.m_right = dst.m_left + 32.0f;
-				dst.m_bottom = dst.m_top + 32.0f;
+				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
+				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 			}
+	
 		}
 	}
 }
+
 //BlockHit関数
 //引数１    float * x           :判定を行うobjectのX位置
 //引数２    float * y           :判定を行うobjectのY位置
@@ -165,7 +184,7 @@ void CObjBlock::BlockHit(
 
 
 					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 76.5f)
+					if (len < 80.0f)
 					{
 						//角度で上下左右を判定
 						if ((r < 76&& r>0) || r > 315)
@@ -176,7 +195,7 @@ void CObjBlock::BlockHit(
 							*vx = 0.0f;//-VX*反発係数
 
 						}
-						if (r > 81.7 && r < 130)
+						if (r > 75 && r < 128)
 						{
 							//上
 							*down = true;//主人公の下の部分が衝突している
@@ -187,7 +206,7 @@ void CObjBlock::BlockHit(
 								Scene::SetScene(new CSceneOver());
 							}*/
 						}
-						if (r > 135 && r < 225)
+						if (r > 128 && r < 225)
 						{
 							//左
 							*left = true;//主人公の右の部分が衝突している

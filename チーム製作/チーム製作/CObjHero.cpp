@@ -35,8 +35,7 @@ void C0bjHero::Init()
 	m_speed_power = 0.5f;//通常速度
 	m_ani_max_time = 4;  //アニメーション間隔幅
 
-	
-
+	m_time = 31;
 
 //当たり判定用のHitBoxを作成
 						
@@ -70,14 +69,22 @@ void C0bjHero::Action()
 		m_speed_power = 0.6f;
 		m_ani_max_time = 2;
 	}
+	//ジャンプ
 	if (Input::GetVKey('W') == true)
 	{
-		if (m_hit_down == true)
+		if (m_hit_down == true &&m_time==0 )
 		{
-			m_vy = -9;
+			m_vy = -8;
 			g_py += m_vy;
 		}
 	}
+	if (m_time > 0) {
+		m_time--;
+		if (m_time <= 0) {
+			m_time = 0;
+		}
+	}
+
 	//しゃがむ
 	if (Input::GetVKey('S') == true)
 	{
