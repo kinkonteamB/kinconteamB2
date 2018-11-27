@@ -20,7 +20,6 @@ void CObjRanking::Init()
 	m_key_flag = false;
 	choose = 1;
 	m_time = 5;
-
 	//得点が高い順に並び替えをする
 	RankingSort(((UserData*)Save::GetData())->m_ranking);
 }
@@ -53,6 +52,8 @@ void CObjRanking::Action()
 		{
 			if (m_key_flag == true)
 			{
+				//得点の初期化
+				((UserData*)Save::GetData())->minute = 0;
 				Scene::SetScene(new CSceneTitle());
 				m_key_flag = false;
 			}
@@ -145,20 +146,22 @@ void CObjRanking::Draw()
 	else
 		Font::StrDraw(L"ClickReset", CLICK_RESET_POS_X, CLICK_RESET_POS_Y, CLICK_RESET_FONT_SIZE, c);
 }
-////ランキングソートメゾット
-////引数1　int[11] :ランキング用配列
-////高順でバブルソートを行う
+//ランキングソートメゾット
+//引数1　int[16] :ランキング用配列
+//高順でバブルソートを行う
 void CObjRanking::RankingSort(int rank[10])
 {
-	//値交換用変数+
+	//値交換用変数
 	int w;
+	int s;
 
 	//バブルソート
 	for (int i = 0; i < 9; i++)
 	{
 		for (int j = i + 1; j < 10; j++)
 		{
-			if (rank[i] < rank[j])
+
+			if (rank[j] < rank[i])
 			{
 				//値の交換
 				w = rank[i];
@@ -168,4 +171,3 @@ void CObjRanking::RankingSort(int rank[10])
 		}
 	}
 }
-

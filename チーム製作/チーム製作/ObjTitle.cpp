@@ -46,8 +46,8 @@ void CObjTitle::Init()
 	if (init_point = true)
 	{
 		Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
-
 	}
+
 }
 
 //アクション
