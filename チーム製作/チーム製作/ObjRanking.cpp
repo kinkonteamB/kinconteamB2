@@ -23,8 +23,6 @@ void CObjRanking::Init()
 
 	//得点が高い順に並び替えをする
 	RankingSort(((UserData*)Save::GetData())->m_ranking);
-
-
 }
 
 //アクション
@@ -147,7 +145,6 @@ void CObjRanking::Draw()
 	else
 		Font::StrDraw(L"ClickReset", CLICK_RESET_POS_X, CLICK_RESET_POS_Y, CLICK_RESET_FONT_SIZE, c);
 }
-//
 ////ランキングソートメゾット
 ////引数1　int[11] :ランキング用配列
 ////高順でバブルソートを行う

@@ -43,10 +43,6 @@ void C0bjTime::Action()
 			timekeeper[i] = m_time;
 		}
 	}
-
-
-
-
 }
 
 //ƒhƒ[

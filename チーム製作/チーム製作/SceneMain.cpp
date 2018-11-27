@@ -109,9 +109,9 @@ void CSceneMain::InitScene()
 	//CObjArrow* obja = new CObjArrow();
 	//Objs::InsertObj(obja, OBJ_ARROW, 5);
 
-	//弓矢オブジェクト作成
-	CObjArrow* objar = new CObjArrow();
-	Objs::InsertObj(objar, OBJ_ARROW, 12);
+	////弓矢オブジェクト作成
+	//CObjArrow* objar = new CObjArrow();
+	//Objs::InsertObj(objar, OBJ_ARROW, 12);
 
 }
 

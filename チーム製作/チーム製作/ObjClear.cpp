@@ -16,35 +16,6 @@ void CObjClear::Init()
 {
 	choose = 0;
 
-
-	//ゲーム実行して一回のみ
-	static bool init_point = false;
-	if (init_point == false)
-	{
-	    //ランキング初期化
-		for (int i = 0; i < 10; i++)
-		{
-			((UserData*)Save::GetData())->m_ranking[i] = 0;
-		}
-
-		//ロード
-		Save::Open();//同フォルダ「UserData」からデータ取得
-
-		//点数を0にする
-		((UserData*)Save::GetData())->minute = 0;
-
-		init_point = true;
-	}
-	//得点情報ランキング最下位（描画圏外）に登録
-	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
-
-	//ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
-	if (init_point = true)
-	{
-		Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
-
-	}
-
 }
 
 //アクション
@@ -127,3 +98,27 @@ void CObjClear::Draw()
 	else
 		Font::StrDraw(L"いいえ", GAME_NO_X, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
 }
+////ランキングソートメゾット
+////引数1　int[11] :ランキング用配列
+////高順でバブルソートを行う
+void CObjClear::RankingSort(int rank[10])
+{
+	//値交換用変数+
+	int w;
+
+	//バブルソート
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = i + 1; j < 10; j++)
+		{
+			if (rank[i] < rank[j])
+			{
+				//値の交換
+				w = rank[i];
+				rank[i] = rank[j];
+				rank[j] = w;
+			}
+		}
+	}
+}
+
