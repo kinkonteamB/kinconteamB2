@@ -30,28 +30,26 @@ void CObjRanking::Init()
 		{
 			((UserData*)Save::GetData())->m_ranking[i] = 0;
 		}
-	}
-
-	//	//ロード
-	//	Save::Open();//同フォルダ「UserData」からデータ取得
+		//ロード
+		Save::Open();//同フォルダ「UserData」からデータ取得
 
 		//点数を0にする
-//		((UserData*)Save::GetData())->m_time = 0;
+		((UserData*)Save::GetData())->minute = 0;
 
-	//	init_point = true;
-	//}
-	////得点情報ランキング最下位（描画圏外）に登録
-	//((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->m_point;
+		init_point = true;
+	}
+	//得点情報ランキング最下位（描画圏外）に登録
+	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
 
-	////得点が高い順に並び替えをする
-	//RankingSort(((UserData*)Save::GetData())->m_ranking);
+	//得点が高い順に並び替えをする
+	RankingSort(((UserData*)Save::GetData())->m_ranking);
 
-	////ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
-	//if (init_point = true)
-	//{
-	//	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
+	//ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
+	if (init_point = true)
+	{
+		Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
 
-	//}
+	}
 
 }
 

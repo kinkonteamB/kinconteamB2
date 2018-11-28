@@ -51,8 +51,8 @@ void C0bjTime::Draw()
 	int minute;    //•ª
 	int second;    //•b
 
-	second = (m_time / 60) % 60; //•b
-	minute = (m_time / 60) / 60; //•b
+	// second = (m_time / 60) % 60; //•b
+	minute = (m_time / 60) % 60; //•b
 
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -60,8 +60,8 @@ void C0bjTime::Draw()
 
 	//•ª:•b‚Ì’l‚ğ•¶š—ñ”ä
 	
-	swprintf_s(str, L"%d•ª%d•b", minute, second);//•b‚Ì1Œ…–Ú‚É0‚ğ—pˆÓ
-	swprintf_s(str, L"%d•ª%d•b", ((UserData*)Save::GetData())->minute= minute, second = second);
+	swprintf_s(str, L"%d•b", minute);//•b‚Ì1Œ…–Ú‚É0‚ğ—pˆÓ
+	swprintf_s(str, L"%d•b", ((UserData*)Save::GetData())->minute= minute);
 	Font::StrDraw(str, 10, 10, 20, c);
 }
 
