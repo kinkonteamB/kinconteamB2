@@ -16,6 +16,7 @@ void CObjClear::Init()
 {
 	choose = 0;
 
+
 }
 
 //ƒAƒNƒVƒ‡ƒ“
