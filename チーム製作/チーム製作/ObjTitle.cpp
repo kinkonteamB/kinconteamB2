@@ -36,18 +36,10 @@ void CObjTitle::Init()
 
 		//点数を0にする
 		((UserData*)Save::GetData())->minute = 0;
-
 		init_point = true;
 	}
-	//得点情報ランキング最下位（描画圏外）に登録
-	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
-
-	//ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
-	if (init_point = true)
-	{
-		Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
-	}
-
+	//得点の初期化
+	((UserData*)Save::GetData())->minute = 0;
 }
 
 //アクション
