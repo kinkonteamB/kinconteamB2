@@ -16,6 +16,7 @@ void C0bjTime::Init()
 {
 	m_time = 0;
 	m_flag_time = false;
+	Save::Seve();//UserDataの情報フォルダ「UserData」を作成
 }
 
 //アクション
@@ -47,7 +48,8 @@ void C0bjTime::Draw()
 {
 	//m_timeから秒分お求める
 
-	 int minute= (m_time / 60) % 999; //秒
+	int minute;
+	minute= (m_time / 60) % 999; //秒
 
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 

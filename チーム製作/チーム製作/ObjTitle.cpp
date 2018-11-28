@@ -20,26 +20,6 @@ void CObjTitle::Init()
 	m_key_flag = true;
 	choose = 0;
 	m_time = 10;
-
-	//ゲーム実行して一回のみ
-	static bool init_point = false;
-	if (init_point == false)
-	{
-		//ランキング初期化
-		for (int i = 0; i < 10; i++)
-		{
-			((UserData*)Save::GetData())->m_ranking[i] = 0;
-		}
-
-		//ロード
-		Save::Open();//同フォルダ「UserData」からデータ取得
-
-		//点数を0にする
-		((UserData*)Save::GetData())->minute = 0;
-		init_point = true;
-	}
-	//得点の初期化
-	((UserData*)Save::GetData())->minute = 0;
 }
 
 //アクション

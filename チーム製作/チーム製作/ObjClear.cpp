@@ -14,7 +14,9 @@ using namespace GameL;
 //イニシャライズ
 void CObjClear::Init()
 {
-	choose = 0;
+	choose = 0;	
+
+
 
 }
 
