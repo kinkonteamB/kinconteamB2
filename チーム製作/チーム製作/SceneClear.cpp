@@ -38,9 +38,6 @@ void CSceneClear::InitScene()
 	CObjClear* nk= new CObjClear();
 	Objs::InsertObj(nk, OBJ_CLEAR, 4);
 
-	CObjClear* op = new CObjClear();
-	Objs::InsertObj(op, OBJ_CLEAR, 1);
-
 	//âπäyì«Ç›çûÇ›
 	Audio::LoadAudio(0, L"BGMClear.wav", BACK_MUSIC);
 
