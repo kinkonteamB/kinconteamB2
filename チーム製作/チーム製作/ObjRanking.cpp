@@ -21,35 +21,9 @@ void CObjRanking::Init()
 	choose = 1;
 	m_time = 5;
 
-	//ゲーム実行して一回のみ
-	static bool init_point = false;
-	if (init_point == false)
-	{
-		//	//ランキング初期化
-		for (int i = 0; i < 10; i++)
-		{
-			((UserData*)Save::GetData())->m_ranking[i] = 0;
-		}
-		//ロード
-		Save::Open();//同フォルダ「UserData」からデータ取得
-
-		//点数を0にする
-		((UserData*)Save::GetData())->minute = 0;
-
-		init_point = true;
-	}
-	//得点情報ランキング最下位（描画圏外）に登録
-	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
 
 	//得点が高い順に並び替えをする
 	RankingSort(((UserData*)Save::GetData())->m_ranking);
-
-	//ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
-	if (init_point = true)
-	{
-		Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
-
-	}
 
 }
 
@@ -81,8 +55,6 @@ void CObjRanking::Action()
 		{
 			if (m_key_flag == true)
 			{
-				//得点の初期化
-				((UserData*)Save::GetData())->minute = 0;
 				Scene::SetScene(new CSceneTitle());
 				m_key_flag = false;
 			}
@@ -132,7 +104,7 @@ void CObjRanking::Draw()
 	for (int i = 0; i <RANKING_SCORE_MAX; i++)
 	{
 		wchar_t str[STR_MAX];
-		swprintf_s(str, L"%d位%d秒", i + SCORE_INIT,((UserData*)Save::GetData())->m_ranking[i]);
+		swprintf_s(str, L"%d位 %d秒", i + SCORE_INIT,((UserData*)Save::GetData())->m_ranking[i]);
 		Font::StrDraw(str, SCORE_POS_X, SCORE_POS_Y + SCORE_INTERVAL*i+1, SCORE_FONT_SIZE, c);
 	}
 
