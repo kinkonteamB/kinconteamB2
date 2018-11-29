@@ -201,7 +201,7 @@ void CObjBlock::BlockHit(
 							*down = true;//主人公の下の部分が衝突している
 							*y = by - 64.0f;//ブロックの位置-主人公の幅
 							*vy = 0.0f;
-					/*		if (m_map[i][j] == 2)
+							/*if (m_map[i][j] == 2)
 							{
 								Scene::SetScene(new CSceneOver());
 							}*/

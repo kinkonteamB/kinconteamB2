@@ -137,6 +137,9 @@
     <ClCompile Include="Objgoalblock.cpp">
       <Filter>ソース ファイル\Brock</Filter>
     </ClCompile>
+    <ClCompile Include="CObjArrow.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjHero.h">
@@ -232,6 +235,7 @@
     <ClInclude Include="Objgoalblock.h">
       <Filter>ソース ファイル\Brock</Filter>
     </ClInclude>
+    <ClInclude Include="CObjArrow.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl">

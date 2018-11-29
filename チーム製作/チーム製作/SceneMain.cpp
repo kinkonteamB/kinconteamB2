@@ -42,7 +42,7 @@ void CSceneMain::InitScene()
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
 	int size;              //ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"map9.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"map2-1.csv", &size);//外部データ読み込み
 
 	int map[19][100];
 	int count = 1;
@@ -66,10 +66,10 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"1133010303.png", 0, TEX_SIZE_576);
 
 	//背景画像読み込み
-	Draw::LoadImage(L"map.jpg", 3, TEX_SIZE_1920);
+	Draw::LoadImage(L"map2haikei.png", 3, TEX_SIZE_1920);
 
 	//ブロック画像読み込み
-	Draw::LoadImage(L"brock3.jpg", 2, TEX_SIZE_768);
+	Draw::LoadImage(L"brock5.png", 2, TEX_SIZE_768);
 
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
@@ -110,8 +110,8 @@ void CSceneMain::InitScene()
 	//Objs::InsertObj(obja, OBJ_ARROW, 5);
 
 	//弓矢オブジェクト作成
-	CObjArrow* objar = new CObjArrow();
-	Objs::InsertObj(objar, OBJ_ARROW, 12);
+	//CObjArrow* objar = new CObjArrow();
+	//Objs::InsertObj(objar, OBJ_ARROW, 12);
 
 }
 
