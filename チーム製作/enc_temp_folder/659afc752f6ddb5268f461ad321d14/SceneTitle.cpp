@@ -52,7 +52,7 @@ void CSceneTitle::InitScene()
 	Audio::LoadAudio(0, L"title2.wav", SOUND_TYPE::BACK_MUSIC);
 
 	//バックミュージックスタート
-	float Volume = Audio::VolumeMaster(1.8);
+	float Volume = Audio::VolumeMaster(1.8f);
 	Audio::Start(0);    //音楽スタート
 }
 

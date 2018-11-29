@@ -6,6 +6,7 @@
 
 #include"GameHead.h"
 #include"CObjHero.h"
+#include"GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -74,6 +75,9 @@ void C0bjHero::Action()
 	{
 		if (m_hit_down == true &&m_time==0 )
 		{
+			//ジャンプの効果音
+			Audio::Start(1);
+
 			m_vy = -15;
 			g_py += m_vy;
 		}

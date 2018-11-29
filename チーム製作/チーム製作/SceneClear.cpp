@@ -45,8 +45,7 @@ void CSceneClear::InitScene()
 	Audio::LoadAudio(0, L"BGMClear.wav", BACK_MUSIC);
 
 	//ボリュームを1.0に戻す
-	float v = Audio::VolumeMaster(0);
-	v = Audio::VolumeMaster(1.0 - v);
+	float v = Audio::VolumeMaster(1.5);
 
 	//音楽スタート
 	Audio::Start(0);
