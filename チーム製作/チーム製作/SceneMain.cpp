@@ -42,7 +42,7 @@ void CSceneMain::InitScene()
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
 	int size;              //ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"map9.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"map1.csv", &size);//外部データ読み込み
 
 	int map[19][100];
 	int count = 1;
@@ -74,6 +74,9 @@ void CSceneMain::InitScene()
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
 
+	//矢読み込み
+	Draw::LoadImage(L"矢2.png", 5, TEX_SIZE_768);
+
 	//ゴール
 	Draw::LoadImage(L"efe.png", 5, TEX_SIZE_768);
 
@@ -104,6 +107,14 @@ void CSceneMain::InitScene()
 
 	//音楽スタート
 	Audio::Start(0);
+	////テスト用矢のオブジェクト作成
+	//CObjArrow* obja = new CObjArrow();
+	//Objs::InsertObj(obja, OBJ_ARROW, 5);
+
+	////弓矢オブジェクト作成
+	//CObjArrow* objar = new CObjArrow();
+	//Objs::InsertObj(objar, OBJ_ARROW, 12);
+
 }
 
 

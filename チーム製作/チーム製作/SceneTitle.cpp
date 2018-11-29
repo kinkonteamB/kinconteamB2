@@ -15,7 +15,7 @@ using namespace GameL;
 #include "SceneMain.h"
 #include "GameHead.h"
 #include "SceneTitle.h"
-#include"ObjTitle.h"
+#include "ObjTitle.h"
 
 //コンストラクタ
 CSceneTitle::CSceneTitle()
@@ -38,15 +38,6 @@ void CSceneTitle::InitScene()
 	//背景オブジェクト作成
 	CObjTitle* back = new CObjTitle();
 	Objs::InsertObj(back, OBJ_TITLE, 3);
-
-	CObjTitle* p = new CObjTitle();
-	Objs::InsertObj(p, OBJ_TITLE, 1);
-
-	CObjTitle* n = new CObjTitle();
-	Objs::InsertObj(n, OBJ_TITLE, 1);
-
-	CObjTitle* o = new CObjTitle();
-	Objs::InsertObj(o, OBJ_TITLE, 1);
 
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"title2.wav", SOUND_TYPE::BACK_MUSIC);

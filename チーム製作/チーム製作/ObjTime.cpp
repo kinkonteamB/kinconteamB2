@@ -8,8 +8,6 @@
 #include"GameHead.h"
 #include"ObjTime.h"
 
-
-
 //Žg—p‚·‚éƒl[ƒ€ƒXƒy[ƒX
 using namespace GameL;
 
@@ -23,6 +21,8 @@ void C0bjTime::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void C0bjTime::Action()
 {
+	Save::Seve();//UserData‚Ìî•ñƒtƒHƒ‹ƒ_uUserDatav‚ðì¬‚·‚é;
+
 	//ŽålŒö‚ÌˆÊ’u‚ðŽæ“¾
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 
@@ -47,21 +47,15 @@ void C0bjTime::Action()
 //ƒhƒ[
 void C0bjTime::Draw()
 {
-	//m_time‚©‚ç•b•ª‚¨‹‚ß‚é
-	int minute;    //•ª
-	int second;    //•b
+	//m_time‚©‚ç•b‚ð‹‚ß‚é
 
-	second = (m_time / 60) % 60; //•b
-	minute = (m_time / 60) / 60; //•b
+	((UserData*)Save::GetData())->minute = (m_time / 60) % 999; //•b
 
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	wchar_t str[128];
-
 	//•ª:•b‚Ì’l‚ð•¶Žš—ñ”ä
-	
-	swprintf_s(str, L"%d•ª%d•b", minute, second);//•b‚Ì1Œ…–Ú‚É0‚ð—pˆÓ
-	swprintf_s(str, L"%d•ª%d•b", ((UserData*)Save::GetData())->minute= minute, second = second);
+	swprintf_s(str, L"%d•b", ((UserData*)Save::GetData())->minute);//•b‚Ì1Œ…–Ú‚É0‚ð—pˆÓ
 	Font::StrDraw(str, 10, 10, 20, c);
 }
 

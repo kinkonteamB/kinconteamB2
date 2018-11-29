@@ -42,12 +42,6 @@ void CSceneOver::InitScene()
 	CObjOver* go1 = new CObjOver();
 	Objs::InsertObj(go1, OBJ_OVER, 4);
 
-	CObjOver* go2 = new CObjOver();
-	Objs::InsertObj(go2, OBJ_OVER, 1);
-
-	CObjOver* go3 = new CObjOver();
-	Objs::InsertObj(go3, OBJ_OVER, 1);
-
 	//âπäyì«Ç›çûÇ›
 	Audio::LoadAudio(0, L"BGMGameover.wav", BACK_MUSIC);
 	//É{ÉäÉÖÅ[ÉÄÇ1.0Ç…ñﬂÇ∑
