@@ -102,7 +102,7 @@ void CObjRanking::Draw()
 	for (int i = 0; i <RANKING_SCORE_MAX; i++)
 	{
 		wchar_t str[STR_MAX];
-		swprintf_s(str, L"%d位%d秒", i + SCORE_INIT,((UserData*)Save::GetData())->m_ranking[i]);
+		swprintf_s(str, L"%d位  %d秒", i + SCORE_INIT,((UserData*)Save::GetData())->m_ranking[i]);
 		Font::StrDraw(str, SCORE_POS_X, SCORE_POS_Y + SCORE_INTERVAL*i+1, SCORE_FONT_SIZE, c);
 	}
 
@@ -145,27 +145,28 @@ void CObjRanking::Draw()
 	else
 		Font::StrDraw(L"ClickReset", CLICK_RESET_POS_X, CLICK_RESET_POS_Y, CLICK_RESET_FONT_SIZE, c);
 }
-////ランキングソートメゾット
-////引数1　int[11] :ランキング用配列
-////高順でバブルソートを行う
+//ランキングソートメゾット
+//引数1　int[10] :ランキング用配列
+//高順でバブルソートを行う
 void CObjRanking::RankingSort(int rank[10])
 {
-	//値交換用変数+
+	//値交換用変数
 	int w;
+	int s;
 
 	//バブルソート
 	for (int i = 0; i < 9; i++)
 	{
 		for (int j = i + 1; j < 10; j++)
 		{
-			if (rank[i] < rank[j])
+			if (rank[j] >rank[i++])
 			{
 				//値の交換
 				w = rank[i];
 				rank[i] = rank[j];
 				rank[j] = w;
+
 			}
 		}
 	}
 }
-

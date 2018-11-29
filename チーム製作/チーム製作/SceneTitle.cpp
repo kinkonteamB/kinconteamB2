@@ -39,15 +39,6 @@ void CSceneTitle::InitScene()
 	CObjTitle* back = new CObjTitle();
 	Objs::InsertObj(back, OBJ_TITLE, 3);
 
-	CObjTitle* p = new CObjTitle();
-	Objs::InsertObj(p, OBJ_TITLE, 1);
-
-	CObjTitle* n = new CObjTitle();
-	Objs::InsertObj(n, OBJ_TITLE, 1);
-
-	CObjTitle* o = new CObjTitle();
-	Objs::InsertObj(o, OBJ_TITLE, 1);
-
 	//âπäyèÓïÒÇÃì«Ç›çûÇ›
 	Audio::LoadAudio(0, L"title2.wav", SOUND_TYPE::BACK_MUSIC);
 

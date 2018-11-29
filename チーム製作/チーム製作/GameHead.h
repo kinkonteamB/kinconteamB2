@@ -46,7 +46,6 @@ struct UserData
 	int mSeveData;	//サンプルセーブデータ
 	int minute;
 	int m_ranking[10];  //ランキング情報
-	
 };
 //------------------------------------------------
 

@@ -35,11 +35,6 @@ void CSceneMenu::InitScene()
 	CObjMenu* om1 = new CObjMenu();
 	Objs::InsertObj(om1, OBJ_MENU, 1);
 
-	CObjMenu* om2 = new CObjMenu();
-	Objs::InsertObj(om2, OBJ_MENU, 1);
-
-	CObjMenu* om3 = new CObjMenu();
-	Objs::InsertObj(om3, OBJ_MENU, 1);
 }
 //実行中メソッド
 void CSceneMenu::Scene()
