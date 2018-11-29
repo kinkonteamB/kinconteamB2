@@ -50,9 +50,9 @@ void CObjClear::Action()
 	}
 	if (choose == 1)
 	{
-		if (Input::GetVKey(VK_BACK) == true)
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
-			Scene::SetScene(new CSceneTitle());
+			Scene::SetScene(new CSceneRanking());
 			m_key_flag = false;
 		}
 	}
