@@ -159,7 +159,7 @@ void CObjRanking::RankingSort(int rank[10])
 	{
 		for (int j = i + 1; j < 10; j++)
 		{
-			if (rank[j] >rank[i++])
+			if (rank[j] > rank[i])
 			{
 				//’l‚ÌŒğŠ·
 				w = rank[i];

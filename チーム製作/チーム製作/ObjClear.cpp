@@ -15,8 +15,6 @@ using namespace GameL;
 void CObjClear::Init()
 {
 	choose = 0;
-
-
 }
 
 //アクション
@@ -52,9 +50,9 @@ void CObjClear::Action()
 	}
 	if (choose == 1)
 	{
-		if (Input::GetVKey(VK_RETURN) == true)
+		if (Input::GetVKey(VK_BACK) == true)
 		{
-			Scene::SetScene(new CSceneRanking());
+			Scene::SetScene(new CSceneTitle());
 			m_key_flag = false;
 		}
 	}
@@ -69,7 +67,7 @@ void CObjClear::Draw()
 	RECT_F src;//描写元切り取り位置
 	RECT_F dst;//描写先表示位置
 
-			   //切り取り位置の設定
+	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 256.0f;

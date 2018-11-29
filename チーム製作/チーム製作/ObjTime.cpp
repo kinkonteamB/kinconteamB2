@@ -21,8 +21,7 @@ void C0bjTime::Init()
 //アクション
 void C0bjTime::Action()
 {
-	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
-
+	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する;
 	//主人公の位置を取得
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 
@@ -47,7 +46,7 @@ void C0bjTime::Action()
 //ドロー
 void C0bjTime::Draw()
 {
-	//m_timeから秒分お求める
+	//m_timeから秒を求める
 
 	((UserData*)Save::GetData())->minute = (m_time / 60) % 999; //秒
 

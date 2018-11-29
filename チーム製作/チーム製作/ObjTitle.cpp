@@ -20,19 +20,29 @@ void CObjTitle::Init()
 	m_key_flag = true;
 	choose = 0;
 	m_time = 10;
-
 	//ゲーム実行して一回のみ
 	static bool init_point = false;
 	if (init_point == false)
 	{
+		//ランキング初期化
+		for (int i = 0; i < 16; i++)
+		{
+			((UserData*)Save::GetData())->m_ranking[i] = 0;
+		}
+
 		//ロード
 		Save::Open();//同フォルダ「UserData」からデータ取得
 
-		//点数を0にする
+					 //点数を0にする
 		((UserData*)Save::GetData())->minute = 0;
 
 		init_point = true;
 	}
+
+
+	//得点の初期化
+	((UserData*)Save::GetData())->minute = 0;
+
 	//得点情報ランキング最下位（描画圏外）に登録
 	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
 }
@@ -40,6 +50,7 @@ void CObjTitle::Init()
 //アクション
 void CObjTitle::Action()
 {
+
 	if (Input::GetVKey(VK_UP) == true && choose > 0 && m_time == 0)
 	{
 		--choose;
@@ -94,9 +105,6 @@ void CObjTitle::Action()
 			exit(1);
 		}
 	}
-
-	//得点の初期化
-	((UserData*)Save::GetData())->minute = 0;
 }
 
 //ドロー
