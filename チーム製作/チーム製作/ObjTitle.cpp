@@ -27,14 +27,14 @@ void CObjTitle::Init()
 		//ランキング初期化
 		for (int i = 0; i < 10; i++)
 		{
-			((UserData*)Save::GetData())->m_ranking[i] = 999;
+			((UserData*)Save::GetData())->m_ranking[i] = OLL_RANKING;
 		}
 
 		//ロード
 		Save::Open();//同フォルダ「UserData」からデータ取得
 
 		//点数を0にする
-		((UserData*)Save::GetData())->minute = 999;
+		((UserData*)Save::GetData())->minute = OLL_RANKING;
 
 		init_point = true;
 	}
@@ -70,7 +70,7 @@ void CObjTitle::Action()
 				m_time = 20;
 
 				//得点の初期化
-				((UserData*)Save::GetData())->minute = 999;
+				((UserData*)Save::GetData())->minute = OLL_RANKING;
 			}
 		}
 		else
@@ -110,7 +110,7 @@ void CObjTitle::Action()
 		}
 	}
 	//得点の初期化
-	((UserData*)Save::GetData())->minute = 999;
+	((UserData*)Save::GetData())->minute = OLL_RANKING;
 }
 
 //ドロー

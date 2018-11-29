@@ -1,5 +1,7 @@
 #pragma once
 
+#define OLL_RANKING (999)
+
 //オブジェクトネーム------------------------------
 enum OBJ_NAME
 {

@@ -20,6 +20,8 @@ void CObjRanking::Init()
 	m_key_flag = false;
 	choose = 1;
 	m_time = 5;
+	//“¾“_‚ª‚‚¢‡‚É•À‚Ñ‘Ö‚¦‚ğ‚·‚é
+	RankingSort(((UserData*)Save::GetData())->m_ranking);
 
 }
 
@@ -70,7 +72,7 @@ void CObjRanking::Action()
 				//ƒ‰ƒ“ƒLƒ“ƒO‰Šú‰»
 				for (int i = 0; i < 10; i++)
 				{
-					((UserData*)Save::GetData())->m_ranking[i] = 999;
+					((UserData*)Save::GetData())->m_ranking[i] = OLL_RANKING;
 				}
 				m_key_flag = false;
 			}
@@ -100,7 +102,7 @@ void CObjRanking::Draw()
 	for (int i = 0; i <RANKING_SCORE_MAX; i++)
 	{
 		wchar_t str[STR_MAX];
-		if( ( ( (UserData*)Save::GetData())->m_ranking[i] ) == 999 )
+		if( ( ( (UserData*)Save::GetData())->m_ranking[i] ) == OLL_RANKING)
 		{
 			swprintf_s(str, L"%dˆÊ  0•b", i + SCORE_INIT);
 		}
