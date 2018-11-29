@@ -6,6 +6,7 @@
 
 #include"GameHead.h"
 #include"ObjBlock.h"
+#include"GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -203,8 +204,9 @@ void CObjBlock::BlockHit(
 							*vy = 0.0f;
 					/*		if (m_map[i][j] == 2)
 							{
+								Audio::Start(1);
 								Scene::SetScene(new CSceneOver());
-							}*/
+							}
 						}
 						if (r > 128 && r < 225)
 						{

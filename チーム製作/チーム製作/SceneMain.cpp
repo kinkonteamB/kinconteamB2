@@ -95,13 +95,15 @@ void CSceneMain::InitScene()
 	//タイムオブジェクト作成
 	C0bjTime* objt = new C0bjTime();
 	Objs::InsertObj(objt, OBJ_TIME, 12);
-
 	//音楽読み込み
 	Audio::LoadAudio(0, L"moristage.wav", BACK_MUSIC);
-	Audio::LoadAudio(1, L"choice.wav", EFFECT);
+	//ボリューム1.5
+	float f = Audio::VolumeMaster(1.0);
 
-	//ボリュームを1.5増やす
-	float v = Audio::VolumeMaster(0);
+	Audio::LoadAudio(1, L"jump01.wav", EFFECT);
+
+	//ボリューム1.5
+	float v = Audio::VolumeMaster(1.5);
 
 	//音楽スタート
 	Audio::Start(0);

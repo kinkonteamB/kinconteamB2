@@ -6,6 +6,7 @@
 
 #include"GameHead.h"
 #include"CObjHero.h"
+#include"GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
