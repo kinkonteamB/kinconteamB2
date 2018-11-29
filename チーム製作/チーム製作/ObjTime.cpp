@@ -22,6 +22,7 @@ void C0bjTime::Init()
 void C0bjTime::Action()
 {
 	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する;
+
 	//主人公の位置を取得
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 

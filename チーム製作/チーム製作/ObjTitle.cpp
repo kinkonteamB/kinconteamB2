@@ -24,25 +24,15 @@ void CObjTitle::Init()
 	static bool init_point = false;
 	if (init_point == false)
 	{
-		//ランキング初期化
-		for (int i = 0; i < 16; i++)
-		{
-			((UserData*)Save::GetData())->m_ranking[i] = 0;
-		}
 
 		//ロード
 		Save::Open();//同フォルダ「UserData」からデータ取得
 
-					 //点数を0にする
+		//点数を0にする
 		((UserData*)Save::GetData())->minute = 0;
 
 		init_point = true;
 	}
-
-
-	//得点の初期化
-	((UserData*)Save::GetData())->minute = 0;
-
 	//得点情報ランキング最下位（描画圏外）に登録
 	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
 }
@@ -62,14 +52,9 @@ void CObjTitle::Action()
 		m_time = 10;
 	}
 
-	if (m_time > 0) {
-		m_time--;
-		if (m_time <= 0) {
-			m_time = 0;
-		}
-	}
 	if (choose == 0)
 	{
+		//エンターキーでゲーム
 		if (Input::GetVKey(VK_RETURN) == true)
 		{
 			if (m_key_flag == true)
@@ -77,6 +62,10 @@ void CObjTitle::Action()
 				Scene::SetScene(new CSceneMain());
 				g_px = 64.0f;
 				g_py = 450.0f;
+				m_time = 20;
+
+				//得点の初期化
+				((UserData*)Save::GetData())->minute = 0;
 			}
 		}
 		else
@@ -84,6 +73,15 @@ void CObjTitle::Action()
 			m_key_flag = true;
 		}
 	}
+	//仮キーフラグ
+	if (m_time > 0) {
+		m_time--;
+		if (m_time <= 0) {
+			m_time = 0;
+		}
+	}
+
+	//エンターキーでランキング
 	if (choose == 1)
 	{
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -98,6 +96,7 @@ void CObjTitle::Action()
 			m_key_flag = true;
 		}
 	}
+	//エンターキーで終了
 	if (choose == 2)
 	{
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -105,6 +104,8 @@ void CObjTitle::Action()
 			exit(1);
 		}
 	}
+	//得点の初期化
+	((UserData*)Save::GetData())->minute = 0;
 }
 
 //ドロー
