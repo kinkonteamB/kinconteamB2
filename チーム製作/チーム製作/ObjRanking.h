@@ -72,7 +72,7 @@ private:
 private:
 	bool m_key_flag;//キーフラグ
 	int choose;
-	float m_time;
+	int m_time;
 
 	//ランキングソートメゾット
 	void RankingSort(int rank[10]);
