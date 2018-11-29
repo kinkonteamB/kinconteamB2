@@ -25,12 +25,6 @@ void CObjTitle::Init()
 	static bool init_point = false;
 	if (init_point == false)
 	{
-		//ランキング初期化
-		for (int i = 0; i < 10; i++)
-		{
-			((UserData*)Save::GetData())->m_ranking[i] = 0;
-		}
-
 		//ロード
 		Save::Open();//同フォルダ「UserData」からデータ取得
 
@@ -41,13 +35,6 @@ void CObjTitle::Init()
 	}
 	//得点情報ランキング最下位（描画圏外）に登録
 	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
-
-	//ゲーム実行して一回のみ以外、ランキングを自動的にセーブする
-	if (init_point = true)
-	{
-		Save::Seve();//UserDataの情報フォルダ「UserData」を作成する
-	}
-
 }
 
 //アクション
@@ -107,6 +94,9 @@ void CObjTitle::Action()
 			exit(1);
 		}
 	}
+
+	//得点の初期化
+	((UserData*)Save::GetData())->minute = 0;
 }
 
 //ドロー
