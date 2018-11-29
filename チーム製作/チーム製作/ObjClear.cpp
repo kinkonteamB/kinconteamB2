@@ -20,6 +20,8 @@ void CObjClear::Init()
 //アクション
 void CObjClear::Action()
 {
+	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する;
+
 	if (Input::GetVKey(VK_UP) == true)
 	{
 		choose = 0;
