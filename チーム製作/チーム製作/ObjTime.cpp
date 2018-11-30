@@ -16,7 +16,6 @@ void C0bjTime::Init()
 {
 	m_time = 0;
 	m_flag_time = false;
-	Save::Seve();//UserDataの情報フォルダ「UserData」を作成
 }
 
 //アクション

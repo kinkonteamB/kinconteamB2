@@ -40,6 +40,8 @@ void CObjTitle::Init()
 	}
 	//得点情報ランキング最下位（描画圏外）に登録
 	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
+
+	Save::Seve();//UserDataの情報フォルダ「UserData」を作成
 }
 
 //アクション
