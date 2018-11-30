@@ -29,11 +29,11 @@ void CObjRanking::Init()
 		Save::Open();//同フォルダ「UserData」からデータ取得
 
 		 //点数を0にする
-		((UserData*)Save::GetData())->minute = 0;
+		((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
 		init_point = true;
 	}
 	//得点の初期化
-	((UserData*)Save::GetData())->minute = 0;
+	((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
 
 	//得点が高い順に並び替えをする
 	RankingSort(((UserData*)Save::GetData())->m_ranking);
@@ -69,8 +69,8 @@ void CObjRanking::Action()
 			if (m_key_flag == true)
 			{
 				Scene::SetScene(new CSceneTitle());
-				////得点の初期化
-				//((UserData*)Save::GetData())->minute = 0;
+				//得点の初期化
+				((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
 				m_key_flag = false;
 			}
 		}
@@ -89,7 +89,7 @@ void CObjRanking::Action()
 				//ランキング初期化
 				for (int i = 0; i < 10; i++)
 				{
-					((UserData*)Save::GetData())->m_ranking[i] = 999;
+					((UserData*)Save::GetData())->m_ranking[i] = ALL_RANKING_SIZE;
 				}
 				m_key_flag = false;
 			}
@@ -120,7 +120,7 @@ void CObjRanking::Draw()
 	{
 		wchar_t str[STR_MAX];
 
-		if ((((UserData*)Save::GetData())->m_ranking[i]) == 999)
+		if ((((UserData*)Save::GetData())->m_ranking[i]) ==999)
 		{
 			swprintf_s(str, L"%d位  0秒", i + SCORE_INIT);
 		}
