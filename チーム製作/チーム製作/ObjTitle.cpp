@@ -20,16 +20,21 @@ void CObjTitle::Init()
 	m_key_flag = true;
 	choose = 0;
 	m_time = 10;
+
 	//ゲーム実行して一回のみ
 	static bool init_point = false;
 	if (init_point == false)
 	{
+		for (int i = 0; i < 10; i++)
+		{
+			((UserData*)Save::GetData())->m_ranking[i] = 999;
+		}
 
 		//ロード
 		Save::Open();//同フォルダ「UserData」からデータ取得
 
 		//点数を0にする
-		((UserData*)Save::GetData())->minute = 0;
+		((UserData*)Save::GetData())->minute = 999;
 
 		init_point = true;
 	}
@@ -65,7 +70,7 @@ void CObjTitle::Action()
 				m_time = 20;
 
 				//得点の初期化
-				((UserData*)Save::GetData())->minute = 0;
+				((UserData*)Save::GetData())->minute = 999;
 			}
 		}
 		else
@@ -105,7 +110,7 @@ void CObjTitle::Action()
 		}
 	}
 	//得点の初期化
-	((UserData*)Save::GetData())->minute = 0;
+	((UserData*)Save::GetData())->minute = 999;
 }
 
 //ドロー

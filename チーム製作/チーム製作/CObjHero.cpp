@@ -75,8 +75,11 @@ void C0bjHero::Action()
 	{
 		if (m_hit_down == true &&m_time==0 )
 		{
-			m_vy = -8;
+			m_vy = -9;
 			g_py += m_vy;
+
+			Audio::Start(1);
+
 		}
 	}
 	if (m_time > 0) {

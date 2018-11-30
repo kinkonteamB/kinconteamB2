@@ -70,9 +70,9 @@ void CObjRanking::Action()
 			if (m_key_flag == true)
 			{
 				//ƒ‰ƒ“ƒLƒ“ƒO‰Šú‰»
-				for (int i = 0; i < 11; i++)
+				for (int i = 0; i < 10; i++)
 				{
-					((UserData*)Save::GetData())->m_ranking[i] = 0;
+					((UserData*)Save::GetData())->m_ranking[i] = 999;
 				}
 				m_key_flag = false;
 			}
@@ -102,7 +102,15 @@ void CObjRanking::Draw()
 	for (int i = 0; i <RANKING_SCORE_MAX; i++)
 	{
 		wchar_t str[STR_MAX];
-		swprintf_s(str, L"%dˆÊ  %d•b", i + SCORE_INIT,((UserData*)Save::GetData())->m_ranking[i]);
+
+		if ((((UserData*)Save::GetData())->m_ranking[i]) == 999)
+		{
+			swprintf_s(str, L"%dˆÊ  0•b", i + SCORE_INIT);
+		}
+		else
+		{
+			swprintf_s(str, L"%dˆÊ  %d•b", i + SCORE_INIT, ((UserData*)Save::GetData())->m_ranking[i]);
+		}
 		Font::StrDraw(str, SCORE_POS_X, SCORE_POS_Y + SCORE_INTERVAL*i+1, SCORE_FONT_SIZE, c);
 	}
 
@@ -159,7 +167,7 @@ void CObjRanking::RankingSort(int rank[10])
 	{
 		for (int j = i + 1; j < 10; j++)
 		{
-			if (rank[j] > rank[i])
+			if (rank[j] < rank[i])
 			{
 				//’l‚ÌŒğŠ·
 				w = rank[i];
