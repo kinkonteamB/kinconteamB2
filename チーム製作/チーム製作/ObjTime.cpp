@@ -16,13 +16,12 @@ void C0bjTime::Init()
 {
 	m_time = 0;
 	m_flag_time = false;
+	Save::Seve();//UserDataの情報フォルダ「UserData」を作成
 }
 
 //アクション
 void C0bjTime::Action()
 {
-	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する;
-
 	//主人公の位置を取得
 	C0bjHero*hero = (C0bjHero*)Objs::GetObj(COBJ_HERO);
 
@@ -47,15 +46,16 @@ void C0bjTime::Action()
 //ドロー
 void C0bjTime::Draw()
 {
-	//m_timeから秒を求める
+	//m_timeから秒分お求める
 
-	((UserData*)Save::GetData())->minute = (m_time / 60) % 999; //秒
+	int minute;
+	minute= (m_time / 60) % 999; //秒
 
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	wchar_t str[128];
 	//分:秒の値を文字列比
-	swprintf_s(str, L"%d秒", ((UserData*)Save::GetData())->minute);//秒の1桁目に0を用意
+	swprintf_s(str, L"%d秒", ((UserData*)Save::GetData())->minute = minute);//秒の1桁目に0を用意
 	Font::StrDraw(str, 10, 10, 20, c);
 }
 

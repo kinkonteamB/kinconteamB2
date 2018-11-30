@@ -45,7 +45,6 @@ void CObjTitle::Init()
 //アクション
 void CObjTitle::Action()
 {
-
 	if (Input::GetVKey(VK_UP) == true && choose > 0 && m_time == 0)
 	{
 		--choose;
@@ -57,9 +56,14 @@ void CObjTitle::Action()
 		m_time = 10;
 	}
 
+	if (m_time > 0) {
+		m_time--;
+		if (m_time <= 0) {
+			m_time = 0;
+		}
+	}
 	if (choose == 0)
 	{
-		//エンターキーでゲーム
 		if (Input::GetVKey(VK_RETURN) == true)
 		{
 			if (m_key_flag == true)
@@ -78,15 +82,6 @@ void CObjTitle::Action()
 			m_key_flag = true;
 		}
 	}
-	//仮キーフラグ
-	if (m_time > 0) {
-		m_time--;
-		if (m_time <= 0) {
-			m_time = 0;
-		}
-	}
-
-	//エンターキーでランキング
 	if (choose == 1)
 	{
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -101,7 +96,6 @@ void CObjTitle::Action()
 			m_key_flag = true;
 		}
 	}
-	//エンターキーで終了
 	if (choose == 2)
 	{
 		if (Input::GetVKey(VK_RETURN) == true)

@@ -21,8 +21,23 @@ void CObjRanking::Init()
 	choose = 1;
 	m_time = 5;
 
+	//ゲーム実行して一回のみ
+	static bool init_point = false;
+	if (init_point == false)
+	{
+		//ロード
+		Save::Open();//同フォルダ「UserData」からデータ取得
+
+		 //点数を0にする
+		((UserData*)Save::GetData())->minute = 0;
+		init_point = true;
+	}
+	//得点の初期化
+	((UserData*)Save::GetData())->minute = 0;
+
 	//得点が高い順に並び替えをする
 	RankingSort(((UserData*)Save::GetData())->m_ranking);
+
 }
 
 //アクション
@@ -54,6 +69,8 @@ void CObjRanking::Action()
 			if (m_key_flag == true)
 			{
 				Scene::SetScene(new CSceneTitle());
+				////得点の初期化
+				//((UserData*)Save::GetData())->minute = 0;
 				m_key_flag = false;
 			}
 		}
@@ -154,7 +171,7 @@ void CObjRanking::Draw()
 		Font::StrDraw(L"ClickReset", CLICK_RESET_POS_X, CLICK_RESET_POS_Y, CLICK_RESET_FONT_SIZE, c);
 }
 //ランキングソートメゾット
-//引数1　int[10] :ランキング用配列
+//引数1　int[16] :ランキング用配列
 //高順でバブルソートを行う
 void CObjRanking::RankingSort(int rank[10])
 {
@@ -173,7 +190,6 @@ void CObjRanking::RankingSort(int rank[10])
 				w = rank[i];
 				rank[i] = rank[j];
 				rank[j] = w;
-
 			}
 		}
 	}

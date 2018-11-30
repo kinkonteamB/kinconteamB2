@@ -14,12 +14,17 @@ using namespace GameL;
 //イニシャライズ
 void CObjClear::Init()
 {
-	choose = 0;
+	choose = 0;	
+
+
+
 }
 
 //アクション
 void CObjClear::Action()
 {
+	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する;
+
 	if (Input::GetVKey(VK_UP) == true)
 	{
 		choose = 0;
