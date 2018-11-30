@@ -1,6 +1,6 @@
 #pragma once
 
-#define OLL_RANKING (999)
+#define ALL_RANKING_SIZE (999);
 
 //オブジェクトネーム------------------------------
 enum OBJ_NAME

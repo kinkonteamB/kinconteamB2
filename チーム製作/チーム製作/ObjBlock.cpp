@@ -236,4 +236,3 @@ void CObjBlock::BlockDraw(float x, float y, RECT_F *dst, float c[])
 {
 
 }
-

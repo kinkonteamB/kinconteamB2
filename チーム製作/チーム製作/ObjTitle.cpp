@@ -20,32 +20,33 @@ void CObjTitle::Init()
 	m_key_flag = true;
 	choose = 0;
 	m_time = 10;
+
 	//ゲーム実行して一回のみ
 	static bool init_point = false;
 	if (init_point == false)
 	{
-		//ランキング初期化
 		for (int i = 0; i < 10; i++)
 		{
-			((UserData*)Save::GetData())->m_ranking[i] = OLL_RANKING;
+			((UserData*)Save::GetData())->m_ranking[i] = ALL_RANKING_SIZE;
 		}
 
 		//ロード
 		Save::Open();//同フォルダ「UserData」からデータ取得
 
 		//点数を0にする
-		((UserData*)Save::GetData())->minute = OLL_RANKING;
+		((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
 
 		init_point = true;
 	}
 	//得点情報ランキング最下位（描画圏外）に登録
 	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
+
+	Save::Seve();//UserDataの情報フォルダ「UserData」を作成
 }
 
 //アクション
 void CObjTitle::Action()
 {
-
 	if (Input::GetVKey(VK_UP) == true && choose > 0 && m_time == 0)
 	{
 		--choose;
@@ -57,9 +58,14 @@ void CObjTitle::Action()
 		m_time = 10;
 	}
 
+	if (m_time > 0) {
+		m_time--;
+		if (m_time <= 0) {
+			m_time = 0;
+		}
+	}
 	if (choose == 0)
 	{
-		//エンターキーでゲーム
 		if (Input::GetVKey(VK_RETURN) == true)
 		{
 			if (m_key_flag == true)
@@ -70,7 +76,7 @@ void CObjTitle::Action()
 				m_time = 20;
 
 				//得点の初期化
-				((UserData*)Save::GetData())->minute = OLL_RANKING;
+				((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
 			}
 		}
 		else
@@ -78,15 +84,6 @@ void CObjTitle::Action()
 			m_key_flag = true;
 		}
 	}
-	//仮キーフラグ
-	if (m_time > 0) {
-		m_time--;
-		if (m_time <= 0) {
-			m_time = 0;
-		}
-	}
-
-	//エンターキーでランキング
 	if (choose == 1)
 	{
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -101,7 +98,6 @@ void CObjTitle::Action()
 			m_key_flag = true;
 		}
 	}
-	//エンターキーで終了
 	if (choose == 2)
 	{
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -110,7 +106,7 @@ void CObjTitle::Action()
 		}
 	}
 	//得点の初期化
-	((UserData*)Save::GetData())->minute = OLL_RANKING;
+	((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
 }
 
 //ドロー

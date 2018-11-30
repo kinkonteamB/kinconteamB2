@@ -23,6 +23,23 @@ void CObjRanking::Init()
 	//得点が高い順に並び替えをする
 	RankingSort(((UserData*)Save::GetData())->m_ranking);
 
+	//ゲーム実行して一回のみ
+	static bool init_point = false;
+	if (init_point == false)
+	{
+		//ロード
+		Save::Open();//同フォルダ「UserData」からデータ取得
+
+		 //点数を0にする
+		((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
+		init_point = true;
+	}
+	//得点の初期化
+	((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
+
+	//得点が高い順に並び替えをする
+	RankingSort(((UserData*)Save::GetData())->m_ranking);
+
 }
 
 //アクション
@@ -54,6 +71,8 @@ void CObjRanking::Action()
 			if (m_key_flag == true)
 			{
 				Scene::SetScene(new CSceneTitle());
+				//得点の初期化
+				((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
 				m_key_flag = false;
 			}
 		}
@@ -72,7 +91,7 @@ void CObjRanking::Action()
 				//ランキング初期化
 				for (int i = 0; i < 10; i++)
 				{
-					((UserData*)Save::GetData())->m_ranking[i] = OLL_RANKING;
+					((UserData*)Save::GetData())->m_ranking[i] = ALL_RANKING_SIZE;
 				}
 				m_key_flag = false;
 			}
@@ -102,15 +121,16 @@ void CObjRanking::Draw()
 	for (int i = 0; i <RANKING_SCORE_MAX; i++)
 	{
 		wchar_t str[STR_MAX];
-		if( ( ( (UserData*)Save::GetData())->m_ranking[i] ) == OLL_RANKING)
+
+		if ((((UserData*)Save::GetData())->m_ranking[i]) ==999)
 		{
 			swprintf_s(str, L"%d位  0秒", i + SCORE_INIT);
 		}
-		else {
+		else
+		{
 			swprintf_s(str, L"%d位  %d秒", i + SCORE_INIT, ((UserData*)Save::GetData())->m_ranking[i]);
 		}
-		Font::StrDraw(str, SCORE_POS_X, SCORE_POS_Y + SCORE_INTERVAL*i + 1, SCORE_FONT_SIZE, c);
-		
+		Font::StrDraw(str, SCORE_POS_X, SCORE_POS_Y + SCORE_INTERVAL*i+1, SCORE_FONT_SIZE, c);
 	}
 
 	Font::StrDraw(L"バックスペースでタイトルへ", CLICK_TITLE_GO_X, CLICK_TITLE_GO_Y, TITLE_FONT_SIZE, c);
@@ -153,7 +173,7 @@ void CObjRanking::Draw()
 		Font::StrDraw(L"ClickReset", CLICK_RESET_POS_X, CLICK_RESET_POS_Y, CLICK_RESET_FONT_SIZE, c);
 }
 //ランキングソートメゾット
-//引数1　int[10] :ランキング用配列
+//引数1　int[16] :ランキング用配列
 //高順でバブルソートを行う
 void CObjRanking::RankingSort(int rank[10])
 {
@@ -172,7 +192,6 @@ void CObjRanking::RankingSort(int rank[10])
 				w = rank[i];
 				rank[i] = rank[j];
 				rank[j] = w;
-
 			}
 		}
 	}
