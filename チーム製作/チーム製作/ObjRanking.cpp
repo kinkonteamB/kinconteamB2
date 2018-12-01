@@ -20,6 +20,8 @@ void CObjRanking::Init()
 	m_key_flag = false;
 	choose = 1;
 	m_time = 5;
+	//“¾“_‚ª‚‚¢‡‚É•À‚Ñ‘Ö‚¦‚ğ‚·‚é
+	RankingSort(((UserData*)Save::GetData())->m_ranking);
 
 	//ƒQ[ƒ€Às‚µ‚Äˆê‰ñ‚Ì‚İ
 	static bool init_point = false;
