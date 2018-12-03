@@ -97,7 +97,7 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(objt, OBJ_TIME, 12);
 
 	//‰¹Šy“Ç‚İ‚İ
-	Audio::LoadAudio(0, L"moristage.wav", BACK_MUSIC);
+	Audio::LoadAudio(0, L"“´ŒA.wav", BACK_MUSIC);
 	Audio::LoadAudio(1, L"choice.wav", EFFECT);
 
 	//ƒ{ƒŠƒ…[ƒ€‚ğ1.5‘‚â‚·

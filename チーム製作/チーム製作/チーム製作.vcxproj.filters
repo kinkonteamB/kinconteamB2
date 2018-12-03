@@ -42,9 +42,6 @@
     <Filter Include="ソース ファイル\GameTitle\Menu">
       <UniqueIdentifier>{a02f87af-c45c-41f0-92a1-85239dbbc9bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\arrow">
-      <UniqueIdentifier>{ee212e0f-8036-49da-9535-5f155d7e9f13}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjHero.cpp">
