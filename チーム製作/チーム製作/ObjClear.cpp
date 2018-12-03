@@ -4,6 +4,7 @@
 #include "GameL\SceneManager.h"
 #include "GameL\DrawTexture.h"
 #include"GameL\UserData.h"
+#include"SceneMain.h"
 
 #include "GameHead.h"
 #include "ObjClear.h"
@@ -14,13 +15,15 @@ using namespace GameL;
 //イニシャライズ
 void CObjClear::Init()
 {
-	choose = 0;	
+	choose = 0;
 }
 
 //アクション
 void CObjClear::Action()
 {
 	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する;
+
+	g_map_chenge += 1;
 
 	if (Input::GetVKey(VK_UP) == true)
 	{

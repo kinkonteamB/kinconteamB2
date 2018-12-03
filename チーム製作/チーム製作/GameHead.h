@@ -1,7 +1,5 @@
 #pragma once
 
-#define ALL_RANKING_SIZE (999);
-
 //オブジェクトネーム------------------------------
 enum OBJ_NAME
 {
@@ -53,8 +51,8 @@ struct UserData
 
 
 //ゲーム内で使用されるグローバル変数・定数・列挙--
-
-
+#define ALL_RANKING_SIZE (999);
+extern int g_map_chenge;//マップ変更
 
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------

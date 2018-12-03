@@ -14,6 +14,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+int g_map_chenge = 0;//マップ変更
+
 //イニシャライズ
 void CObjTitle::Init()
 {
