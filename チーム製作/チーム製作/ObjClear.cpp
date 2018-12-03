@@ -23,7 +23,7 @@ void CObjClear::Action()
 {
 	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する;
 
-	g_map_chenge += 1;
+	g_map_chenge = 1;
 
 	if (Input::GetVKey(VK_UP) == true)
 	{
