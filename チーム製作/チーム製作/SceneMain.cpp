@@ -73,14 +73,20 @@ void CSceneMain::InitScene()
 	//外部グラフィックファイルを読み込み0番に登録（576x384ピクセル）
 	Draw::LoadImage(L"1133010303.png", 0, TEX_SIZE_576);
 
-	//背景画像読み込み
-	Draw::LoadImage(L"map2haikei.png", 3, TEX_SIZE_1920);
+	if (g_map_chenge == 0)
+	{
+		Draw::LoadImage(L"map.jpg", 3, TEX_SIZE_1920);
 
-	//ブロック画像読み込み
-	Draw::LoadImage(L"brock5.png", 1, TEX_SIZE_768);
+		//ブロック画像読み込み
+		Draw::LoadImage(L"Brock3.jpg", 2, TEX_SIZE_768);
+	}
+	else if (g_map_chenge == 1)
+	{
+		Draw::LoadImage(L"map2haikei.png", 3, TEX_SIZE_1920);
 
-	//マップ2　ブロック画像読み込み
-	Draw::LoadImage(L"brock5.png", 2, TEX_SIZE_768);
+		//マップ2　ブロック画像読み込み
+		Draw::LoadImage(L"brock5.png", 2, TEX_SIZE_768);
+	}
 
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);

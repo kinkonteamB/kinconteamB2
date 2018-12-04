@@ -34,13 +34,22 @@ void C0bjBackground::Draw()
 	RECT_F src;//描写元切り取り位置
 	RECT_F dst;//描写先表示位置
 
-	//切り取り位置の設定
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 1000.0f;
-	src.m_bottom = 740.0f;
-	
+	if (g_map_chenge == 0)
+	{
+		//切り取り位置の設定
+		src.m_top    =    0.0f;
+		src.m_left   =  500.0f;
+		src.m_right  = 1920.0f;
+		src.m_bottom =  740.0f;
+	}
+	else if (g_map_chenge == 1)
+	{
+		//切り取り位置の設定
+		src.m_top    =    0.0f;
+		src.m_left   =    0.0f;
+		src.m_right  = 1000.0f;
+		src.m_bottom =  740.0f;
+	}
 	//描画
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f + m_x1;
