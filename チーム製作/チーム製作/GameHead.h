@@ -51,7 +51,7 @@ struct UserData
 
 
 //ゲーム内で使用されるグローバル変数・定数・列挙--
-#define ALL_RANKING_SIZE (999);
+#define ALL_RANKING_SIZE (999); //ランキング初期化変数
 extern int g_map_chenge;//マップ変更
 
 //------------------------------------------------
