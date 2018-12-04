@@ -94,7 +94,7 @@ void CObjBlock::Draw()
 			src.m_bottom = ALL_BLOCK_SIZE;
 
 			//ブロック画像表示
-			if (m_map[i][j] == 1 && g_map_chenge==0)
+			if (m_map[i][j] == 1)
 			{
 				//表示位置の設定
 				dst.m_top = i*ALL_BLOCK_SIZE;
@@ -103,17 +103,6 @@ void CObjBlock::Draw()
 				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(2, &src, &dst, c, 0.0f);
-			}
-			//ブロック画像表示
-			if (m_map[i][j] == 1 && g_map_chenge == 1)
-			{
-				//表示位置の設定
-				dst.m_top = i*ALL_BLOCK_SIZE;
-				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
-				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
-				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
-
-				Draw::Draw(1, &src, &dst, c, 0.0f);
 			}
 			//針トラップ表示
 			else if (m_map[i][j] == 2)
