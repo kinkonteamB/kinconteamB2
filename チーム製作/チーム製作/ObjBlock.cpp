@@ -208,14 +208,14 @@ void CObjBlock::BlockHit(
 								Scene::SetScene(new CSceneOver());
 							}
 						}
-						if (r > 128 && r < 225)
+						if (r > 128 && r < 190)
 						{
 							//左
 							*left = true;//主人公の右の部分が衝突している
 							*x = bx - 50.0f + (scroll);//ブロックの位置-主人公の幅
 							*vx = -(*vx)*0.0f;//-VX*反発係数
 						}
-						if (r > 225 && r < 315)
+						if (r > 190 && r < 315)
 						{
 							//下
 							*up = true;//主人公の上の部分が衝突している
