@@ -6,6 +6,7 @@
 
 #include"GameHead.h"
 #include"ObjBlock.h"
+#include"GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -93,7 +94,7 @@ void CObjBlock::Draw()
 			src.m_bottom = ALL_BLOCK_SIZE;
 
 			//ブロック画像表示
-			if (m_map[i][j] == 1)
+			if (m_map[i][j] == 1 && g_map_chenge==0)
 			{
 				//表示位置の設定
 				dst.m_top = i*ALL_BLOCK_SIZE;
@@ -102,6 +103,17 @@ void CObjBlock::Draw()
 				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(2, &src, &dst, c, 0.0f);
+			}
+			//ブロック画像表示
+			if (m_map[i][j] == 1 && g_map_chenge == 1)
+			{
+				//表示位置の設定
+				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
+				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
+
+				Draw::Draw(1, &src, &dst, c, 0.0f);
 			}
 			//針トラップ表示
 			else if (m_map[i][j] == 2)
@@ -184,7 +196,7 @@ void CObjBlock::BlockHit(
 
 
 					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 80.0f)
+					if (len < 79.0f)
 					{
 						//角度で上下左右を判定
 						if ((r < 75&& r>0) || r > 315)
@@ -203,7 +215,8 @@ void CObjBlock::BlockHit(
 							*vy = 0.0f;
 							if (m_map[i][j] == 2)
 							{
-							//	Scene::SetScene(new CSceneOver());
+								Audio::Start(1);
+								Scene::SetScene(new CSceneOver());
 							}
 						}
 						if (r > 128 && r < 225)
@@ -217,7 +230,7 @@ void CObjBlock::BlockHit(
 						{
 							//下
 							*up = true;//主人公の上の部分が衝突している
-							*y = by + 64.0f;//ブロックの位置+主人公の幅
+							*y = by + 32.0f;//ブロックの位置+主人公の幅
 							if (*vy < 0)
 							{
 								*vy = 0.0f;
@@ -234,4 +247,3 @@ void CObjBlock::BlockDraw(float x, float y, RECT_F *dst, float c[])
 {
 
 }
-

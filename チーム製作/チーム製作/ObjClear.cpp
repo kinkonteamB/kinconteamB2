@@ -3,6 +3,8 @@
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
 #include "GameL\DrawTexture.h"
+#include"GameL\UserData.h"
+#include"SceneMain.h"
 
 #include "GameHead.h"
 #include "ObjClear.h"
@@ -19,6 +21,8 @@ void CObjClear::Init()
 //アクション
 void CObjClear::Action()
 {
+	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する;
+
 	if (Input::GetVKey(VK_UP) == true)
 	{
 		choose = 0;
@@ -38,6 +42,7 @@ void CObjClear::Action()
 				g_px = 64.0f;
 				g_py = 500.0f;
 
+				g_map_chenge += 1;
 				Scene::SetScene(new CSceneMain());
 				m_key_flag = false;
 			}
@@ -52,6 +57,7 @@ void CObjClear::Action()
 		if (Input::GetVKey(VK_BACK) == true)
 		{
 			Scene::SetScene(new CSceneTitle());
+			g_map_chenge = 0;//マップ変更
 			m_key_flag = false;
 		}
 	}
@@ -66,7 +72,7 @@ void CObjClear::Draw()
 	RECT_F src;//描写元切り取り位置
 	RECT_F dst;//描写先表示位置
 
-			   //切り取り位置の設定
+	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 256.0f;
