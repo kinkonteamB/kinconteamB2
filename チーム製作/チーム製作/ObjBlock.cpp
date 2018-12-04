@@ -6,6 +6,7 @@
 
 #include"GameHead.h"
 #include"ObjBlock.h"
+#include"GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -184,10 +185,10 @@ void CObjBlock::BlockHit(
 
 
 					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 80.0f)
+					if (len < 79.0f)
 					{
 						//角度で上下左右を判定
-						if ((r < 76&& r>0) || r > 315)
+						if ((r < 75&& r>0) || r > 315)
 						{
 							//右
 							*right = true;//オブジェクトの左の部分が衝突している
@@ -201,10 +202,11 @@ void CObjBlock::BlockHit(
 							*down = true;//主人公の下の部分が衝突している
 							*y = by - 64.0f;//ブロックの位置-主人公の幅
 							*vy = 0.0f;
-							/*if (m_map[i][j] == 2)
+							if (m_map[i][j] == 2)
 							{
+								Audio::Start(1);
 								Scene::SetScene(new CSceneOver());
-							}*/
+							}
 						}
 						if (r > 128 && r < 225)
 						{
@@ -234,4 +236,3 @@ void CObjBlock::BlockDraw(float x, float y, RECT_F *dst, float c[])
 {
 
 }
-

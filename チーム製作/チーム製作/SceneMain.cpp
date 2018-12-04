@@ -42,7 +42,15 @@ void CSceneMain::InitScene()
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t> p; //ステージ情報ポインター
 	int size;              //ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"map2-1.csv", &size);//外部データ読み込み
+
+	if (g_map_chenge == 0)
+	{
+		p = Save::ExternalDataOpen(L"map1.csv", &size);//外部データ読み込み
+	}
+	else if (g_map_chenge == 1)
+	{
+		p = Save::ExternalDataOpen(L"map2-1.csv", &size);//外部データ読み込み
+	}
 
 	int map[19][100];
 	int count = 1;
@@ -95,13 +103,15 @@ void CSceneMain::InitScene()
 	//タイムオブジェクト作成
 	C0bjTime* objt = new C0bjTime();
 	Objs::InsertObj(objt, OBJ_TIME, 12);
-
 	//音楽読み込み
-	Audio::LoadAudio(0, L"洞窟.wav", BACK_MUSIC);
-	Audio::LoadAudio(1, L"choice.wav", EFFECT);
+	Audio::LoadAudio(0, L"moristage.wav", BACK_MUSIC);
+	//ボリューム1.5
+	float f = Audio::VolumeMaster(1.0);
 
-	//ボリュームを1.5増やす
-	float v = Audio::VolumeMaster(0);
+	Audio::LoadAudio(1, L"jump01.wav", EFFECT);
+
+	//ボリューム1.5
+	float v = Audio::VolumeMaster(1.5);
 
 	//音楽スタート
 	Audio::Start(0);
@@ -109,7 +119,7 @@ void CSceneMain::InitScene()
 	//CObjArrow* obja = new CObjArrow();
 	//Objs::InsertObj(obja, OBJ_ARROW, 5);
 
-	//弓矢オブジェクト作成
+	////弓矢オブジェクト作成
 	//CObjArrow* objar = new CObjArrow();
 	//Objs::InsertObj(objar, OBJ_ARROW, 12);
 

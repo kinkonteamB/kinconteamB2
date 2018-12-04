@@ -2,6 +2,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
+#include"GameL\UserData.h"
 
 #include "GameHead.h"
 #include "ObjTitle.h"
@@ -13,12 +14,36 @@
 //使用するネームスペース
 using namespace GameL;
 
+int g_map_chenge = 0;//マップ変更
+
 //イニシャライズ
 void CObjTitle::Init()
 {
 	m_key_flag = true;
 	choose = 0;
 	m_time = 10;
+
+	//ゲーム実行して一回のみ
+	static bool init_point = false;
+	if (init_point == false)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			((UserData*)Save::GetData())->m_ranking[i] = ALL_RANKING_SIZE;
+		}
+
+		//ロード
+		Save::Open();//同フォルダ「UserData」からデータ取得
+
+		//点数を0にする
+		((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
+
+		init_point = true;
+	}
+	//得点情報ランキング最下位（描画圏外）に登録
+	((UserData*)Save::GetData())->m_ranking[9] = ((UserData*)Save::GetData())->minute;
+
+	Save::Seve();//UserDataの情報フォルダ「UserData」を作成
 }
 
 //アクション
@@ -48,6 +73,12 @@ void CObjTitle::Action()
 			if (m_key_flag == true)
 			{
 				Scene::SetScene(new CSceneMain());
+				g_px = 64.0f;
+				g_py = 450.0f;
+				m_time = 20;
+
+				//得点の初期化
+				((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
 			}
 		}
 		else
@@ -76,6 +107,8 @@ void CObjTitle::Action()
 			exit(1);
 		}
 	}
+	//得点の初期化
+	((UserData*)Save::GetData())->minute = ALL_RANKING_SIZE;
 }
 
 //ドロー

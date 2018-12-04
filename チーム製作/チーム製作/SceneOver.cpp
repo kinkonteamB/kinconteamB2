@@ -42,18 +42,10 @@ void CSceneOver::InitScene()
 	CObjOver* go1 = new CObjOver();
 	Objs::InsertObj(go1, OBJ_OVER, 4);
 
-	CObjOver* go2 = new CObjOver();
-	Objs::InsertObj(go2, OBJ_OVER, 1);
-
-	CObjOver* go3 = new CObjOver();
-	Objs::InsertObj(go3, OBJ_OVER, 1);
-
 	//音楽読み込み
 	Audio::LoadAudio(0, L"BGMGameover.wav", BACK_MUSIC);
-
 	//ボリュームを1.0に戻す
-	float v = Audio::VolumeMaster(0);
-	v = Audio::VolumeMaster((1.0 - v));
+	float v = Audio::VolumeMaster(1.5);
 
 	//音楽スタート
 	Audio::Start(0);

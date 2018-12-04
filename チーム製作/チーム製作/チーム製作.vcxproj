@@ -145,7 +145,9 @@
     </ClCompile>
     <ClCompile Include="SceneClear.cpp" />
     <ClCompile Include="SceneMain.cpp" />
-    <ClCompile Include="SceneMenu.cpp" />
+    <ClCompile Include="SceneMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="SceneOver.cpp" />
     <ClCompile Include="SceneRanking.cpp" />
     <ClCompile Include="SceneTitle.cpp">
@@ -189,7 +191,9 @@
     </ClInclude>
     <ClInclude Include="SceneClear.h" />
     <ClInclude Include="SceneMain.h" />
-    <ClInclude Include="SceneMenu.h" />
+    <ClInclude Include="SceneMenu.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="SceneOver.h" />
     <ClInclude Include="SceneRanking.h" />
     <ClInclude Include="SceneTitle.h">

@@ -6,10 +6,11 @@
 //
 ////使用するネームスペース
 //using namespace GameL;
+//
 //CObjArrow::CObjArrow(float x, float y)
 //{
-//	//m_x = x;
-//	//m_y = y;
+//	m_x = x;
+//	m_y = y;
 //}
 //
 ////イニシャライズ
@@ -34,4 +35,3 @@
 //	RECT_F dst;
 //
 //}
-
