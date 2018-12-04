@@ -74,10 +74,13 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"1133010303.png", 0, TEX_SIZE_576);
 
 	//背景画像読み込み
-	Draw::LoadImage(L"map.jpg", 3, TEX_SIZE_1920);
+	Draw::LoadImage(L"map2haikei.png", 3, TEX_SIZE_1920);
 
 	//ブロック画像読み込み
-	Draw::LoadImage(L"brock3.jpg", 2, TEX_SIZE_768);
+	Draw::LoadImage(L"brock5.png", 2, TEX_SIZE_768);
+
+	//マップ2　ブロック画像読み込み
+	Draw::LoadImage(L"brock5.png", 1, TEX_SIZE_768);
 
 	//マップ2　ブロック画像読み込み
 	Draw::LoadImage(L"brock5.png", 1, TEX_SIZE_768);
