@@ -77,10 +77,10 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"map2haikei.png", 3, TEX_SIZE_1920);
 
 	//ブロック画像読み込み
-	Draw::LoadImage(L"brock5.png", 2, TEX_SIZE_768);
+	Draw::LoadImage(L"brock5.png", 1, TEX_SIZE_768);
 
 	//マップ2　ブロック画像読み込み
-	Draw::LoadImage(L"brock5.png", 1, TEX_SIZE_768);
+	Draw::LoadImage(L"brock5.png", 2, TEX_SIZE_768);
 
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
