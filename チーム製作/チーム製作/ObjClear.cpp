@@ -23,8 +23,6 @@ void CObjClear::Action()
 {
 	Save::Seve();//UserDataの情報フォルダ「UserData」を作成する;
 
-	g_map_chenge = 1;
-
 	if (Input::GetVKey(VK_UP) == true)
 	{
 		choose = 0;
@@ -44,6 +42,7 @@ void CObjClear::Action()
 				g_px = 64.0f;
 				g_py = 500.0f;
 
+				g_map_chenge += 1;
 				Scene::SetScene(new CSceneMain());
 				m_key_flag = false;
 			}
@@ -58,6 +57,7 @@ void CObjClear::Action()
 		if (Input::GetVKey(VK_BACK) == true)
 		{
 			Scene::SetScene(new CSceneTitle());
+			g_map_chenge = 0;//マップ変更
 			m_key_flag = false;
 		}
 	}

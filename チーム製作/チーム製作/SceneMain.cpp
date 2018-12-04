@@ -79,6 +79,9 @@ void CSceneMain::InitScene()
 	//ブロック画像読み込み
 	Draw::LoadImage(L"brock5.png", 2, TEX_SIZE_768);
 
+	//マップ2　ブロック画像読み込み
+	Draw::LoadImage(L"brock5.png", 1, TEX_SIZE_768);
+
 	//針罠読み込み
 	Draw::LoadImage(L"blockobj2.png", 4, TEX_SIZE_768);
 
@@ -103,18 +106,30 @@ void CSceneMain::InitScene()
 	//タイムオブジェクト作成
 	C0bjTime* objt = new C0bjTime();
 	Objs::InsertObj(objt, OBJ_TIME, 12);
-	//音楽読み込み
-	Audio::LoadAudio(0, L"moristage.wav", BACK_MUSIC);
-	//ボリューム1.5
-	float f = Audio::VolumeMaster(1.0);
-
+	if (g_map_chenge == 0)
+	{
+		//音楽読み込み
+		Audio::LoadAudio(0, L"moristage.wav", BACK_MUSIC);
+		//ボリューム1.5
+		float f = Audio::VolumeMaster(1.5);
+	}
+	else if (g_map_chenge == 1)
+	{
+		//音楽読み込み
+		Audio::LoadAudio(0, L"洞窟.wav", BACK_MUSIC);
+		//ボリューム1.5
+		float v = Audio::VolumeMaster(1.5);
+	};
 	Audio::LoadAudio(1, L"jump01.wav", EFFECT);
-
 	//ボリューム1.5
-	float v = Audio::VolumeMaster(1.5);
+	float v = Audio::VolumeMaster(1.0);
 
 	//音楽スタート
 	Audio::Start(0);
+
+
+
+
 	////テスト用矢のオブジェクト作成
 	//CObjArrow* obja = new CObjArrow();
 	//Objs::InsertObj(obja, OBJ_ARROW, 5);
